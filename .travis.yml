@@ -5,5 +5,10 @@ python:
     - "3.6"
 install:
     - pip install -r requirements.txt
+env:
+    - DEBUG = False
+    - TESTING = False
+    - CSRF_ENABLED = True
+    - SECRET_KEY = 'This is secret'
 script:
     - python -m unittest discover
