@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Abenezer Mengistu </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
+        /* Setting fade transition and default settings */
+
+body {
+  color: #000;
+  background-color: #f4f4f4;
+  transition: background-color 0.75s ease;
+}
+
+/* panel styles */
+.panel {
+  /* min height incase content is higher than window height */
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  /* outline: 10px solid hotpink; */
+  /* turn above on to see the edge of panels */
+}
+
+
+/* colours */
+.color-violet {
+  background-color: #265E79;
+  color: #ffffff;
+}
+.color-indigo {
+  background-color: #8C6B36;
+  color: #ffffff;
+}
+.color-blue {
+  background-color: #3D2428;
+  color: #ffffff;
+}
+
+.text {
+  min-height: 100vh;
+  jutify-content: center;
+}
+
+
+.color-green {
+  background-color: #2B5B49;
+  color: #ffffff;
+}
+
+.color-yellow {
+  background-color: #F3D685;
+}
+.color-orange {
+  background-color: #D97B37;
+}
+.color-red {
+  background-color: #BF574C;
+}
+
+/* styling for demo, can ignore */
+body {
+  text-align: center;
+  font-size: 120%;
+  line-height: 1.618;
+}
+h1, h2 {
+  font-size: 3em;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  font-family: 'Slabo 27px', serif;
+}
+p {
+  max-width: 30em;
+  margin-bottom: 1.618em;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  color: black;
+}
+
+#about, #experience, #projects, #contact {
+  color: #f4f4f4;
+}
+</style>
+</head>
+<body>
+    <div class="panel" data-color="white" id="home">
+        <div>
+            <h1> Hi, I'm Abenezer </h1>
+            <p> i'm a full stack web developer / data scientist to be.</p> 
+            <p> <a href="https://www.linkedin.com/in/abenezer-mengistu-mamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px"></i></a>
+                <a href="https://www.instagram.com/ab_mamo" target="_blank"><i class="fa fa-instagram" style="font-size:36px"> </i></a></p>
+            <p> <a href="#about"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></p>
+        </div>
+    </div>
+    <div class="panel" data-color="violet" id="about">
+        <div class="text">
+        
+        <h1>About Me</h1>
+        <p> based in Portland and currently attending Reed College. </p>
+        <p> interested in full stack web development and machine learning. </p>
+        <p> love coding, music, travelling and tiramisu. </p>
+        <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        </div>
+    </div>
+<!--    <div class="panel" data-color="blue" id="projects">
+        <div class="text">
+        <h1>Cool Projects</h1>
+        <p> Coming Soon </p>
+        <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        </div>
+    </div>
+-->    <div class="panel" data-color="green" id="contact">
+        <div class="text">
+        <h1>Contact Me</h1>
+        <p> wanna know more ? collaborate ? hire me ? </p> 
+        <p> know how each color on this website describes me as a person ?</p>
+        <p> <a href="mailto:abmamo@reed.edu" target="_top" style="color: #f4f4f4"> send me an email </a> </p>        
+        <p> or let's connect </p>
+        <p> <a href="https://www.linkedin.com/in/abenezer-mengistu-mamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px;color:#f4f4f4;"></i></a>
+                <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px;color:#f4f4f4;"></i></a>
+                <a href="https://www.instagram.com/ab_mamo" target="_blank"><i class="fa fa-instagram" style="font-size:36px;color:#f4f4f4"> </i></a></p>
+        <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        </div>
+    </div>
+</body>
+<script>
+$(window).scroll(function() {
+  
+  // selectors
+  var $window = $(window),
+      $body = $('body'),
+      $panel = $('.panel');
+  
+  // Change 33% earlier than scroll position so colour is there when you arrive.
+  var scroll = $window.scrollTop() + ($window.height() / 2);
+ 
+  $panel.each(function () {
+    var $this = $(this);
+    
+    // if position is within range of this panel.
+    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+    // Remember we set the scroll to 33% earlier in scroll var.
+    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+          
+      // Remove all classes on body with color-
+      $body.removeClass(function (index, css) {
+        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+      });
+       
+      // Add class of currently active div
+      $body.addClass('color-' + $(this).data('color'));
+    }
+  });    
+  
+}).scroll();
+</script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</html>
