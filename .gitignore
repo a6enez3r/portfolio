@@ -1,4 +1,6 @@
 .py[oc]
 __pycache__/
 env
-app/config.py
+config.py
+*.ini
+*.sock
