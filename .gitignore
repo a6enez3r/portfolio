@@ -1,6 +1,7 @@
 .py[oc]
 __pycache__/
 env
+logs
 config.py
 *.ini
 *.sock
