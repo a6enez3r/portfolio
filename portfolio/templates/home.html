@@ -91,6 +91,30 @@ a {
 #about, #experience, #projects, #contact {
   color: #f4f4f4;
 }
+
+.box {
+  margin: 2.5%;
+  padding: 2.5%;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.box p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875em;
+  padding: 2.5%;
+  margin: 2.5%;;
+  color: #f4f4f4;
+  margin-bottom: 0.809em;
+}
+
+#contact {
+    margin-top: 15%;
+}
+
 </style>
 </head>
 <body>
@@ -111,17 +135,24 @@ a {
         <p> based in Portland and currently attending Reed College. </p>
         <p> interested in full stack web development and machine learning. </p>
         <p> love coding, music, travelling and tiramisu. </p>
-        <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
-<!--    <div class="panel" data-color="blue" id="projects">
+    <div class="panel" data-color="blue" id="projects">
         <div class="text">
         <h1>Cool Projects</h1>
-        <p> Coming Soon </p>
+        <div class="box">
+            <h2>teret.io</h2>
+            <p> A microblogging web application written in flask + summernote.js with content and user management systems</p>
+        </div>
+        <div class="box">
+            <h2> curriculum learning </h2>
+            <p> For my thesis I will be researching the use of curriculum learning in training various machine learning models; more specifically the use curriculum learning in solving the odd man out task </p>
+        </div>
         <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
--->    <div class="panel" data-color="green" id="contact">
+    <div class="panel" data-color="green" id="contact">
         <div class="text">
         <h1>Contact Me</h1>
         <p> wanna know more ? collaborate ? hire me ? </p> 
