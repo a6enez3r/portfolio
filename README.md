@@ -1,3 +1,3 @@
 # portfolio [![Build Status](https://travis-ci.org/abmamo/portfolio.svg?branch=master)](https://travis-ci.org/abmamo/portfolio)
 <br />
-A simple flask application for serving single page portfolio websites. I use jQuery for scrolling animations. used in abmamo.com
+A web application for serving single page portfolio websites. Uses javascript for various smooth scrolling animations, CSS for styling and flask to power the backend. for simplicity and discoverability purposes it uses google analytics tools to analyze site traffic. used in abmamo.com
