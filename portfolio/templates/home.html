@@ -73,17 +73,31 @@ body {
   font-size: 120%;
   line-height: 1.618;
 }
-h1, h2 {
-  font-size: 3em;
+h1, h2, h3, h4{
   letter-spacing: 0.05em;
   line-height: 1.1;
   font-family: 'Slabo 27px', serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
 }
 p {
   max-width: 30em;
   margin-bottom: 1.618em;
   font-family: 'Open Sans', sans-serif;
 }
+
+.link-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #f4f4f4;
+    text-decoration: underline;
+}
+
 a {
   color: black;
 }
@@ -104,11 +118,17 @@ a {
 
 .box p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.875em;
+  line-height: 1.618;
+  letter-spacing: 0.05em;
+  max-width: 30em;
   padding: 2.5%;
   margin: 2.5%;;
   color: #f4f4f4;
   margin-bottom: 0.809em;
+}
+
+.box-text {
+    font-size: 0.75em;
 }
 
 #contact {
@@ -121,10 +141,11 @@ a {
     <div class="panel" data-color="white" id="home">
         <div>
             <h1> Hi, I'm Abenezer </h1>
-            <p> i'm a full stack web developer / data scientist to be.</p> 
-            <p> <a href="https://www.linkedin.com/in/abenezer-mengistu-mamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+            <p> i'm a full stack web developer / machine learning enthusiast.</p> 
+            <p> 
+                <a href="https://www.linkedin.com/in/abmamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
                 <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px"></i></a>
-                <a href="https://www.instagram.com/ab_mamo" target="_blank"><i class="fa fa-instagram" style="font-size:36px"> </i></a></p>
+            </p>
             <p> <a href="#about"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></p>
         </div>
     </div>
@@ -133,7 +154,7 @@ a {
         
         <h1>About Me</h1>
         <p> based in Portland and currently attending Reed College. </p>
-        <p> interested in full stack web development and machine learning. </p>
+        <p> passionate about full stack web development and transparency + accountability in machine learning systems. </p>
         <p> love coding, music, travelling and tiramisu. </p>
         <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
@@ -142,12 +163,21 @@ a {
         <div class="text">
         <h1>Cool Projects</h1>
         <div class="box">
-            <h2>teret.io</h2>
-            <p> A microblogging web application written in flask + summernote.js with content and user management systems</p>
+            <h2>teret.io</h3>
+            <p> 
+                <span class="box-text">
+                    inspired by my experiences as an international student living in Portland, for the past year I have dedicated the majority of my free time to developing teret.io: a microblogging web application written in flask + html/javascript. it is a site that aims to serve as a content publishing platform for short stories and life experiences from around the globe. it is intended as casual and safe space for diverse and multicultural viewpoints to coexist in. i am currently
+                    co developing a curated set of short stories and life experiences to publish and launch the website. <a href="https://www.teret.io/about"><span class="link-text">read more</span></a>   
+                </span> 
+            </p>
         </div>
         <div class="box">
-            <h2> curriculum learning </h2>
-            <p> For my thesis I will be researching the use of curriculum learning in training various machine learning models; more specifically the use curriculum learning in solving the odd man out task </p>
+            <h2> curriculum learning </h3>
+            <p> 
+                <span class="box-text">
+                    i am currently thesising on the use of curriculum learning in traning neural networks and exploring various training regimens for optimising convergence rates. these regimens are then used to efficiently train sense aware word vector embeddings that can be used in various natural language processing tasks. <a href="https://github.com/abmamo/thesis"><span class="link-text">read more </span></a> 
+                </span>
+            </p>
         </div>
         <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
@@ -155,13 +185,14 @@ a {
     <div class="panel" data-color="green" id="contact">
         <div class="text">
         <h1>Contact Me</h1>
-        <p> wanna know more ? collaborate ? hire me ? </p> 
+        <p> wanna know more? collaborate? hire me? </p> 
         <p> know how each color on this website describes me as a person ?</p>
         <p> <a href="mailto:abmamo@reed.edu" target="_top" style="color: #f4f4f4"> send me an email </a> </p>        
         <p> or let's connect </p>
-        <p> <a href="https://www.linkedin.com/in/abenezer-mengistu-mamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px;color:#f4f4f4;"></i></a>
-                <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px;color:#f4f4f4;"></i></a>
-                <a href="https://www.instagram.com/ab_mamo" target="_blank"><i class="fa fa-instagram" style="font-size:36px;color:#f4f4f4"> </i></a></p>
+        <p> 
+            <a href="https://www.linkedin.com/in/abmamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px;color:#f4f4f4;"></i></a>
+            <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px;color:#f4f4f4;"></i></a>
+        </p>
         <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
