@@ -8,71 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
-    <style>
-
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
-        /* Setting fade transition and default settings */
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
   color: #000;
   background-color: #f4f4f4;
   transition: background-color 0.75s ease;
-}
-
-/* panel styles */
-.panel {
-  /* min height incase content is higher than window height */
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  /* outline: 10px solid hotpink; */
-  /* turn above on to see the edge of panels */
-}
-
-
-/* colours */
-.color-violet {
-  background-color: #265E79;
-  color: #ffffff;
-}
-.color-indigo {
-  background-color: #8C6B36;
-  color: #ffffff;
-}
-.color-blue {
-  background-color: #3D2428;
-  color: #ffffff;
-}
-
-.text {
-  min-height: 100vh;
-  jutify-content: center;
-}
-
-
-.color-green {
-  background-color: #2B5B49;
-  color: #ffffff;
-}
-
-.color-yellow {
-  background-color: #F3D685;
-}
-.color-orange {
-  background-color: #D97B37;
-}
-.color-red {
-  background-color: #BF574C;
-}
-
-/* styling for demo, can ignore */
-body {
   text-align: center;
   font-size: 120%;
   line-height: 1.618;
 }
+
 h1, h2, h3, h4{
   letter-spacing: 0.05em;
   line-height: 1.1;
@@ -102,46 +50,156 @@ a {
   color: black;
 }
 
+.panel {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-violet {
+  background-color: #265E79;
+  color: #ffffff;
+}
+.color-indigo {
+  background-color: #8C6B36;
+  color: #ffffff;
+}
+.color-blue {
+  background-color: #3D2428;
+  color: #ffffff;
+}
+
+.text {
+  min-height: 100vh;
+  jutify-content: center;
+  text-align: center;
+}
+
+.color-green {
+  background-color: #2B5B49;
+  color: #ffffff;
+}
+
+.color-yellow {
+  background-color: #F3D685;
+}
+.color-orange {
+  background-color: #D97B37;
+}
+.color-red {
+  background-color: #BF574C;
+}
+
 #about, #experience, #projects, #contact {
   color: #f4f4f4;
+}
+
+.box-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .box {
   margin: 2.5%;
   padding: 2.5%;
-  width: 100%;
+  width: 45%;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  border-radius: 5px;
+  background: #f4f4f4;
+  border-radius: 15px;
+  display: inline-block;
 }
 
 .box p {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.618;
   letter-spacing: 0.05em;
-  max-width: 30em;
-  padding: 2.5%;
-  margin: 2.5%;;
-  color: #f4f4f4;
-  margin-bottom: 0.809em;
+  color: #333;
+  text-align: center;
 }
 
-.box-text {
-    font-size: 0.75em;
+.box h2 {
+  line-height: 1.618;
+  color: #333;
 }
 
 #contact {
     margin-top: 15%;
 }
+ 
+div.container
+{
+    font-family: Raleway;
+    margin: 0 auto;
+    padding: 2.5% 2.5%;
+    text-align: right;
+}
+
+div.container a
+{
+    color: #333;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+div.topLeftBorders a:before
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 0px;
+    background: #333;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+div.topLeftBorders a:after
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+div.topLeftBorders a:hover:before
+{
+    height: 100%;
+}
+
+div.topLeftBorders a:hover:after
+{
+    opacity: 0;
+    top: 100%;
+}
 
 </style>
 </head>
 <body>
+    <div class="container indigo topLeftBorders">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+        <a href="https://teret.abmamo.com">BLOG</a>
+    </div> 
     <div class="panel" data-color="white" id="home">
         <div>
             <h1> Hi, I'm Abenezer </h1>
-            <p> a full stack web developer / machine learning enthusiast.</p> 
+            <p> a full stack web developer / machine learning enthusiast / currently in Portland / reinforcement learning is v. cool</p> 
             <p> 
                 <a href="https://www.linkedin.com/in/abmamo" target='_blank'><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
                 <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px"></i></a>
@@ -156,30 +214,30 @@ a {
         <p> based in Portland and currently attending Reed College. </p>
         <p> passionate about full stack web development and transparency + accountability in machine learning systems. </p>
         <p> love coding, music, travelling and tiramisu. </p>
+        <p> currently researching reinforcement learning + modelling chaotic economies in python</p>
         <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
     <div class="panel" data-color="blue" id="projects">
-        <div class="text">
-        <h1>Cool Projects</h1>
+        <div class="box-container">
+        <h1>Some Cool Projects</h1>
             <div class="box">
-                <h2>teret.io</h3>
-                <p> 
-                    <span class="box-text">
-                        inspired by my experiences as an international student living in Portland, for the past year I have dedicated the majority of my free time to developing teret.io: a microblogging web application written in flask + html/javascript. it is a site that aims to serve as a content publishing platform for short stories and life experiences from around the globe. it is intended as casual and safe space for diverse and multicultural viewpoints to coexist in. i am currently
-                        co developing a curated set of short stories and life experiences to publish and launch the website. <a href="https://www.teret.io/about"><span class="link-text">read more</span></a>   
-                    </span> 
-                </p>
+                <h2>teret / ተረት</h2>
+                
+                <p>inspired by experiences as an international student living in Portland + traveling in the US + Europe. journal / microblogging application w/ rich text editing + image upload + in-built web music player written in flask + Javascript</p>
+                <p>check it out @ <a href="https://www.teret.abmamo.com">HERE</a></p>
+                
             </div>
             <div class="box">
-                <h2> curriculum learning </h3>
-                <p> 
-                    <span class="box-text">
-                        i am currently thesising on the use of curriculum learning in traning neural networks and exploring various training regimens for optimising convergence rates. these regimens are then used to efficiently train sense aware word vector embeddings that can be used in various natural language processing tasks. <a href="https://github.com/abmamo/thesis"><span class="link-text">read more </span></a> 
-                    </span>
-                </p>
+                <h2> thesis :- word vector induction + curriculum learning + scalable learning for the odd man out task </h2>
+                
+                <p>final year thesis explored the use of scalable learning methods in optimizing training regimens for neural networks. </p>
+                <p>more specifically, scalable learning for the odd man out task with applications to word vector induction to generate sense aware embeddings</p>
+                <p>check it out @ <a href="https://github.com/abmamo/thesis"> HERE </a></p>
+          
             </div>
         </div>
+
         <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
     </div>
     <div class="panel" data-color="green" id="contact">
@@ -249,6 +307,7 @@ $(document).ready(function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
+	return false;
       });
     } // End if
   });
