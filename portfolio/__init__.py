@@ -20,7 +20,7 @@ def index():
 @app.route('/resume')
 def resume():
     try:
-        return send_from_directory(app.static_folder, filename="style.jpg")
+        return send_from_directory(app.static_folder, filename="resume.pdf")
     except:
         return render_template('500.html'), 500
 
