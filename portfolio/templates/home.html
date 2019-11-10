@@ -6,6 +6,7 @@
     <title> Abenezer Mengistu </title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
 <style>
@@ -58,7 +59,7 @@ a {
   align-items: center;
 }
 
-.color-violet {
+.color-blue {
   background-color: #265E79;
   color: #ffffff;
 }
@@ -66,7 +67,7 @@ a {
   background-color: #8C6B36;
   color: #ffffff;
 }
-.color-blue {
+.color-brown {
   background-color: #3D2428;
   color: #ffffff;
 }
@@ -123,6 +124,10 @@ a {
 .box h2 {
   line-height: 1.618;
   color: #333;
+}
+
+hr.title {
+	border-top: 2px solid #333;
 }
 
 #contact {
@@ -193,6 +198,7 @@ div.topLeftBorders a:hover:after
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
         <a href="#projects">PROJECTS</a>
+        <a href="#resume">RESUME</a>
         <a href="#contact">CONTACT</a>
         <a href="https://teret.abmamo.com">BLOG</a>
     </div> 
@@ -207,7 +213,7 @@ div.topLeftBorders a:hover:after
             <p> <a href="#about"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></p>
         </div>
     </div>
-    <div class="panel" data-color="violet" id="about">
+    <div class="panel" data-color="blue" id="about">
         <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         <div class="text">
         
@@ -219,40 +225,90 @@ div.topLeftBorders a:hover:after
         <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
-    <div class="panel" data-color="blue" id="projects">
+    <div class="panel" data-color="brown" id="projects">
         <p> <a href="#about"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         <div class="box-container">
         <h1>Some Cool Projects</h1>
-            <div class="box">
-                <h2>teret / ተረት</h2>
-                
-                <p>inspired by experiences as an international student living in Portland + traveling in the US + Europe. journal / microblogging application w/ rich text editing + image upload + in-built web music player written in flask + Javascript</p>
-                <p>check it out @ <a href="https://www.teret.abmamo.com">HERE</a></p>
-                
+            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+              <div class="box">
+                  <h2>teret / ተረት</h2>
+                  
+                  <p>inspired by experiences as an international student living in Portland + traveling in the US + Europe. journal / microblogging application w/ rich text editing + image upload + in-built web music player written in flask + Javascript</p>
+                  <p>check it out @ <a href="https://www.teret.abmamo.com">HERE</a></p>
+                  
+              </div>
             </div>
-            <div class="box">
-                <h2> thesis :- word vector induction + curriculum learning + scalable learning for the odd man out task </h2>
-                
-                <p>final year thesis explored the use of scalable learning methods in optimizing training regimens for neural networks. </p>
-                <p>more specifically, scalable learning for the odd man out task with applications to word vector induction to generate sense aware embeddings</p>
-                <p>check it out @ <a href="https://github.com/abmamo/thesis"> HERE </a></p>
-          
+            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+              <div class="box">
+                  <h2> thesis :- word vector induction + curriculum learning + scalable learning for the odd man out task </h2>
+                  
+                  <p>final year thesis explored the use of scalable learning methods in optimizing training regimens for neural networks. </p>
+                  <p>more specifically, scalable learning for the odd man out task with applications to word vector induction to generate sense aware embeddings</p>
+                  <p>check it out @ <a href="https://github.com/abmamo/thesis"> HERE </a></p>
+              </div>
             </div>
-            <div class="box">
-		<h2> current events + machine art </h2>
+            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+              <div class="box">
+                  <h2> current events + machine art </h2>
 
-		<p> a web application built using flask + pyTorch and running on a GCP backend that performs neural style transfer on two images </p>
-		<p> currently doing a weekly series of commentary pieces on various global events </p>
-		<p> check it out @ <a href="https://www.art.abmamo.com">HERE</a></p>
-          
+                  <p> a web application built using flask + pyTorch and running on a GCP backend that performs neural style transfer on two images </p>
+                  <p> currently doing a weekly series of commentary pieces on various global events </p>
+                  <p> check it out @ <a href="https://www.art.abmamo.com">HERE</a></p>        
+              </div>
             </div>
-
         </div>
-
         <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
     </div>
+
+    <div class="panel" data-color="blue" id="resume">
+      <p> <a href="#projects"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+      <div class="box-container">
+        <h1>Resume</h1>
+        <div data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1500">
+          <div class="box">
+            <h2>Experience</h2>
+            <div data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="700">
+                <hr class="title">
+            </div>
+            <p>Help Desk Assistant - <span style="font-weight: light;">Reed College Computer User Services</span></p>
+            <p>Full Stack Developer - <span style="font-weight: light;">Reed College Software Design Studio</span></p>
+          </div>
+        </div>
+        <div data-aos="fade-down-left" data-aos-easing="linear" data-aos-duration="1500">
+          <div class="box">
+            <h2>Education</h2>
+            <div data-aos="fade-down-left" data-aos-easing="linear" data-aos-duration="700">
+                <hr class="title">
+            </div>
+            <p>Reed College - <span style="font-weight: light;">2015 - 2019</span></p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+          <div class="box">
+            <h2>Skills</h2>
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+                <hr class="title">
+            </div>
+            <p>Python</p>
+            <p>React</p>
+            <p>Javascript</p>
+            <p>CSS</p>
+            <p>Haskell</p>
+            <p>C++</p>
+            <p>Apache Spark</p>
+            <p>Natural Language Processing</p>
+            <p>Machine Learning</p>
+            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+              <hr class="title">
+            </div>
+            <p> download resume @ <a href="{{ url_for('resume') }}">HERE</a></p>        
+          </div>
+        </div>
+      </div>
+      <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+    </div>
     <div class="panel" data-color="green" id="contact">
-        <p> <a href="#projects"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        <p> <a href="#resume"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         <div class="text">
         <h1>Contact Me</h1>
         <p> wanna know more? collaborate? hire me? </p> 
@@ -266,7 +322,10 @@ div.topLeftBorders a:hover:after
         <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
-</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script>
 $(window).scroll(function() {
   
@@ -325,4 +384,5 @@ $(document).ready(function(){
   });
 });
 </script>
+</body>
 </html>
