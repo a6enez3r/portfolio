@@ -13,3 +13,5 @@ and to run the website
 ```sh
 python wsgi.py
 ```
+
+This code uses the pytest testing framework for simple testing (to test main page loading (200) or errors (4xx and 5xx).
