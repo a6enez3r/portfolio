@@ -16,6 +16,14 @@ def index():
     except:
         return render_template('500.html'), 500
 
+# resume download linke
+@app.route('/resume')
+def resume():
+    try:
+        return send_from_directory(app.static_folder, filename="resume.pdf")
+    except:
+        return render_template('500.html'), 500
+
 # Routes for google analytics
 @app.route('/google51951de21c061dc9.html', methods=['GET'])
 def google_gsuite_verification():
