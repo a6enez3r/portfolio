@@ -5,196 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Abenezer Mengistu </title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-body {
-  color: #000;
-  background-color: #f4f4f4;
-  transition: background-color 0.75s ease;
-  text-align: center;
-  font-size: 120%;
-  line-height: 1.618;
-}
-
-h1, h2, h3, h4{
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-  font-family: 'Slabo 27px', serif;
-}
-
-h1 {
-    font-size: 3em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-p {
-  max-width: 30em;
-  margin-bottom: 1.618em;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.link-text {
-    font-family: 'Open Sans', sans-serif;
-    color: #f4f4f4;
-    text-decoration: underline;
-}
-
-a {
-  color: black;
-}
-
-.panel {
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-
-.color-blue {
-  background-color: #265E79;
-  color: #ffffff;
-}
-.color-indigo {
-  background-color: #8C6B36;
-  color: #ffffff;
-}
-.color-brown {
-  background-color: #3D2428;
-  color: #ffffff;
-}
-
-.text {
-  min-height: 100vh;
-  jutify-content: center;
-  text-align: center;
-}
-
-.color-green {
-  background-color: #2B5B49;
-  color: #ffffff;
-}
-
-.color-yellow {
-  background-color: #F3D685;
-}
-.color-orange {
-  background-color: #D97B37;
-}
-.color-red {
-  background-color: #BF574C;
-}
-
-#about, #experience, #projects, #contact {
-  color: #f4f4f4;
-}
-
-.box-container {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.box {
-  margin: 2.5%;
-  padding: 2.5%;
-  width: 45%;
-  box-sizing: border-box;
-  background: #f4f4f4;
-  border-radius: 15px;
-  display: inline-block;
-}
-
-.box p {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.618;
-  letter-spacing: 0.05em;
-  color: #333;
-  text-align: center;
-}
-
-.box h2 {
-  line-height: 1.618;
-  color: #333;
-}
-
-hr.title {
-	border-top: 2px solid #333;
-}
-
-#contact {
-    margin-top: 15%;
-}
- 
-div.container
-{
-    font-family: Raleway;
-    margin: 0 auto;
-    padding: 2.5% 2.5%;
-    text-align: right;
-}
-
-div.container a
-{
-    color: #333;
-    text-decoration: none;
-    font: 20px Raleway;
-    margin: 0px 10px;
-    padding: 10px 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-}
-
-div.topLeftBorders a:before
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 2px;
-    height: 0px;
-    background: #333;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
-}
-
-div.topLeftBorders a:after
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #333;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
-}
-
-div.topLeftBorders a:hover:before
-{
-    height: 100%;
-}
-
-div.topLeftBorders a:hover:after
-{
-    opacity: 0;
-    top: 100%;
-}
-
-</style>
 </head>
+
 <body>
-    <div class="container indigo topLeftBorders">
+    <!-- Section One -->
+    <div class="container topLeftBorders show-on-large">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
         <a href="#projects">PROJECTS</a>
@@ -202,8 +21,8 @@ div.topLeftBorders a:hover:after
         <a href="#contact">CONTACT</a>
         <a href="https://teret.abmamo.com">BLOG</a>
     </div> 
+    <!-- Section Two -->
     <div class="panel" data-color="white" id="home">
-        <div>
             <h1> Hi, I'm Abenezer </h1>
             <p> a full stack web developer / machine learning enthusiast / currently in Portland / reinforcement learning is v. cool</p> 
             <p> 
@@ -211,92 +30,60 @@ div.topLeftBorders a:hover:after
                 <a href="https://github.com/abmamo" target='_blank'><i class="fa fa-github-square" style="font-size:36px"></i></a>
             </p>
             <p> <a href="#about"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></p>
-        </div>
     </div>
+    <!-- Section Three -->
     <div class="panel" data-color="blue" id="about">
         <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         <div class="text">
-        
-        <h1>About Me</h1>
-        <p> based in Portland and currently attending Reed College. </p>
-        <p> passionate about full stack web development and transparency + accountability in machine learning systems. </p>
-        <p> love coding, music, travelling and tiramisu. </p>
-        <p> currently researching reinforcement learning + modelling chaotic economies in python</p>
-        <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+          <h1>About Me</h1>
+          <p> based in Portland and currently attending Reed College. </p>
+          <p> passionate about full stack web development and transparency + accountability in machine learning systems. </p>
+          <p> love coding, music, travelling and tiramisu. </p>
+          <p> currently researching reinforcement learning + modelling chaotic economies in python</p>
+          <p> <a href="#projects"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
+    <!-- Section Four -->
     <div class="panel" data-color="brown" id="projects">
-        <p> <a href="#about"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
-        <div class="box-container">
-        <h1>Some Cool Projects</h1>
-            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
-              <div class="box">
-                  <h2>teret / ተረት</h2>
-                  
-                  <p>inspired by experiences as an international student living in Portland + traveling in the US + Europe. journal / microblogging application w/ rich text editing + image upload + in-built web music player written in flask + Javascript</p>
-                  <p>check it out @ <a href="https://www.teret.abmamo.com">HERE</a></p>
-                  
-              </div>
-            </div>
-            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
-              <div class="box">
-                  <h2> thesis :- word vector induction + curriculum learning + scalable learning for the odd man out task </h2>
-                  
-                  <p>final year thesis explored the use of scalable learning methods in optimizing training regimens for neural networks. </p>
-                  <p>more specifically, scalable learning for the odd man out task with applications to word vector induction to generate sense aware embeddings</p>
-                  <p>check it out @ <a href="https://github.com/abmamo/thesis"> HERE </a></p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
-              <div class="box">
-            		<h2> current events + machine art </h2>
-
-                <p> a web application built using flask + pyTorch and running on a GCP backend that performs neural style transfer on two images </p>
-                <p> currently doing a weekly series of commentary pieces on various global events </p>
-                <p> check it out @ <a href="https://www.art.abmamo.com">HERE</a></p>        
-              </div>
-            </div>
-            <div data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
-              <div class="box">
-                <h2> snakeJS </h2>
-                
-                <p> classic snake game built using JavaScript for graphics and game logic and Flask for serving </p>
-                <p> check it out @ <a href="https://www.snake.abmamo.com">HERE</a></p>        
-              </div>
-            </div>
-        </div>
+          <p> <a href="#about"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+          <h1>Some Cool Projects</h1>
+          <div class="box">
+              <h2>teret / ተረት</h2>
+              <p>inspired by experiences as an international student living in Portland + traveling in the US + Europe. journal / microblogging application w/ rich text editing + image upload + in-built web music player written in flask + Javascript</p>
+              <p>check it out @ <a href="https://www.teret.abmamo.com">HERE</a></p>                  
+          </div>
+          <div class="box">
+              <h2> thesis :- word vector induction + curriculum learning + scalable learning for the odd man out task </h2>
+              <p>final year thesis explored the use of scalable learning methods in optimizing training regimens for neural networks. </p>
+              <p>more specifically, scalable learning for the odd man out task with applications to word vector induction to generate sense aware embeddings</p>
+              <p>check it out @ <a href="https://github.com/abmamo/thesis"> HERE </a></p>
+          </div>
+          <div class="box">
+            <h2> current events + machine art </h2>
+            <p> a web application built using flask + pyTorch and running on a GCP backend that performs neural style transfer on two images </p>
+            <p> currently doing a weekly series of commentary pieces on various global events </p>
+            <p> check it out @ <a href="https://www.art.abmamo.com">HERE</a></p>        
+          </div>
         <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
     </div>
-
+    <!-- Section Five -->
     <div class="panel" data-color="blue" id="resume">
-      <p> <a href="#projects"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
-      <div class="box-container">
-        <h1>Resume</h1>
-        <div data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1500">
+        <p> <a href="#projects"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+          <h1>Resume</h1>
           <div class="box">
             <h2>Experience</h2>
-            <div data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="700">
-                <hr class="title">
-            </div>
-            <p>Help Desk Assistant - <span style="font-weight: light;">Reed College Computer User Services</span></p>
-            <p>Full Stack Developer - <span style="font-weight: light;">Reed College Software Design Studio</span></p>
+            <hr class="title">
+            <p>Help Desk Assistant :- <span style="font-weight: light;">Reed College Computer User Services</span></p>
+            <p>Full Stack Developer :- <span style="font-weight: light;">Reed College Software Design Studio</span></p>
           </div>
-        </div>
-        <div data-aos="fade-down-left" data-aos-easing="linear" data-aos-duration="1500">
           <div class="box">
             <h2>Education</h2>
-            <div data-aos="fade-down-left" data-aos-easing="linear" data-aos-duration="700">
-                <hr class="title">
-            </div>
-            <p>Reed College - <span style="font-weight: light;">2015 - 2019</span></p>
+            <hr class="title">
+            <p>Reed College :- <span style="font-weight: light;">2015 - 2019</span></p>
           </div>
-        </div>
-        <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
           <div class="box">
             <h2>Skills</h2>
-            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
-                <hr class="title">
-            </div>
+            <hr class="title">
             <p>Python</p>
             <p>React</p>
             <p>Javascript</p>
@@ -306,15 +93,12 @@ div.topLeftBorders a:hover:after
             <p>Apache Spark</p>
             <p>Natural Language Processing</p>
             <p>Machine Learning</p>
-            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="400">
-              <hr class="title">
-            </div>
+            <hr class="title">
             <p> download resume @ <a target="_blank" href="{{ url_for('resume') }}">HERE</a></p>        
           </div>
-        </div>
-      </div>
-      <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
+        <p> <a href="#contact"><i class="fa fa-arrow-down" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
     </div>
+    <!-- Section Six -->
     <div class="panel" data-color="green" id="contact">
         <p> <a href="#resume"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         <div class="text">
@@ -330,67 +114,67 @@ div.topLeftBorders a:hover:after
         <p> <a href="#home"><i class="fa fa-arrow-up" aria-hidden="true" style="color: #f4f4f4"></i></a></p>
         </div>
     </div>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<script>
-$(window).scroll(function() {
-  
-  // selectors
-  var $window = $(window),
-      $body = $('body'),
-      $panel = $('.panel');
-  
-  // Change 33% earlier than scroll position so colour is there when you arrive.
-  var scroll = $window.scrollTop() + ($window.height() / 2);
- 
-  $panel.each(function () {
-    var $this = $(this);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    // scroll change color function
+    $(window).scroll(function() {
+      
+      // selectors
+      var $window = $(window),
+          $body = $('body'),
+          $panel = $('.panel');
+      
+      // Change 33% earlier than scroll position so colour is there when you arrive.
+      var scroll = $window.scrollTop() + ($window.height() / 2);
     
-    // if position is within range of this panel.
-    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-    // Remember we set the scroll to 33% earlier in scroll var.
-    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+      $panel.each(function () {
+        var $this = $(this);
+        
+        // if position is within range of this panel.
+        // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+        // Remember we set the scroll to 33% earlier in scroll var.
+        if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+              
+          // Remove all classes on body with color-
+          $body.removeClass(function (index, css) {
+            return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+          });
           
-      // Remove all classes on body with color-
-      $body.removeClass(function (index, css) {
-        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+          // Add class of currently active div
+          $body.addClass('color-' + $(this).data('color'));
+        }
+      });    
+      
+    }).scroll();
+    </script>
+
+    <script>
+    // smooth scrolling navbar code
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+      
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+      return false;
+          });
+        } // End if
       });
-       
-      // Add class of currently active div
-      $body.addClass('color-' + $(this).data('color'));
-    }
-  });    
-  
-}).scroll();
-</script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-	return false;
-      });
-    } // End if
-  });
-});
-</script>
+    });
+    </script>
 </body>
 </html>
