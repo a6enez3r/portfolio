@@ -21,13 +21,17 @@ nav {
   padding-top: 2.5%;
 }
 
+.cards-container {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
 .card-panel {
   margin-top: 2.5% !important;
   background: #000000 !important;
   border-radius: 0.75rem !important;
   box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
   text-align: left !important;
-  display: inline-block;
 }
 
 .card-position-title,
@@ -36,7 +40,9 @@ nav {
 .card-project-title,
 .card-summary-title {
   color: #ffb140;
-  font-weight: 600;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
 }
 
 .card-position-content,
@@ -80,6 +86,9 @@ nav {
   background-color: #ffb140 !important;
 }
 
+.nav-icon {
+  text-align: center;
+}
 .nav-icon a {
   color: #ffb140 !important;
 }
@@ -95,4 +104,8 @@ nav {
 .material-icons {
   display: inline-flex;
   vertical-align: top;
+}
+
+.card-project-content {
+  font-size: 0.75em !important;
 }

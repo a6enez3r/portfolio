@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,7 +20,7 @@
       <ul class="right hide-on-med-and-down">
         <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
         <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
-        <li class="nav-link"><a href="{{ url_for('resume')}}">resume</a></li>
+        <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
         <li class="nav-icon"><a href="https://github.com/abmamo"><i class="fa fa-github-square"></i></a></li>
         <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><i class="fa fa-linkedin-square"></i></a></li>
       </ul>
@@ -31,15 +28,18 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="{{ url_for('work') }}">work</a></li>
-    <li><a href="{{ url_for('about')}}">about</a></li>
-    <li><a href="{{ url_for('resume')}}">resume</a></li>
-    <li><a href="https://github.com/abmamo">github</a></li>
-    <li><a href="https://www.linkedin.com/in/abmamo/">linkedin</a></li>
+    <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
+    <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
+    <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
+    <li class="nav-link"><a href="https://github.com/abmamo">github</a></li>
+    <li class="nav-link"><a href="https://www.linkedin.com/in/abmamo/">linkedin</a></li>
   </ul>
   <div class="container valign-wrapper body-content">
     {% block content %}{% endblock %}
   </div>
+<!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
   $(document).ready(function(){
     $('.sidenav').sidenav();

@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 import logging
 # config
 import os
+# import work
+from portfolio.data import work_list
 # load environment
 load_dotenv()
 # get environment
@@ -30,7 +32,9 @@ else:
 def work():
     # error handling
     try:
-        return render_template('work.html'), 200
+        # group work experience
+        grouped_work_list = [work_list[i:i+2] for i in range(0, len(work_list), 2)]
+        return render_template('work.html', grouped_work_list=grouped_work_list), 200
     except Exception as e:
         # log
         app.logger.error("getting work page failed.")
