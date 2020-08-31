@@ -9,19 +9,25 @@ app.config.from_object('config.ProductionConfig')
 
 
 @app.route('/', methods=['GET'])
-def index():
+def work():
     # error handling
     try:
-        return render_template('home.html')
+        return render_template('work.html'), 200
     except:
         return render_template('500.html'), 500
 
-# resume download linke
+@app.route('/about', methods=['GET'])
+def about():
+    try:
+        return render_template('about.html'), 200
+    except Exception as e:
+        return render_template('500.html'), 500
+
 @app.route('/resume')
 def resume():
     try:
         return send_from_directory(app.static_folder, filename="resume.pdf")
-    except:
+    except Exception as e:
         return render_template('500.html'), 500
 
 # Routes for google analytics
@@ -36,8 +42,12 @@ def google_webmaster_tools_verification():
 # Generic error handling routes
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    error_code = 404
+    error_message = "page not found."
+    return render_template('error.html', error_code=error_code, error_message=error_message), 404
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('500.html'), 500
+    error_code = 500
+    error_message = "internal server errror."
+    return render_template('error.html', error_code=error_code, error_message=error_message), 500

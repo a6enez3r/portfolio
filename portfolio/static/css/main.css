@@ -1,175 +1,98 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;1,200&display=swap");
 
 body {
-  color: #000;
-  background-color: #f4f4f4;
-  transition: background-color 0.75s ease;
+  background-color: #291528;
   text-align: center;
-  font-size: 120%;
-  line-height: 1.618;
-}
-
-/* Font Properties */
-h1, h2, h3, h4{
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-  font-family: 'Slabo 27px', serif;
-}
-
-h1 {
-    font-size: 3em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-p {
-  max-width: 30em;
-  margin-bottom: 1.618em;
-  font-family: 'Open Sans', sans-serif;
-}
-
-a {
-  color: black;
-}
-
-.text {
-  min-height: 100vh;
-  jutify-content: center;
-  text-align: center;
-}
-
-/************/
-
-/* Changing Background Colors and Styling */
-
-.panel {
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-
-.color-blue {
-  background-color: #265E79;
-  color: #ffffff;
-}
-.color-indigo {
-  background-color: #8C6B36;
-  color: #ffffff;
-}
-.color-brown {
-  background-color: #3D2428;
-  color: #ffffff;
-}
-
-.color-green {
-  background-color: #2B5B49;
-  color: #ffffff;
-}
-
-.color-yellow {
-  background-color: #F3D685;
-}
-.color-orange {
-  background-color: #D97B37;
-}
-.color-red {
-  background-color: #BF574C;
-}
-
-#about, #experience, #projects, #contact {
-  color: #f4f4f4;
-}
-
-#contact {
-  margin-top: 15%;
-}
-
-.box {
-  margin: 2.5% -2.5% 2.5% -2.5%;
-  padding: 2.5%;
+  height: 100vh;
   width: 100vw;
-  box-sizing: border-box;
-  background: #f6f6f7;
+  font-family: "Source Code Pro", monospace;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.body-content {
+  padding-top: 2.5%;
+}
+
+.card-panel {
+  margin-top: 2.5% !important;
+  background: #000000 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+  text-align: left !important;
   display: inline-block;
 }
 
-.box p {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.618;
-  letter-spacing: 0.05em;
-  color: #333;
-  text-align: center;
-  margin: 0 auto;
+.card-position-title,
+.card-company-title,
+.card-time-title,
+.card-project-title,
+.card-summary-title {
+  color: #ffb140;
+  font-weight: 600;
 }
 
-.box h2 {
-  line-height: 1.618;
-  color: #333;
+.card-position-content,
+.card-company-content,
+.card-time-content,
+.card-project-content,
+.card-summary-content {
+  color: #f6f6f7;
 }
 
-hr.title {
-	border-top: 2px solid #333;
+.card-position-title,
+.card-position-content {
+  font-size: 1.25rem;
 }
 
-/**** Navbar Animation *****/
-
-div.container
-{
-    font-family: Raleway;
-    margin: 0 auto;
-    padding: 2.5% 2.5%;
-    text-align: right;
+.card-position-content {
+  font-weight: 600;
 }
 
-div.container a
-{
-    color: #333;
-    text-decoration: none;
-    font: 20px Raleway;
-    margin: 0px 10px;
-    padding: 10px 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
+.no-padding-bottom {
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
 }
 
-div.topLeftBorders a:before
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 2px;
-    height: 0px;
-    background: #333;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
+.brand-logo {
+  color: #291528 !important;
+  left: 15px !important;
+  transition: 0.3s;
 }
 
-div.topLeftBorders a:after
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #333;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
+.brand-logo:hover {
+  color: #ffb140 !important;
 }
 
-div.topLeftBorders a:hover:before
-{
-    height: 100%;
+.nav-link a {
+  color: #291528 !important;
 }
 
-div.topLeftBorders a:hover:after
-{
-    opacity: 0;
-    top: 100%;
+.nav-link:hover,
+.nav-icon:hover {
+  background-color: #ffb140 !important;
+}
+
+.nav-icon a {
+  color: #ffb140 !important;
+}
+
+.nav-icon a:hover {
+  color: #3d5dc7 !important;
+}
+
+.sidenav-trigger {
+  color: #ffb140 !important;
+}
+
+.material-icons {
+  display: inline-flex;
+  vertical-align: top;
 }
