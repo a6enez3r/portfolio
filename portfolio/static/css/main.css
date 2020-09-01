@@ -38,6 +38,7 @@ nav {
 .card-company-title,
 .card-time-title,
 .card-project-title,
+.card-tool-title,
 .card-summary-title {
   color: #ffb140;
   font-weight: 400;
@@ -49,6 +50,7 @@ nav {
 .card-company-content,
 .card-time-content,
 .card-project-content,
+.card-tool-content,
 .card-summary-content {
   color: #f6f6f7;
 }
@@ -65,6 +67,7 @@ nav {
 .no-padding-bottom {
   padding-bottom: 0px !important;
   padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 .brand-logo {
@@ -106,6 +109,12 @@ nav {
   vertical-align: top;
 }
 
+.card-tool-content,
 .card-project-content {
   font-size: 0.75em !important;
+}
+
+.center-icon {
+  text-align: center !important;
+  width: 100% !important;
 }

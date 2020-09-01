@@ -54,6 +54,16 @@
               </div>
               {% endfor %}
             </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-tool-title">
+                <i class="material-icons">settings</i> tools:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              {% for project in item["tools"] %}
+              <div class="col s4 m4 l3 card-tool-content">{{ project }}</div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
