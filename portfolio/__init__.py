@@ -7,7 +7,7 @@ import logging
 # config
 import os
 # import work
-from portfolio.data import work_list
+from portfolio.data import work_text, about_text
 # load environment
 load_dotenv()
 # get environment
@@ -33,8 +33,8 @@ def work():
     # error handling
     try:
         # group work experience
-        grouped_work_list = [work_list[i:i+2] for i in range(0, len(work_list), 2)]
-        return render_template('work.html', grouped_work_list=grouped_work_list), 200
+        grouped_work_text = [work_text[i:i+2] for i in range(0, len(work_text), 2)]
+        return render_template('work.html', grouped_work_text=grouped_work_text), 200
     except Exception as e:
         # log
         app.logger.error("getting work page failed.")
@@ -45,7 +45,7 @@ def work():
 @app.route('/about', methods=['GET'])
 def about():
     try:
-        return render_template('about.html'), 200
+        return render_template('about.html', about_text=about_text), 200
     except Exception as e:
         # log
         app.logger.error("getting work page failed.")

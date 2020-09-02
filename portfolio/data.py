@@ -1,5 +1,5 @@
 # work
-work_list = [
+work_text = [
     {
         "title": "Junior Python Developer", 
         "company": "Pivony", 
@@ -24,4 +24,16 @@ work_list = [
         "projects": ["geolocation tracking", "user authentication", "CSS Theme"],
         "tools": ["python", "HTML", "JavaScript", "CSS", "PostgreSQL"]
     }
+]
+
+about_text = [
+        """
+            I am a back end developer with a strong background in web/API development (Flask/Django), databases (PostgreSQL/MySQL), cloud-native development
+            (AWS), NLP/ML (pyTorch/anaconda/jupyter), managing & extracting meaningful insight from large datasets (dask/pandas/parquet), devops & infrastructure
+            management (Linux/bash/systemd), & MVP prototyping and development.
+        """,
+        """
+            I am passionate about utilizing emerging technologies to build 
+            I am passionate about utilizing emerging technologies to build robust infrasturucture to deliver incredible products.
+        """
 ]
