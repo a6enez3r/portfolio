@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block content %}
+<div class="container cards-container">
+  {% for group in grouped_work_list %}
+  <div class="row">
+    <div class="row">
+      {% for item in group %}
+      <div class="col s12 m12 l6">
+        <div class="card-panel valign-wrapper left-align">
+          <div class="container">
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-position-content">
+                {{item["title"]}}
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-company-title">
+                <i class="material-icons">location_on</i> where:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-company-content">
+                {{item["company"]}}
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-time-title">
+                <i class="material-icons">access_time</i> when:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-time-content">
+                {{item["duration"]}}
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-summary-title">
+                <i class="material-icons">code</i> quick summary:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-summary-content">
+                {{item["summary"]}}
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-project-title">
+                <i class="material-icons">sort</i> projects:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              {% for project in item["projects"] %}
+              <div class="col s12 m12 l4 card-project-content">
+                {{ project }}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="row no-padding-bottom">
+              <div class="col s12 m12 l12 card-tool-title">
+                <i class="material-icons">settings</i> tools:
+              </div>
+            </div>
+            <div class="row no-padding-bottom">
+              {% for project in item["tools"] %}
+              <div class="col s4 m4 l3 card-tool-content">{{ project }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
