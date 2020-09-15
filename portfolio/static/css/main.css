@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;1,200&display=swap");
 
 body {
-  background-color: #291528;
+  background-color: #7776bc;
   text-align: center;
   height: 100vh;
   width: 100vw;
@@ -17,8 +17,50 @@ nav {
   box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
 }
 
+.brand-logo {
+  color: #291528 !important;
+  left: 15px !important;
+  transition: 0.5s;
+}
+
+.brand-logo:hover {
+  color: #ffb140 !important;
+}
+
+.nav-link a {
+  color: #291528 !important;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
+}
+
+.nav-link:hover,
+.nav-icon:hover {
+  background-color: #ffb140 !important;
+}
+
+.nav-icon {
+  text-align: center;
+}
+.nav-icon a {
+  color: #ffb140 !important;
+  transition: 0.5s;
+}
+
+.nav-icon a:hover {
+  color: #3d5dc7 !important;
+}
+
+.sidenav-trigger {
+  color: #ffb140 !important;
+}
+
 .body-content {
   padding-top: 2.5%;
+}
+
+.material-icons {
+  display: inline-flex;
+  vertical-align: top;
 }
 
 .cards-container {
@@ -26,11 +68,12 @@ nav {
   width: 100%;
   max-width: 100%;
 }
+
 .card-panel {
   margin-top: 2.5% !important;
   background: #000000 !important;
   border-radius: 0.75rem !important;
-  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 16px 48px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
   text-align: left !important;
 }
 
@@ -52,16 +95,8 @@ nav {
 .card-project-content,
 .card-tool-content,
 .card-summary-content {
-  color: #f6f6f7;
-}
-
-.card-position-title,
-.card-position-content {
-  font-size: 1.25rem;
-}
-
-.card-position-content {
-  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.05em;
 }
 
 .no-padding-bottom {
@@ -70,51 +105,30 @@ nav {
   margin-top: 0px !important;
 }
 
-.brand-logo {
-  color: #291528 !important;
-  left: 15px !important;
-  transition: 0.3s;
+.card-position-content {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 3.5px !important;
+  border-bottom: 3px solid #ffb140;
 }
 
-.brand-logo:hover {
-  color: #ffb140 !important;
-}
-
-.nav-link a {
-  color: #291528 !important;
-}
-
-.nav-link:hover,
-.nav-icon:hover {
-  background-color: #ffb140 !important;
-}
-
-.nav-icon {
-  text-align: center;
-}
-.nav-icon a {
-  color: #ffb140 !important;
-}
-
-.nav-icon a:hover {
-  color: #3d5dc7 !important;
-}
-
-.sidenav-trigger {
-  color: #ffb140 !important;
-}
-
-.material-icons {
-  display: inline-flex;
-  vertical-align: top;
+.card-company-title,
+.card-company-content,
+.card-time-title,
+.card-time-content,
+.card-summary-title,
+.card-summary-content,
+.card-project-title,
+.card-tool-title {
+  font-size: 0.9em !important;
 }
 
 .card-tool-content,
 .card-project-content {
   font-size: 0.75em !important;
+  line-height: 1.75;
 }
 
-.center-icon {
-  text-align: center !important;
-  width: 100% !important;
+.card-summary-content {
+  line-height: 1.75;
 }

@@ -7,7 +7,7 @@ import logging
 # config
 import os
 # import work
-from portfolio.data import work_list
+from portfolio.data import work_text, about_text
 # load environment
 load_dotenv()
 # get environment
@@ -33,8 +33,8 @@ def work():
     # error handling
     try:
         # group work experience
-        grouped_work_list = [work_list[i:i+2] for i in range(0, len(work_list), 2)]
-        return render_template('work.html', grouped_work_list=grouped_work_list), 200
+        grouped_work_text = [work_text[i:i+2] for i in range(0, len(work_text), 2)]
+        return render_template('work.html', grouped_work_text=grouped_work_text), 200
     except Exception as e:
         # log
         app.logger.error("getting work page failed.")
@@ -45,7 +45,7 @@ def work():
 @app.route('/about', methods=['GET'])
 def about():
     try:
-        return render_template('about.html'), 200
+        return render_template('about.html', about_text=about_text), 200
     except Exception as e:
         # log
         app.logger.error("getting work page failed.")
@@ -64,16 +64,13 @@ def resume():
         # return error template
         return render_template('error.html'), 500
 
-# Routes for google analytics
-@app.route('/google51951de21c061dc9.html', methods=['GET'])
-def google_gsuite_verification():
-    return render_template('google51951de21c061dc9.html')
-
-@app.route('/google087c96628ea965db.html', methods=['GET'])
-def google_webmaster_tools_verification():
-    return render_template('google087c96628ea965db.html')
-
 # Generic error handling routes
+@app.errorhandler(400)
+def page_not_found(e):
+    error_code = 400
+    error_message = "bad request."
+    return render_template('error.html', error_code=error_code, error_message=error_message), 400
+
 @app.errorhandler(404)
 def page_not_found(e):
     error_code = 404
@@ -85,3 +82,9 @@ def internal_server_error(e):
     error_code = 500
     error_message = "internal server errror."
     return render_template('error.html', error_code=error_code, error_message=error_message), 500
+
+@app.errorhandler(502)
+def internal_server_error(e):
+    error_code = 502
+    error_message = "bad gateway."
+    return render_template('error.html', error_code=error_code, error_message=error_message), 502

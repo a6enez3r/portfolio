@@ -4,26 +4,17 @@
     <div class="card-panel valign-wrapper left-align">
       <div class="container">
         <div class="row no-padding-bottom">
-          <div class="col s12 m12 l12 card-summary-title">
+          <div class="col s12 m12 l12 card-position-content">
             <i class="material-icons">code</i> about me:
           </div>
         </div>
+        {% for text in about_text %}
         <div class="row no-padding-bottom">
           <div class="col s12 m12 l12 card-summary-content">
-            <p>
-              I am a very simple card. I am good at containing small bits of
-              information. I am convenient because I require little markup to
-              use effectively. I am similar to what is called a panel in other
-              frameworks.
-            </p>
-            <p>
-              I am a very simple card. I am good at containing small bits of
-              information. I am convenient because I require little markup to
-              use effectively. I am similar to what is called a panel in other
-              frameworks.
-            </p>
+            <p>{{ text}}</p>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>
