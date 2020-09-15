@@ -95,7 +95,8 @@ nav {
 .card-project-content,
 .card-tool-content,
 .card-summary-content {
-  color: #f6f6f7;
+  color: #fff;
+  letter-spacing: 0.05em;
 }
 
 .no-padding-bottom {

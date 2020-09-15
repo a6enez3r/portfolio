@@ -6,7 +6,7 @@ work_text = [
         "duration": "May, 2020 - present", 
         "summary": """worked on creating and maintaining a cloud native microservice infrastructure for topic modeling""", 
         "projects": ["preprocessing engine", "aws resource orchestrator", "async email manager"],
-        "tools": ["AWS", "python", "dask", "docker", "flask", "gensim", "transformers", "PostgreSQL"]
+        "tools": ["AWS", "python", "dask", "docker", "flask", "gensim", "bash", "PostgreSQL"]
     },
     {
         "title": "Topics in NLP", 
