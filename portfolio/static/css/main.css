@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;1,200&display=swap");
 
+/* body */
 body {
-  background-color: #7776bc;
+  background-color: #372f4b;
   text-align: center;
   height: 100vh;
   width: 100vw;
@@ -11,8 +12,11 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.25em !important;
+  padding: 0 0 1em 0 !important;
+  font-size: 16px !important;
 }
-
+/* nav */
 nav {
   box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
 }
@@ -24,26 +28,27 @@ nav {
 }
 
 .brand-logo:hover {
-  color: #ffb140 !important;
+  color: #ced375 !important;
+  letter-spacing: 0.2em !important;
 }
 
 .nav-link a {
   color: #291528 !important;
   letter-spacing: 0.1em;
-  transition: 0.5s;
+  transition: 0.5s !important;
 }
 
 .nav-link:hover,
 .nav-icon:hover {
-  background-color: #ffb140 !important;
+  background-color: #ced375 !important;
 }
 
 .nav-icon {
-  text-align: center;
+  text-align: center !important;
 }
+
 .nav-icon a {
-  color: #ffb140 !important;
-  transition: 0.5s;
+  color: #ced375 !important;
 }
 
 .nav-icon a:hover {
@@ -51,52 +56,36 @@ nav {
 }
 
 .sidenav-trigger {
-  color: #ffb140 !important;
+  color: #ced375 !important;
 }
 
+.sidenav-trigger:hover {
+  color: #7776bc !important;
+}
+
+/* content */
 .body-content {
   padding-top: 2.5%;
+}
+
+.cards-container {
+  min-width: 100%;
+  width: 90%;
+  max-width: 100%;
 }
 
 .material-icons {
   display: inline-flex;
   vertical-align: top;
-}
-
-.cards-container {
-  min-width: 100%;
-  width: 100%;
-  max-width: 100%;
+  color: #ced375 !important;
 }
 
 .card-panel {
   margin-top: 2.5% !important;
-  background: #000000 !important;
+  background: #ffffff !important;
   border-radius: 0.75rem !important;
   box-shadow: 0 16px 48px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
   text-align: left !important;
-}
-
-.card-position-title,
-.card-company-title,
-.card-time-title,
-.card-project-title,
-.card-tool-title,
-.card-summary-title {
-  color: #ffb140;
-  font-weight: 400;
-  margin: 0px;
-  padding: 0px;
-}
-
-.card-position-content,
-.card-company-content,
-.card-time-content,
-.card-project-content,
-.card-tool-content,
-.card-summary-content {
-  color: #fff;
-  letter-spacing: 0.05em;
 }
 
 .no-padding-bottom {
@@ -105,30 +94,58 @@ nav {
   margin-top: 0px !important;
 }
 
-.card-position-content {
-  font-size: 1.25rem;
+.card-position {
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 3.5px !important;
-  border-bottom: 3px solid #ffb140;
+  border-bottom: 3px solid #7776bc;
+  margin-left: 1.5% !important;
 }
 
-.card-company-title,
-.card-company-content,
-.card-time-title,
-.card-time-content,
-.card-summary-title,
-.card-summary-content,
-.card-project-title,
-.card-tool-title {
+.card-company,
+.card-time,
+.card-project,
+.card-tool,
+.card-summary {
+  color: #000000;
+  letter-spacing: 0.05em;
   font-size: 0.9em !important;
 }
 
-.card-tool-content,
-.card-project-content {
-  font-size: 0.75em !important;
+.card-company,
+.card-time {
+  padding-bottom: 1.5em !important;
+}
+
+.card-summary {
   line-height: 1.75;
 }
 
-.card-summary-content {
+.collapsible {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.collapsible-header {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.collapsible-header span {
+  text-decoration: underline;
+}
+
+.collapsible-header span:hover {
+  letter-spacing: 0.1em;
+}
+
+.collapsible-body {
+  border-color: #ced375 !important;
+}
+
+.card-tool,
+.card-project {
+  font-size: 0.75em !important;
   line-height: 1.75;
+  box-shadow: none !important;
 }

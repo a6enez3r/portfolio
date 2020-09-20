@@ -16,25 +16,25 @@
   <nav>
     <div class="nav-wrapper white">
       <a href="{{ url_for('work') }}" class="brand-logo left hide-on-med-and-down">abenezer m. mamo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mySidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
         <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
         <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
-        <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
+        <li class="nav-link"><a href="https://localhost:5001" target="_blank">blog</a></li>
         <li class="nav-icon"><a href="https://github.com/abmamo"><i class="fa fa-github-square"></i></a></li>
         <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><i class="fa fa-linkedin-square"></i></a></li>
       </ul>
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo">
+  <ul class="sidenav" id="mySidenav">
     <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
     <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
     <li class="nav-link"><a href="https://teret.abmamo.com">blog</a></li>
     <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
-    <li class="nav-icon"><a href="https://github.com/abmamo"><i class="fa fa-github-square center-icon"></i></a></li>
-    <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><i class="fa fa-linkedin-square center-icon"></i></a></li>
+    <li class="nav-icon"><a href="https://github.com/abmamo"><span><i class="fa fa-github-square center-align"></i></span></a></li>
+    <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><span><i class="fa fa-linkedin-square center-align"></i></span></a></li>
   </ul>
   <div class="container valign-wrapper body-content">
     {% block content %}{% endblock %}
@@ -45,6 +45,11 @@
 <script>
   $(document).ready(function(){
     $('.sidenav').sidenav();
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
   });
 </script>
 </body>
