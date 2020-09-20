@@ -1,8 +1,2 @@
-Click
-Flask
-itsdangerous
-Jinja2
-MarkupSafe
-uWSGI
-Werkzeug
+flask
 python-dotenv
