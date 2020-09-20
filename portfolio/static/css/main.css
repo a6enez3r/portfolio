@@ -94,6 +94,10 @@ nav {
   margin-top: 0px !important;
 }
 
+.padding-bottom {
+  padding-bottom: 0.5em !important;
+}
+
 .card-position {
   font-size: 1.5rem;
   font-weight: 600;
@@ -112,9 +116,8 @@ nav {
   font-size: 0.9em !important;
 }
 
-.card-company,
-.card-time {
-  padding-bottom: 1.5em !important;
+.card-company {
+  margin-left: 0.5em !important;
 }
 
 .card-summary {
@@ -131,12 +134,17 @@ nav {
   box-shadow: none !important;
 }
 
+.collapsible-header:hover {
+  cursor: auto;
+}
+
 .collapsible-header span {
   text-decoration: underline;
 }
 
 .collapsible-header span:hover {
   letter-spacing: 0.1em;
+  cursor: pointer;
 }
 
 .collapsible-body {
@@ -145,7 +153,7 @@ nav {
 
 .card-tool,
 .card-project {
-  font-size: 0.75em !important;
-  line-height: 1.75;
+  font-size: 0.85em !important;
+  line-height: 1.5 !important;
   box-shadow: none !important;
 }
