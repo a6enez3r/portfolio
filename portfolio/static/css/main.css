@@ -157,3 +157,15 @@ nav {
   line-height: 1.5 !important;
   box-shadow: none !important;
 }
+
+.card-error {
+  font-size: 1.5em !important;
+  color: #ced375 !important;
+  display: inline-block;
+}
+
+.card-message {
+  font-size: 1.1em !important;
+  color: #000000;
+  display: inline-block;
+}
