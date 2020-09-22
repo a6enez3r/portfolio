@@ -1,6 +1,6 @@
 name: portfolio
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -29,11 +29,10 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-      - name: Deploy to Server
-        - uses: actions/checkout@v1
-            uses: appleboy/ssh-action@master
-            with:
-                host: ${{ secrets.HOST }}
-                username: ${{ secrets.USERNAME }}
-                password: ${{ secrets.KEY}}
-                script: whoami
+      - name: Push to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.KEY}}
+          script: whoami
