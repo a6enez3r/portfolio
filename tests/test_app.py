@@ -8,7 +8,7 @@ def test_home(client):
 
 def test_about(client):
     response = client.get("/about")
-    assert response.status_code == 204
+    assert response.status_code == 200
 
 
 def test_resume(client):

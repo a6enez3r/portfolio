@@ -38,4 +38,5 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
-            ls -la
+            git pull origin master
+            sudo systemctl restart ${{ secrets.PROJECT_NAME }}
