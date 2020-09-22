@@ -39,4 +39,4 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull origin master
-            echo ${{ secrets.SERVER_PASSWORD }} | sudo -S systemctl restart ${{ secrets.PROJECT_NAME }}
+            sudo systemctl restart ${{ secrets.PROJECT_NAME }}
