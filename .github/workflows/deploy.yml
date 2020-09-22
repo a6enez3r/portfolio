@@ -29,15 +29,11 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-  deploy:
-    if: github.ref == 'refs/heads/master'
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v1
-      - name: Push to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.KEY}}
-          script: whoami
+      - name: Deploy to Server
+        - uses: actions/checkout@v1
+            uses: appleboy/ssh-action@master
+            with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USERNAME }}
+                password: ${{ secrets.KEY}}
+                script: whoami
