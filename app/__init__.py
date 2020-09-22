@@ -11,7 +11,8 @@ import logging
 import os
 
 # import work
-from portfolio.data import work_text, about_text
+from app.data import work_text, about_text
+import app.config as config
 
 # load environment
 load_dotenv()
@@ -23,12 +24,12 @@ app = Flask(__name__, static_url_path="/static")
 # config
 if environment == "production":
     # configure app
-    app.config.from_object("config.ProductionConfig")
+    app.config.from_object(config.ProductionConfig)
     # configure app logger
     logging.basicConfig(level=logging.ERROR)
 else:
     # configure app
-    app.config.from_object("config.DevelopmentConfig")
+    app.config.from_object(config.DevelopmentConfig)
     # configure app logger
     logging.basicConfig(level=logging.DEBUG)
 
