@@ -26,7 +26,7 @@ if environment == "production":
     # configure app
     app.config.from_object(config.ProductionConfig)
     # configure app logger
-    logging.basicConfig(level=logging.ERROR)
+    logging.basicConfig(level=logging.WARNING)
 else:
     # configure app
     app.config.from_object(config.DevelopmentConfig)
