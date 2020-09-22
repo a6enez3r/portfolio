@@ -34,8 +34,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY}}
-          passphrase: ${{ secrets.PASSPHRASE}}
+          key: ${{ secrets.KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            whoami
+            cd ${{ secrets.PROJECT_PATH }}
             ls -la
