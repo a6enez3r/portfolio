@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Heeba+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
 
 /* body */
 body {
@@ -24,7 +24,7 @@ nav {
   color: #291528 !important;
   left: 15px !important;
   transition: 0.5s;
-  font-family: "Heeba", serif;
+  font-family: "Heebo", serif;
 }
 
 .brand-logo:hover {
@@ -106,7 +106,7 @@ nav {
   border-bottom: 3px solid #7776bc;
   padding-bottom: 2.5% !important;
   margin-left: 1.5% !important;
-  font-family: "Heeba", serif;
+  font-family: "Heebo", serif;
 }
 
 .card-company,
