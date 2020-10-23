@@ -3,7 +3,7 @@ work_text = [
     {
         "title": "Junior Python Developer",
         "company": "Pivony",
-        "duration": "May, 2020 - present",
+        "duration": "May, 2020 - Oct, 2020",
         "summary": """building a cloud native and micro service oriented topic modeling infrastructure to efficiently process and summarize textual data and identify customer trends such as sentiment, complaints, influence, keywords, topics, and actionable insights.""",
         "projects": [
             "preprocessing engine",
@@ -31,7 +31,7 @@ work_text = [
     },
     {
         "title": "Full Stack Developer Intern",
-        "company": "Software Design Stuio",
+        "company": "Software Design Studio",
         "duration": "Jan, 2017 - Aug, 2017",
         "summary": """got introduced to the fundamentals of web programming using flask, javascript, postgreSQL, HTML/CSS/JavaScript resuling in a fleet management / geolocation tracking web application for efficient & accurate vehicle management""",
         "projects": ["geolocation tracking", "user authentication", "CSS Themes"],

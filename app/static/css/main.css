@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Indie+Flower&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 /* body */
@@ -17,11 +16,11 @@ body {
 }
 /* nav */
 nav {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #443B2F;
 }
-
+/* logo */
 .brand-logo {
-  color: #291528 !important;
+  color: #443B2F !important;
   left: 15px !important;
   transition: 0.5s;
   font-family: "Poppins", serif;
@@ -31,16 +30,16 @@ nav {
 .brand-logo:hover {
   letter-spacing: 0.15em !important;
 }
-
+/* nav links */
 .nav-link a {
-  color: #291528 !important;
+  color: #443B2F !important;
   letter-spacing: 0.1em;
   transition: 0.5s !important;
 }
 
 .nav-link:hover,
 .nav-icon:hover {
-  background-color: #8A6C82 !important;
+  background-color: #EEB21B !important;
   color: #ffffff !important;
   transition: 0.3s all;
 }
@@ -55,33 +54,27 @@ nav {
 }
 
 .nav-icon a {
-  color: #000000 !important;
+  color: #443B2F !important;
   transition: 0.3s all;
 }
 
 .sidenav-trigger {
-  color: #8A6C82 !important;
+  color: #EEB21B !important;
 }
 
 .sidenav-trigger:hover {
-  color: #8A6C82 !important;
+  color: #EEB21B !important;
 }
 
 /* content */
 .body-content {
   padding-top: 2.5%;
 }
-
+/* cards */
 .cards-container {
   min-width: 90%;
   width: 90%;
   max-width: 100%;
-}
-
-.material-icons {
-  display: inline-flex;
-  vertical-align: top;
-  color: #8A6C82 !important;
 }
 
 .card-panel {
@@ -90,7 +83,7 @@ nav {
   text-align: left !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  border: 2px solid #000000 !important;
+  border: 2px solid #443B2F !important;
 }
 
 .no-padding-bottom {
@@ -107,7 +100,7 @@ nav {
   font-size: 1.65rem;
   font-weight:bold;
   padding: 3.5px !important;
-  border-bottom: 3px solid #8A6C82;
+  border-bottom: 3px solid #443B2F;
   padding-bottom: 2.5% !important;
   margin-left: 1.5% !important;
   font-family: "Poppins", serif;
@@ -118,15 +111,17 @@ nav {
 .card-time,
 .card-project,
 .card-tool {
-  color: #000000;
+  color: #443B2F;
   letter-spacing: 0.05em;
-  font-size: 0.95em !important;
+  font-size: 0.975em !important;
   font-family: 'Source Code Pro', monospace;
+  font-weight: 500 !important;
 }
 
 .card-company,
 .card-time {
   font-weight: bold;
+  margin-bottom: 2.5% !important;
 }
 
 
@@ -162,7 +157,7 @@ nav {
 }
 
 .collapsible-body {
-  border-color: #8A6C82 !important;
+  border-color: #EEB21B !important;
 }
 
 .card-tool,
@@ -174,12 +169,19 @@ nav {
 
 .card-error {
   font-size: 1.5em !important;
-  color: #8A6C82 !important;
+  color: #EEB21B !important;
   min-width: 300px;
 }
 
 .card-message {
   font-size: 1.1em !important;
-  color: #000000;
+  color: #443B2F;
   display: inline-block;
+}
+/* materialize */
+.material-icons {
+  display: inline-flex;
+  vertical-align: top;
+  color: #EEB21B !important;
+  font-weight: bold !important;
 }
