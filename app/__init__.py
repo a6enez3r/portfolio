@@ -27,13 +27,9 @@ app = Flask(__name__, static_url_path="/static")
 if environment == "production":
     # configure app
     app.config.from_object(config.ProductionConfig)
-    # configure app logger
-    logging.basicConfig(level=logging.WARNING)
 else:
     # configure app
     app.config.from_object(config.DevelopmentConfig)
-    # configure app logger
-    logging.basicConfig(level=logging.DEBUG)
 # import error handlers
 from app.errors import errors as error_module
 # register error handlers
