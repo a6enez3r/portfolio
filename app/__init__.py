@@ -21,7 +21,6 @@ import app.config as config
 load_dotenv()
 # get environment
 environment = os.environ.get("ENVIRONMENT")
-
 # init app
 app = Flask(__name__, static_url_path="/static")
 # configure based on environment
@@ -51,8 +50,6 @@ def work():
         current_app.logger.error(str(e))
         # return error template
         return render_template("error.html"), 500
-
-
 # about page
 @app.route("/about", methods=["GET"])
 def about():
@@ -64,8 +61,6 @@ def about():
         current_app.logger.error(str(e))
         # return error template
         return render_template("error.html"), 500
-
-
 # resume page
 @app.route("/resume")
 def resume():
