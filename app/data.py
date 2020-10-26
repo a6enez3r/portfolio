@@ -1,3 +1,5 @@
+# general
+name = "abenezer m. mamo"
 # work
 work_text = [
     {
