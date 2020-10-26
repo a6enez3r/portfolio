@@ -10,8 +10,7 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6 padding-bottom">
-              <i class="material-icons">location_on</i
-              ><span class="card-company">{{item["company"]}}</span>
+              <i class="material-icons">location_on</i><span class="card-company">{{item["company"]}}</span>
             </div>
             <div class="col s12 m6 l6 padding-bottom">
               <i class="material-icons">access_time</i>
@@ -25,8 +24,7 @@
             <ul class="collapsible">
               <li>
                 <div class="collapsible-header">
-                  <i class="material-icons">sort</i
-                  ><span class="card-subheader">projects</span>
+                  <i class="material-icons">sort</i><span class="card-subheader">projects</span>
                 </div>
                 <div class="collapsible-body">
                   <div class="row no-padding-bottom">
@@ -38,13 +36,12 @@
               </li>
               <li>
                 <div class="collapsible-header">
-                  <i class="material-icons">settings</i
-                  ><span class="card-subheader">tools</span>
+                  <i class="material-icons">settings</i><span class="card-subheader">tools</span>
                 </div>
                 <div class="collapsible-body">
                   <div class="row no-padding-bottom">
                     {% for project in item["tools"] %}
-                    <div class="col s4 m4 l3 card-tool">{{ project }}</div>
+                    <div class="col s12 m12 l4 card-tool">{{ project }}</div>
                     {% endfor %}
                   </div>
                 </div>

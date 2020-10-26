@@ -41,7 +41,7 @@ nav {
 .nav-icon:hover {
   background-color: #EEB21B !important;
   color: #ffffff !important;
-  transition: 0.3s all;
+  transition: 0.3s all !important;
 }
 
 .nav-link:hover a,
