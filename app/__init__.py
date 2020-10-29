@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 import logging
 
 # import data
-from app.data import work_text, about_text, name
+from app.data import work_text, about_text, name, social_links
 # config
 import app.config as config
 # load environment
@@ -39,7 +39,7 @@ app.register_blueprint(error_module)
 def work():
     # error handling
     try:
-        return render_template("work.html", name=name, work_text=work_text), 200
+        return render_template("work.html", name=name, work_text=work_text, social_links=social_links), 200
     except Exception as e:
         # log
         current_app.logger.error("getting work page failed.")
@@ -50,7 +50,7 @@ def work():
 @app.route("/about", methods=["GET"])
 def about():
     try:
-        return render_template("about.html", name=name, about_text=about_text), 200
+        return render_template("about.html", name=name, about_text=about_text, social_links=social_links), 200
     except Exception as e:
         # log
         current_app.logger.error("getting work page failed.")

@@ -26,9 +26,9 @@
         <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
         <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
         <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
-        <li class="nav-icon"><a href="https://github.com/abmamo"><i class="fa fa-github-square"></i></a></li>
-        <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><i class="fa fa-linkedin-square"></i></a>
-        </li>
+        {% for social_link in social_links%}
+        <li class="nav-icon"><a href="{{ social_link['link'] }}"><i class="{{ social_link['class'] }}"></i></a></li>
+        {% endfor %}
       </ul>
     </div>
   </nav>
@@ -39,10 +39,10 @@
     <li class="nav-link"><a href="https://teret.abmamo.com">blog</a></li>
     <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
     <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
-    <li class="nav-icon"><a href="https://github.com/abmamo"><span><i
-            class="fa fa-github-square center-align"></i></span></a></li>
-    <li class="nav-icon"><a href="https://www.linkedin.com/in/abmamo/"><span><i
-            class="fa fa-linkedin-square center-align"></i></span></a></li>
+    {% for social_link in social_links%}
+    <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i
+          class="{{ social_link['class'] }}"></i></a></li>
+    {% endfor %}
   </ul>
   <!-- content -->
   <div class="container valign-wrapper body-content">

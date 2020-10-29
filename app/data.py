@@ -1,5 +1,11 @@
 # general
 name = "abenezer m. mamo"
+# social links
+social_links = [
+    {"name": "github", "link": "https://github.com/abmamo", "class": "fa fa-github-square"},
+    {"name": "linked_in", "link": "https://www.linkedin.com/in/abmamo/", "class": "fa fa-linkedin-square"},
+    {"name": "angel", "link": "https://angel.co/u/abmamo", "class": "fa fa-angellist"}
+]
 # work
 work_text = [
     {
