@@ -9,10 +9,10 @@ social_links = [
 # work
 work_text = [
     {
-        "title": "Junior Python Developer",
+        "title": "Junior Backend Developer",
         "company": "Pivony",
         "duration": "May, 2020 - Oct, 2020",
-        "summary": """building a cloud native and micro service oriented topic modeling infrastructure to efficiently process and summarize textual data and identify customer trends such as sentiment, complaints, influence, keywords, topics, and actionable insights.""",
+        "summary": """architected a distributed AWS native topic modeling platform to efficiently process and summarize textual data and identify user trends such as sentiment, complaints, influence, keywords, topics, and deliver actionable insights.""",
         "projects": [
             "preprocessing engine",
             "aws resource orchestrator",
@@ -41,18 +41,19 @@ work_text = [
         "title": "Full Stack Developer Intern",
         "company": "Software Design Studio",
         "duration": "Jan, 2017 - Aug, 2017",
-        "summary": """got introduced to the fundamentals of web programming using flask, javascript, postgreSQL, HTML/CSS/JavaScript resuling in a fleet management / geolocation tracking web application for efficient & accurate vehicle management""",
+        "summary": """got introduced to web programming tools such as flask, javascript, postgreSQL, HTML/CSS/JavaScript, Git, & Linux and built a fleet management / geolocation tracking web application to efficiently automate vehicle management""",
         "projects": ["geolocation tracking", "user authentication", "CSS Themes"],
-        "tools": ["flask", "HTML", "JavaScript", "CSS", "PostgreSQL", "jinja", "git"],
-    },
+        "tools": ["flask", "HTML", "JavaScript", "CSS", "PostgreSQL", "jinja", "git", "Google Maps API"],
+    }
 ]
 
 about_text = [
     """
-            I am a back-end developer with strong backgrounds in web/API/microservice development, database management, cloud-native applications, NLP/ML frameworks, 
-            devops / command-line tools, managing & extracting meaningful insight from larget datasets, & rapid MVP prototyping and development.
-        """,
+        I am a full stack developer with strong backgrounds in API design & development, micro services, databases, cloud-native & server less computing, 
+        topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
+        and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
+    """,
     """
-            I am passionate about problem solving & utilizing established and emerging technologies to build robust, scalable products.
-        """,
+        I am passionate about problem solving & utilizing established and emerging technologies to build robust and scalable systems.
+    """,
 ]
