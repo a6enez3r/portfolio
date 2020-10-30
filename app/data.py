@@ -53,7 +53,4 @@ about_text = [
         topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
         and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
     """,
-    """
-        I am passionate about problem solving & utilizing established and emerging technologies to build robust and scalable systems.
-    """,
 ]
