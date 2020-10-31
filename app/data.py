@@ -7,7 +7,7 @@ social_links = [
     {"name": "angel", "link": "https://angel.co/u/abmamo", "class": "fa fa-angellist"}
 ]
 # work
-work_text = [
+work_data = [
     {
         "title": "Junior Backend Developer",
         "company": "Pivony",
@@ -46,11 +46,29 @@ work_text = [
         "tools": ["flask", "HTML", "JavaScript", "CSS", "PostgreSQL", "jinja", "git", "Google Maps API"],
     }
 ]
-
-about_text = [
-    """
-        I am a full stack developer with strong backgrounds in API design & development, micro services, databases, cloud-native & server less computing, 
-        topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
-        and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
-    """,
-]
+# about
+about_data = {
+    "text": """
+                I am a full stack developer with strong backgrounds in API design & development, micro services, databases, cloud-native & server less computing, 
+                topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
+                and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
+            """,
+    "cool_things": [
+        {"title": "Apache Drill"}
+    ],
+    "projects": [
+        {"title": "mock", "link": "https://github.com/abmamo/mock", "summary": "currently working on a mock data generation package. supports generating CSV, JSON, Parquet, and SQLite."},
+        {"title": "grub", "link": "https://github.com/abmamo/grub",
+            "summary":
+            """
+                a cart management tool written in go and python to make coordinating group orders easy. 
+                It is comprised of two RESTful services: a Mux RESTful API to provide an interface to a 
+                MongoDB Atlas cluster for storage and a Flask RESTful API for integrations such as slack or a web app. 
+                Initially using the go exec command to manually start up the Flask API to interface 
+                with slack and serve the UI. Hoping to move to a GRPC based communication.
+            """
+        },
+        {"title": "teret", "link": "https://teret.abmamo.com", "summary": "blogging application with WYSIWYG editor built using Flask + SummernoteJS + SQLite."},
+        {"title": "tunez", "link": "https://tunez.abmamo.com", "summary": "music player web application built using Flask + HowlerJS + SQLite/SQLAlchemy"},
+    ]
+}

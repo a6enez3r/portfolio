@@ -160,6 +160,17 @@ nav {
   border-color: #EEB21B !important;
 }
 
+.collapsible-body a {
+  color: #000000 !important;
+  line-height: 1.6;
+  border-bottom: 1px solid #EEB21B;
+}
+
+.collapsible-body a:hover {
+  color: #ffffff !important;
+  background: #EEB21B !important;
+}
+
 .card-tool,
 .card-project {
   font-size: 0.85em !important;
