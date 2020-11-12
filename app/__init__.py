@@ -34,6 +34,11 @@ else:
 from app.errors import errors as error_module
 # register error handlers
 app.register_blueprint(error_module)
+# favicon (primarily for non html pages)
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
 # work page
 @app.route("/", methods=["GET"])
 def work():
@@ -44,8 +49,8 @@ def work():
         # log
         current_app.logger.error("getting work page failed.")
         current_app.logger.error(str(e))
-        # return error template
-        return render_template("error.html"), 500
+        # abort
+        abort(500)
 # about page
 @app.route("/about", methods=["GET"])
 def about():
@@ -55,8 +60,8 @@ def about():
         # log
         current_app.logger.error("getting work page failed.")
         current_app.logger.error(str(e))
-        # return error template
-        return render_template("error.html"), 500
+        # abort
+        abort(500)
 # resume page
 @app.route("/resume")
 def resume():
@@ -67,5 +72,5 @@ def resume():
         # log
         current_app.logger.error("getting work page failed.")
         current_app.logger.error(str(e))
-        # return error template
-        return render_template("error.html"), 500
+        # abort
+        abort(500)

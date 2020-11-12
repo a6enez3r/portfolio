@@ -53,10 +53,8 @@ about_data = {
                 topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
                 and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
             """,
-    "cool_things": [
-        {"title": "Apache Drill"}
-    ],
     "projects": [
+        {"title": "fs2db", "link": "https://github.com/abmamo/fs2db", "summary": "python package with functions that perform extract + load operations on files and load them to a central db"},
         {"title": "mock", "link": "https://github.com/abmamo/mock", "summary": "currently working on a mock data generation package. supports generating CSV, JSON, Parquet, and SQLite."},
         {"title": "grub", "link": "https://github.com/abmamo/grub",
             "summary":

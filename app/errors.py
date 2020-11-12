@@ -4,11 +4,11 @@ from flask import Blueprint, render_template
 errors = Blueprint('errors',
                __name__,
                template_folder='templates',
-               static_folder='static',)
+               static_folder='static')
                
 
 @errors.app_errorhandler(400)
-def not_found(error):
+def bad_request(error):
     # error code
     status_code = 400
     # message
@@ -25,6 +25,18 @@ def not_found(error):
     status_code = 404
     # message
     message = "resource not found."
+    # return error page
+    return (
+        render_template("error.html", message=message, status_code=status_code),
+        404,
+    )
+
+@errors.app_errorhandler(405)
+def forbidden(error):
+    # error code
+    status_code = 405
+    # message
+    message = "resource forbidden."
     # return error page
     return (
         render_template("error.html", message=message, status_code=status_code),
