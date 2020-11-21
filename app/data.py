@@ -4,7 +4,8 @@ name = "abenezer m. mamo"
 social_links = [
     {"name": "github", "link": "https://github.com/abmamo", "class": "fa fa-github-square"},
     {"name": "linked_in", "link": "https://www.linkedin.com/in/abmamo/", "class": "fa fa-linkedin-square"},
-    {"name": "angel", "link": "https://angel.co/u/abmamo", "class": "fa fa-angellist"}
+    {"name": "angel", "link": "https://angel.co/u/abmamo", "class": "fa fa-angellist"},
+    {"name": "availability", "link": "https://calendly.com/abenezermamo", "class": "fa fa-calendar"}
 ]
 # work
 work_data = [
