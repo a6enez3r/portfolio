@@ -1,3 +1,3 @@
-# portfolio [![Actions Status](https://github.com/abmamo/portfolio/workflows/portfolio/badge.svg)](https://github.com/abmamo/portfolio/actions)
+# portfolio ![deploy](https://github.com/abmamo/portfolio/workflows/deploy/badge.svg)
 <br />
 portfolio website built using flask. it stores data in python lists + dicts and renders them dynamically using Jinja2.
