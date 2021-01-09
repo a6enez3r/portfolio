@@ -52,19 +52,20 @@ about_data = {
     "text": """
                 I am a full stack developer with strong backgrounds in API design & development, micro services, databases, cloud-native & server less computing, 
                 topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
-                and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
+                and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent 
+                decision making.
+
             """,
     "projects": [
-        {"title": "fs2db", "link": "https://github.com/abmamo/fs2db", "summary": "python package with functions that perform extract + load operations on files and load them to a central db"},
-        {"title": "mock", "link": "https://github.com/abmamo/mock", "summary": "currently working on a mock data generation package. supports generating CSV, JSON, Parquet, and SQLite."},
+        {"title": "fs2db", "link": "https://github.com/abmamo/fs2db", "summary": "python package with to perform ETL operations on files and load them to a relational db"},
+        {"title": "mock", "link": "https://github.com/abmamo/mock", "summary": "python package to generate mock data. supports generating CSV, JSON, Parquet, and SQLite."},
+        {"title": "fastdb", "link": "https://github.com/abmamo/fastdb", "summary": "python package to easily set up mock Postgres & MySQL databases in docker (requires docker)"},
         {"title": "grub", "link": "https://github.com/abmamo/grub",
             "summary":
             """
-                a cart management tool written in go and python to make coordinating group orders easy. 
-                It is comprised of two RESTful services: a Mux RESTful API to provide an interface to a 
-                MongoDB Atlas cluster for storage and a Flask RESTful API for integrations such as slack or a web app. 
-                Initially using the go exec command to manually start up the Flask API to interface 
-                with slack and serve the UI. Hoping to move to a GRPC based communication.
+                order coordination web app written in Go + React + Docker. comprised of
+                two services: a Mux RESTful API to provide an interface to a MongoDB Atlas 
+                cluster (for data storage) and a React web app (to provide a user interface). 
             """
         },
         {"title": "teret", "link": "https://teret.abmamo.com", "summary": "blogging application with WYSIWYG editor built using Flask + SummernoteJS + SQLite."},
