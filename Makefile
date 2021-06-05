@@ -13,6 +13,8 @@ help:
 	@echo "lint        	- lint app."
 	@echo "test        	- test app."
 	@echo "load-test       - load test app using locust."
+	@echo "latest          - get latest version."
+	@echo "release         - trigger deploy job."
 	@echo
 	@echo "to build docker containers"
 	@echo "build-dev       - build dev app docker container."
@@ -59,6 +61,11 @@ test:
 	@FLASK_APP=${FLASK_APP} FLASK_ENV=testing ENVIRONMENT=testing PORT=${APP_PORT} pytest --cov-report term-missing --cov=src tests -v && sleep 2.5 && rm -f .coverage*
 load-test:
 	make dev & locust -f $(CURDIR)/tests/test_load.py
+latest:
+	@git describe --exact-match --abbrev=0
+release:
+	@git tag -a ${TAG} -m ${MESSAGE} && git push origin --tags
+
 # docker commands
 build-dev:
 	@docker build -f ./dockerfiles/Dockerfile . -t ${APP_CONTAINER_NAME_DEV}:latest
