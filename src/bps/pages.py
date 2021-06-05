@@ -7,12 +7,11 @@ import os
 # flask
 from flask import Blueprint, render_template, send_from_directory, current_app
 
+# minimizer
+from flask_minify import decorators as minify_decorators
+
 # data
 from src.data import work_data, about_data, USER_NAME, social_links
-
-# minimizer
-from src.extensions import minimizer
-from flask_minify import decorators as minify_decorators
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"

@@ -5,7 +5,6 @@
 from flask import Blueprint, render_template
 
 # minimizer
-from src.extensions import minimizer
 from flask_minify import decorators as minify_decorators
 
 errors_bp = Blueprint(

@@ -1,6 +1,9 @@
 """
     factory.py: contains function to configure & create flask web app
 """
+# io
+import os
+
 # time
 from time import strftime
 
@@ -8,7 +11,7 @@ from time import strftime
 import structlog
 
 # flask
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 
 # config dict (contains dict of the format
 # {"env_name": config_obj_for_env})
@@ -73,6 +76,7 @@ def create_app(environment="development"):
             "favicon.ico",
             mimetype="image/vnd.microsoft.icon",
         )
+
     # config logger
     app.logger = logger
     # init minimizer
