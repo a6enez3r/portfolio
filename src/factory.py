@@ -17,6 +17,9 @@ from src.config import config_dict
 # config blueprints
 from src.bps import register_blueprints
 
+# extensions
+from src.extensions import minimizer
+
 
 logger = structlog.get_logger()
 
@@ -59,8 +62,21 @@ def create_app(environment="development"):
     app = Flask(__name__)
     # config here
     app.config.from_object(config_dict[environment])
+    # favicon
+    @app.route("/favicon.ico")
+    def favicon():
+        """
+        render favicon
+        """
+        return send_from_directory(
+            os.path.join(app.root_path, "static"),
+            "favicon.ico",
+            mimetype="image/vnd.microsoft.icon",
+        )
     # config logger
     app.logger = logger
+    # init minimizer
+    minimizer.init_app(app)
     # init logger
     create_logger(app=app)
     # register blueprints

@@ -10,25 +10,17 @@ from flask import Blueprint, render_template, send_from_directory, current_app
 # data
 from src.data import work_data, about_data, USER_NAME, social_links
 
+# minimizer
+from src.extensions import minimizer
+from flask_minify import decorators as minify_decorators
+
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
 )
 
-
-@pages_bp.route("/favicon.ico")
-def favicon():
-    """
-    render favicon
-    """
-    return send_from_directory(
-        os.path.join(current_app.root_path, "static"),
-        "favicon.ico",
-        mimetype="image/vnd.microsoft.icon",
-    )
-
-
 # work page
 @pages_bp.route("/", methods=["GET"])
+@minify_decorators.minify(html=True, js=True, cssless=True)
 def work():
     """
     render work page
@@ -46,6 +38,7 @@ def work():
 
 # about page
 @pages_bp.route("/about", methods=["GET"])
+@minify_decorators.minify(html=True, js=True, cssless=True)
 def about():
     """
     render about page
@@ -63,6 +56,7 @@ def about():
 
 # resume page
 @pages_bp.route("/resume")
+@minify_decorators.minify(html=True, js=True, cssless=True)
 def resume():
     """
     render resume
