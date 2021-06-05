@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Abenezer Mengistu </title>
+  <title> {{ USER_NAME }} </title>
   <!-- static files -->
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
@@ -19,12 +19,12 @@
   <!-- nav -->
   <nav>
     <div class="nav-wrapper white">
-      <a href="{{ url_for('work') }}" class="brand-logo left hide-on-med-and-down">{{ name }}</a>
+      <a href="{{ url_for('pages_bp.work') }}" class="brand-logo left hide-on-med-and-down">{{ USER_NAME }}</a>
       <a href="#" data-target="mySidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
-        <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
-        <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
+        <li class="nav-link"><a href="{{ url_for('pages_bp.work') }}">work</a></li>
+        <li class="nav-link"><a href="{{ url_for('pages_bp.about')}}">about</a></li>
+        <li class="nav-link"><a href="{{ url_for('pages_bp.resume')}}" target="_blank">resume</a></li>
         <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
         {% for social_link in social_links%}
         <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i
@@ -35,10 +35,10 @@
   </nav>
   <!-- sidenav -->
   <ul class="sidenav" id="mySidenav">
-    <li class="nav-link"><a href="{{ url_for('work') }}">work</a></li>
-    <li class="nav-link"><a href="{{ url_for('about')}}">about</a></li>
+    <li class="nav-link"><a href="{{ url_for('pages_bp.work') }}">work</a></li>
+    <li class="nav-link"><a href="{{ url_for('pages_bp.about')}}">about</a></li>
     <li class="nav-link"><a href="https://teret.abmamo.com">blog</a></li>
-    <li class="nav-link"><a href="{{ url_for('resume')}}" target="_blank">resume</a></li>
+    <li class="nav-link"><a href="{{ url_for('pages_bp.resume')}}" target="_blank">resume</a></li>
     <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
     {% for social_link in social_links%}
     <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i

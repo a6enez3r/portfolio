@@ -1,29 +1,33 @@
+"""
+    test_app.py: contains tests for pages
+"""
 
-def test_home(client):
+
+def test_home(test_client):
     """
-        test home page
+    test home page
     """
     # get page
-    response = client.get("/")
+    response = test_client.get("/")
     # assert response is valid
     assert response.status_code == 200
 
 
-def test_about(client):
+def test_about(test_client):
     """
-        test about page
+    test about page
     """
     # get page
-    response = client.get("/about")
+    response = test_client.get("/about")
     # assert response is valid
     assert response.status_code == 200
 
 
-def test_resume(client):
+def test_resume(test_client):
     """
-        test resume page
+    test resume page
     """
     # get page
-    response = client.get("/resume")
+    response = test_client.get("/resume")
     # assert response is valid
     assert response.status_code == 200

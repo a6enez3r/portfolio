@@ -1,14 +1,19 @@
+"""
+    errors.py: contains functions to render error pages
+"""
 # flask blueprint
 from flask import Blueprint, render_template
 
-errors = Blueprint('errors',
-               __name__,
-               template_folder='templates',
-               static_folder='static')
-               
+errors_bp = Blueprint(
+    "errors_bp", __name__, template_folder="templates", static_folder="static"
+)
 
-@errors.app_errorhandler(400)
-def bad_request(error):
+
+@errors_bp.app_errorhandler(400)
+def bad_request():
+    """
+    bad request handler
+    """
     # error code
     status_code = 400
     # message
@@ -19,8 +24,12 @@ def bad_request(error):
         400,
     )
 
-@errors.app_errorhandler(404)
-def not_found(error):
+
+@errors_bp.app_errorhandler(404)
+def not_found():
+    """
+    not found handler
+    """
     # error code
     status_code = 404
     # message
@@ -31,8 +40,12 @@ def not_found(error):
         404,
     )
 
-@errors.app_errorhandler(405)
-def forbidden(error):
+
+@errors_bp.app_errorhandler(405)
+def forbidden():
+    """
+    forbidden request handler
+    """
     # error code
     status_code = 405
     # message
@@ -43,8 +56,12 @@ def forbidden(error):
         404,
     )
 
-@errors.app_errorhandler(500)
-def server_error(error):
+
+@errors_bp.app_errorhandler(500)
+def server_error():
+    """
+    internal server error handler
+    """
     # error code
     status_code = 500
     # message
@@ -55,8 +72,12 @@ def server_error(error):
         500,
     )
 
-@errors.app_errorhandler(502)
-def server_error(error):
+
+@errors_bp.app_errorhandler(502)
+def bad_gateway():
+    """
+    bad gateway handler
+    """
     # error code
     status_code = 502
     # message

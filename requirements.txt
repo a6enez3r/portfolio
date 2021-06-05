@@ -1,4 +1,14 @@
-flask==1.1.2
+# flask
+flask==2.0.1
+# load testing
+locust==1.5.3
+# env
 python-dotenv==0.15.0
+# linting
+black==21.5b2
+pylint==2.8.3
+# logging
+structlog==21.1.0
+# testing
+pytest-cov==2.12.1
 pytest==6.2.1
-locust==1.4.1

@@ -1,15 +1,19 @@
+"""
+    conftest.py: contains all pytest configurations & fixtures for testing
+"""
+# testing framework
 import pytest
 
+# api factory (function to create & configure api)
+from src.factory import create_app
 
-@pytest.fixture(scope="module")
-def client():
+
+@pytest.fixture(scope="session", autouse=True)
+def test_client():
     """
-        pytest fixture that returns test
-        flask client
+    test app fixture
     """
-    # import flask app
-    from app import app
-    # set testing to true
-    app.config["TESTING"] = True
-    # return test client
-    return app.test_client()
+    # create app
+    app = create_app(environment="testing")
+    # yield test app client
+    yield app.test_client()
