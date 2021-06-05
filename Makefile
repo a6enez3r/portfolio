@@ -12,6 +12,7 @@ help:
 	@echo "prod        	- run app in prod mode."
 	@echo "lint        	- lint app."
 	@echo "test        	- test app."
+	@echo "load-test       - load test app using locust."
 	@echo
 	@echo "to build docker containers"
 	@echo "build-dev       - build dev app docker container."
@@ -56,6 +57,8 @@ lint:
 	@PYTHONPATH=./src pylint src && pylint tests
 test:
 	@FLASK_APP=${FLASK_APP} FLASK_ENV=testing ENVIRONMENT=testing PORT=${APP_PORT} pytest --cov-report term-missing --cov=src tests -v && sleep 2.5 && rm -f .coverage*
+load-test:
+	make dev & locust -f $(CURDIR)/tests/test_load.py
 # docker commands
 build-dev:
 	@docker build -f ./dockerfiles/Dockerfile . -t ${APP_CONTAINER_NAME_DEV}:latest

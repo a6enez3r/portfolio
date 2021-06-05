@@ -13,7 +13,10 @@ RUN apt install build-essential -y --no-install-recommends
 # copy the contents of the local app directory to the working directory
 # need to be really careful to not accidentally add sensitive info such
 # as .env files
-COPY . .
+COPY src src
+COPY wsgi.py wsgi.py
+COPY requirements.txt requirements.txt
+COPY tests tests
 # upgrade pip
 RUN pip3 install --upgrade pip
 # install python deps
