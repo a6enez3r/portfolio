@@ -1,7 +1,7 @@
 # flask
 flask==1.1.2
 # minifer
-flask-minify==1.16.0
+flask-minify==0.32
 # load testing
 locust==1.5.3
 # env
