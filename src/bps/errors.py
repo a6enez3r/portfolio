@@ -4,16 +4,12 @@
 # flask blueprint
 from flask import Blueprint, render_template
 
-# minimizer
-from flask_minify import decorators as minify_decorators
-
 errors_bp = Blueprint(
     "errors_bp", __name__, template_folder="templates", static_folder="static"
 )
 
 
 @errors_bp.app_errorhandler(400)
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def bad_request():
     """
     bad request handler
@@ -30,7 +26,6 @@ def bad_request():
 
 
 @errors_bp.app_errorhandler(404)
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def not_found():
     """
     not found handler
@@ -47,7 +42,6 @@ def not_found():
 
 
 @errors_bp.app_errorhandler(405)
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def forbidden():
     """
     forbidden request handler
@@ -64,7 +58,6 @@ def forbidden():
 
 
 @errors_bp.app_errorhandler(500)
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def server_error():
     """
     internal server error handler
@@ -81,7 +74,6 @@ def server_error():
 
 
 @errors_bp.app_errorhandler(502)
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def bad_gateway():
     """
     bad gateway handler
