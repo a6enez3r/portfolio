@@ -10,80 +10,70 @@ errors_bp = Blueprint(
 
 
 @errors_bp.app_errorhandler(400)
-def bad_request():
+def bad_request(error):
     """
     bad request handler
     """
     # error code
-    status_code = 400
-    # message
-    message = "bad request."
+    error_code = 400
     # return error page
     return (
-        render_template("error.html", message=message, status_code=status_code),
+        render_template("error.html", error_message=str(error), error_code=error_code),
         400,
     )
 
 
 @errors_bp.app_errorhandler(404)
-def not_found():
+def not_found(error):
     """
     not found handler
     """
     # error code
-    status_code = 404
-    # message
-    message = "resource not found."
+    error_code = 404
     # return error page
     return (
-        render_template("error.html", message=message, status_code=status_code),
+        render_template("error.html", error_message=str(error), error_code=error_code),
         404,
     )
 
 
 @errors_bp.app_errorhandler(405)
-def forbidden():
+def forbidden(error):
     """
     forbidden request handler
     """
     # error code
-    status_code = 405
-    # message
-    message = "resource forbidden."
+    error_code = 405
     # return error page
     return (
-        render_template("error.html", message=message, status_code=status_code),
+        render_template("error.html", error_message=str(error), error_code=error_code),
         404,
     )
 
 
 @errors_bp.app_errorhandler(500)
-def server_error():
+def server_error(error):
     """
     internal server error handler
     """
     # error code
-    status_code = 500
-    # message
-    message = "internal server error."
+    error_code = 500
     # return error page
     return (
-        render_template("error.html", message=message, status_code=status_code),
+        render_template("error.html", error_message=str(error), error_code=error_code),
         500,
     )
 
 
 @errors_bp.app_errorhandler(502)
-def bad_gateway():
+def bad_gateway(error):
     """
     bad gateway handler
     """
     # error code
-    status_code = 502
-    # message
-    message = "bad gateway."
+    error_code = 502
     # return error page
     return (
-        render_template("error.html", message=message, status_code=status_code),
+        render_template("error.html", error_message=str(error), error_code=error_code),
         502,
     )
