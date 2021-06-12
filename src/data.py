@@ -118,7 +118,7 @@ about_data = {
             "title": "mock",
             "link": "https://github.com/abmamo/mock",
             # pylint: disable=line-too-long
-            "summary": "python package to generate mock data. supports generating CSV, JSON, Parquet, and SQLite.",
+            "summary": "python package to generate mock data. supports generating data in CSV, JSON, Parquet, and SQLite formats.",
         },
         {
             "title": "fastdb",

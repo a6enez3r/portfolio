@@ -58,6 +58,10 @@ nav {
   transition: 0.3s all;
 }
 
+.nav-icon:hover a {
+  color: #ffffff !important;
+}
+
 .sidenav-trigger {
   color: #EEB21B !important;
 }

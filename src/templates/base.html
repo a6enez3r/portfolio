@@ -37,12 +37,11 @@
   <ul class="sidenav" id="mySidenav">
     <li class="nav-link"><a href="{{ url_for('pages_bp.work') }}">work</a></li>
     <li class="nav-link"><a href="{{ url_for('pages_bp.about')}}">about</a></li>
-    <li class="nav-link"><a href="https://teret.abmamo.com">blog</a></li>
     <li class="nav-link"><a href="{{ url_for('pages_bp.resume')}}" target="_blank">resume</a></li>
     <li class="nav-link"><a href="https://teret.abmamo.com" target="_blank">blog</a></li>
     {% for social_link in social_links%}
     <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i
-          class="{{ social_link['class'] }}"></i></a></li>
+        style="padding-left: 107.5px;" class="{{ social_link['class'] }}"></i></a></li>
     {% endfor %}
   </ul>
   <!-- content -->
@@ -52,6 +51,25 @@
   <!-- javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <!-- darkmode trigger -->
+  <script>
+    const options = {
+      bottom: '32px', // default: '32px'
+      right: '32px', // default: '32px'
+      left: 'unset', // default: 'unset'
+      time: '0.5s', // default: '0.3s'
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#ffffff',  // default: '#fff'
+      buttonColorDark: '#443B2F',  // default: '#100f2c'
+      buttonColorLight: '#ffffff', // default: '#fff'
+      saveInCookies: false, // default: true,
+      label: '🌙 ', // default: ''
+      autoMatchOsTheme: true // default: true
+    }
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+  </script>
   <!-- sidenav trigger -->
   <script>
     $(document).ready(function () {
