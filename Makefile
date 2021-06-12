@@ -62,7 +62,7 @@ test:
 load-test:
 	make dev & locust -f $(CURDIR)/tests/test_load.py
 latest:
-	@git describe --exact-match --abbrev=0
+	@git describe --abbrev=0
 release:
 	@git tag -a ${TAG} -m ${MESSAGE} && git push origin --tags
 
