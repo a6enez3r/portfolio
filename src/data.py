@@ -85,10 +85,10 @@ about_data = {
             """,
     "projects": [
         {
-            "title": "fs2db",
-            "link": "https://github.com/abmamo/fs2db",
+            "title": "validate_json",
+            "link": "https://github.com/abmamo/validate_json",
             # pylint: disable=line-too-long
-            "summary": "python package with to perform ETL operations on files and load them to a relational db",
+            "summary": "validate JSON data against a schema",
         },
         {
             "title": "mock",
@@ -103,12 +103,10 @@ about_data = {
             "summary": "python package to easily set up mock Postgres & MySQL databases in docker (requires docker)",
         },
         {
-            "title": "grub",
-            "link": "https://github.com/abmamo/grub",
+            "title": "flask_rl",
+            "link": "https://github.com/abmamo/flask_rl",
             "summary": """
-                order coordination web app written in Go + React + Docker. comprised of
-                two services: a Mux RESTful API to provide an interface to a MongoDB Atlas 
-                cluster (for data storage) and a React web app (to provide a user interface). 
+                flask rate limiter extension with an in memory DB
             """,
         },
         {
