@@ -5,7 +5,7 @@ flask-minify==0.32
 # load testing
 locust==1.6.0
 # env
-python-dotenv==0.17.1
+python-dotenv==0.18.0
 # linting
 black==21.6b0
 pylint==2.9.3
