@@ -29,7 +29,7 @@ work_data = [
         "company": "ForAllSecure",
         "duration": "Mar, 2021 - Present",
         # pylint: disable=line-too-long
-        "summary": """built and maintained various features, services, and systems necessary to bring Mayhem, a fully autonomous cybersecurity system, to market.""",
+        "summary": """designing, building, and maintaining various services and features necessary to bring Mayhem, a fully autonomous cybersecurity system, to market.""",
         "projects": [
             "Reporting Dashboard",
             "Mayhem for CI/CD",
@@ -80,7 +80,7 @@ work_data = [
         "tools": ["pyTorch", "python", "spaCy", "anaconda", "MySQL", "Haskell", "git"],
     },
     {
-        "title": "Full Stack Developer Intern",
+        "title": "Software Engineer Intern",
         "company": "Software Design Studio",
         "duration": "Jan, 2017 - Aug, 2017",
         # pylint: disable=line-too-long
@@ -100,12 +100,9 @@ work_data = [
 ]
 # about
 about_data = {
+    # pylint: disable=line-too-long
     "text": """
-                I am a full stack developer with strong backgrounds in API design & development, micro services, databases, cloud-native & server less computing, 
-                topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills 
-                and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent 
-                decision making.
-
+                I am a full-stack developer with a strong background in API design & development, microservices, databases, cloud-native & serverless computing, topics in NLP & ML, security, test-driven development, CI/CD pipelines, and agile methodologies. Looking for an opportunity to leverage my skills and experience to build resilient & scalable systems to automate and optimize workflows, extract meaningful insights, and provide intelligent decision making.
             """,
     "projects": [
         {
