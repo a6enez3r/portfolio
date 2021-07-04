@@ -29,7 +29,7 @@ work_data = [
         "company": "ForAllSecure",
         "duration": "Mar, 2021 - Present",
         # pylint: disable=line-too-long
-        "summary": """built and maintained various features, services, and systems necessary to bring Mayhem, a fully autonomous cybersecurity system, to market. Worked across the stack using React, Python, Kubernetes and Helm, GKE to deliver efficient computing resources.""",
+        "summary": """built and maintained various features, services, and systems necessary to bring Mayhem, a fully autonomous cybersecurity system, to market.""",
         "projects": [
             "Reporting Dashboard",
             "Mayhem for CI/CD",
@@ -38,14 +38,14 @@ work_data = [
             "GKE",
             "python",
             "react",
-            "typescript"
+            "typescript",
             "kubernetes",
             "docker",
             "flask",
             "bash",
             "PostgreSQL",
             "git",
-            "selenium"
+            "selenium",
         ],
     },
     {
