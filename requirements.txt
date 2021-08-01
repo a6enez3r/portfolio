@@ -8,7 +8,7 @@ locust==1.6.0
 python-dotenv==0.18.0
 # linting
 black==21.7b0
-pylint==2.9.5
+pylint==2.9.6
 flake8==3.9.2
 # logging
 structlog==21.1.0
