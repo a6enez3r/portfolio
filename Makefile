@@ -13,6 +13,8 @@ help:
 	@echo "lint        	- lint app."
 	@echo "test        	- test app."
 	@echo "load-test       - load test app using locust."
+	@echo "save            - save latest changes using git"
+	@echo "save-remote     - save latest changes to github"
 	@echo "latest          - get latest version."
 	@echo "release         - trigger deploy job."
 	@echo
@@ -36,12 +38,24 @@ ENVIRONMENT := development
 # default app port
 DEFAULT_APP_PORT := 5000
 # db uri
-ifeq ($(DB_URI),)
+ifeq ($(APP_PORT),)
 APP_PORT := ${DEFAULT_APP_PORT}
 endif
-# docker container names
 APP_CONTAINER_NAME_DEV := portfolio-dev
 APP_CONTAINER_NAME_PROD := portfolio-prod
+# git
+PACKAGE_NAME := flask_rl
+MODULE_NAME := flask_rl.py
+MODULE_TEST_NAME := tests
+ifeq ($(VERSION),)
+VERSION := 0.0.1
+endif
+ifeq ($(COMMIT_MESSAGE),)
+COMMIT_MESSAGE := default commit message
+endif
+ifeq ($(BRANCH_NAME),)
+BRANCH_NAME := main
+endif
 
 # virtualenv commands
 install:
@@ -61,10 +75,19 @@ test:
 	@FLASK_APP=${FLASK_APP} FLASK_ENV=testing ENVIRONMENT=testing PORT=${APP_PORT} pytest --cov-report term-missing --cov=src tests -v && sleep 2.5 && rm -f .coverage*
 load-test:
 	make dev & locust -f $(CURDIR)/tests/test_load.py
+
+save:
+	@echo "saving..." && git add . && git commit -m "${COMMIT_MESSAGE}"
+
+save-remote:
+	@echo "saving to remote..." && git push origin ${BRANCH_NAME}
+
 latest:
 	@git describe --abbrev=0
+
 release:
-	@git tag -a ${TAG} -m ${MESSAGE} && git push origin --tags
+	git tag -d ${VERSION} || : && git push --delete origin ${VERSION} || : && git tag -a ${VERSION} -m "latest" && git push origin --tags
+
 
 # docker commands
 build-dev:
