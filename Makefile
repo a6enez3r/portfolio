@@ -56,10 +56,13 @@ endif
 ifeq ($(BRANCH_NAME),)
 BRANCH_NAME := master
 endif
+ifeq ($(DEPS),)
+DEPS := dev
+endif
 
 # virtualenv commands
 install:
-	@python3 -m pip install --upgrade pip && python3 -m pip install -r $(CURDIR)/requirements.txt
+	@python3 -m pip install --upgrade pip && python3 -m pip install -r $(CURDIR)/requirements/${DEPS}.txt
 routes:
 	@FLASK_APP=${FLASK_APP} FLASK_ENV=${FLASK_ENV} ENVIRONMENT=${ENVIRONMENT} PORT=${APP_PORT} python3 -m flask routes
 dev:
