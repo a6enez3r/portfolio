@@ -1,11 +1,10 @@
 flask==1.1.2
-flask-minify==0.32
 locust==1.6.0
 python-dotenv==0.18.0
+uwsgi==2.0.19.1
+structlog==21.1.0
 black==21.6b0
 pylint==2.9.3
 flake8==3.9.2
-structlog==21.1.0
 pytest-cov==2.12.1
 pytest==6.2.4
-uwsgi==2.0.19.1
