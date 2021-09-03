@@ -54,7 +54,7 @@ ifeq ($(COMMIT_MESSAGE),)
 COMMIT_MESSAGE := default commit message
 endif
 ifeq ($(BRANCH_NAME),)
-BRANCH_NAME := main
+BRANCH_NAME := master
 endif
 
 # virtualenv commands
