@@ -20,9 +20,6 @@ from src.config import config_dict
 # config blueprints
 from src.bps import register_blueprints
 
-# extensions
-from src.extensions import minimizer
-
 
 logger = structlog.get_logger()
 
@@ -79,8 +76,6 @@ def create_app(environment="development"):
 
     # config logger
     app.logger = logger
-    # init minimizer
-    minimizer.init_app(app)
     # init logger
     create_logger(app=app)
     # register blueprints

@@ -7,11 +7,8 @@ import os
 # flask
 from flask import Blueprint, render_template, send_from_directory, current_app
 
-# minimizer
-from flask_minify import decorators as minify_decorators
-
 # data
-from src.data import work_data, about_data, USER_NAME, social_links
+from src.data import work_data, about_data, social_links, USER_NAME
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
@@ -19,7 +16,6 @@ pages_bp = Blueprint(
 
 # work page
 @pages_bp.route("/", methods=["GET"])
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def work():
     """
     render work page
@@ -37,7 +33,6 @@ def work():
 
 # about page
 @pages_bp.route("/about", methods=["GET"])
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def about():
     """
     render about page
@@ -55,7 +50,6 @@ def about():
 
 # resume page
 @pages_bp.route("/resume")
-@minify_decorators.minify(html=True, js=True, cssless=True)
 def resume():
     """
     render resume
