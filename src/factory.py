@@ -35,15 +35,7 @@ def create_logger(app):
         timestamp = strftime("[%Y-%b-%d %H:%M]")
         # request information
         logger.info(
-            "%s %s %s %s %s %s"
-            % (
-                timestamp,
-                request.remote_addr,
-                request.method,
-                request.scheme,
-                request.full_path,
-                response.status,
-            )
+            f"{timestamp} {request.remote_addr} {request.method} {request.schema} {request.full_path} {response.status}"  # pylint: disable=line-too-long
         )
         # return response
         return response
