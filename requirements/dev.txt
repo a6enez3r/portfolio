@@ -1,5 +1,5 @@
 flask==2.0.2
-locust==2.4.0
+locust==2.4.1
 python-dotenv==0.19.1
 structlog==21.2.0
 black==21.9b0
