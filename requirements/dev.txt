@@ -3,7 +3,7 @@ locust==2.5.0
 python-dotenv==0.19.2
 structlog==21.2.0
 black==21.11b0
-pylint==2.11.1
+pylint==2.12.2
 flake8==4.0.1
 pytest-cov==3.0.0
 pytest==6.2.5
