@@ -1,5 +1,5 @@
 flask==2.0.2
-locust==2.5.0
+locust==2.5.1
 python-dotenv==0.19.2
 structlog==21.4.0
 uwsgi==2.0.20
