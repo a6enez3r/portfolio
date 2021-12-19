@@ -37,5 +37,5 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull origin main
-            env/bin/pip3 install -r requirements.txt
+            env/bin/pip3 install -r requirements/prod.txt
             sudo /bin/systemctl restart ${{ secrets.PROJECT_NAME }}
