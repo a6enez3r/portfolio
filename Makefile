@@ -1,135 +1,176 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
+cname := portfolio
+ep := app.py
+mn := src
+tmn := tests
+env := development
+default_port := 5000
+ifeq ($(port),)
+port := ${default_port}
+endif
+ifeq ($(version),)
+version := 0.0.1
+endif
+ifeq ($(cm),)
+cm := default commit message
+endif
+ifeq ($(branch),)
+branch := master
+endif
+ifeq ($(deptype),)
+deptype := dev
+endif
+ifeq ($(envtype),)
+envtype := dev
+endif
+
+# COLORS
+ifneq (,$(findstring xterm,${TERM}))
+	BLACK        := $(shell tput -Txterm setaf 0 || exit 0)
+	RED          := $(shell tput -Txterm setaf 1 || exit 0)
+	GREEN        := $(shell tput -Txterm setaf 2 || exit 0)
+	YELLOW       := $(shell tput -Txterm setaf 3 || exit 0)
+	LIGHTPURPLE  := $(shell tput -Txterm setaf 4 || exit 0)
+	PURPLE       := $(shell tput -Txterm setaf 5 || exit 0)
+	BLUE         := $(shell tput -Txterm setaf 6 || exit 0)
+	WHITE        := $(shell tput -Txterm setaf 7 || exit 0)
+	RESET := $(shell tput -Txterm sgr0)
+else
+	BLACK        := ""
+	RED          := ""
+	GREEN        := ""
+	YELLOW       := ""
+	LIGHTPURPLE  := ""
+	PURPLE       := ""
+	BLUE         := ""
+	WHITE        := ""
+	RESET        := ""
+endif
+
+
+TARGET_MAX_CHAR_NUM=20
+## show help
 help:
-	@echo "list of available app commands"
-	@echo
-	@echo "available in a virtualenv"
-	@echo "venv		- create virtual env."
-	@echo "install		- install dependencies."
-	@echo "routes      	- show all app routes."
-	@echo "dev     	- run app in dev mode."
-	@echo "prod        	- run app in prod mode."
-	@echo "lint        	- lint app."
-	@echo "test        	- test app."
-	@echo "load-test       - load test app using locust."
-	@echo "save            - save latest changes using git"
-	@echo "save-remote     - save latest changes to github"
-	@echo "latest          - get latest version."
-	@echo "release         - trigger deploy job."
-	@echo
-	@echo "to build docker containers"
-	@echo "build-dev       - build dev app docker container."
-	@echo "build-prod      - build prod app docker container."
-	@echo "up-dev     	- run dev app docker container."
-	@echo "up-prod     	- run prod app docker container."
-	@echo "purge-dev     	- purge dev app docker container."
-	@echo "purge-prod     	- purge prod app docker container."
-	@echo "status-dev      - get dev app docker container status."
-	@echo "status-prod     - get prod app docker container status."
+	@echo ''
+	@echo 'usage:'
+	@echo '  ${BLUE}make${RESET} ${RED}<cmd>${RESET}'
+	@echo ''
+	@echo 'cmds:'
+	@awk '/^[a-zA-Z\-\_0-9]+:/ { \
+		helpMessage = match(lastLine, /^## (.*)/); \
+		if (helpMessage) { \
+			helpCommand = substr($$1, 0, index($$1, ":")-1); \
+			helpMessage = substr(lastLine, RSTART + 3, RLENGTH); \
+			printf "  ${PURPLE}%-$(TARGET_MAX_CHAR_NUM)s${RESET} ${GREEN}%s${RESET}\n", helpCommand, helpMessage; \
+		} \
+	} \
+	{ lastLine = $$0 }' $(MAKEFILE_LIST)
 
-# makefile args
-# env variables
-# app entrypoint
-FLASK_APP := wsgi.py
-# app env
-FLASK_ENV := development
-ENVIRONMENT := development
-# default app port
-DEFAULT_APP_PORT := 5000
-# db uri
-ifeq ($(APP_PORT),)
-APP_PORT := ${DEFAULT_APP_PORT}
-endif
-APP_CONTAINER_NAME_DEV := portfolio-dev
-APP_CONTAINER_NAME_PROD := portfolio-prod
-# git
-PACKAGE_NAME := flask_rl
-MODULE_NAME := flask_rl.py
-MODULE_TEST_NAME := tests
-ifeq ($(VERSION),)
-VERSION := 0.0.1
-endif
-ifeq ($(COMMIT_MESSAGE),)
-COMMIT_MESSAGE := default commit message
-endif
-ifeq ($(BRANCH_NAME),)
-BRANCH_NAME := master
-endif
-ifeq ($(DEPS),)
-DEPS := dev
-endif
+# SCM #
 
-# virtualenv commands
-install:
-	@python3 -m pip install --upgrade pip && python3 -m pip install -r $(CURDIR)/requirements/${DEPS}.txt
-routes:
-	@FLASK_APP=${FLASK_APP} FLASK_ENV=${FLASK_ENV} ENVIRONMENT=${ENVIRONMENT} PORT=${APP_PORT} python3 -m flask routes
-dev:
-	@echo "config: dev"
-	@BG_ENABLED=${BG_ENABLED} FLASK_APP=${FLASK_APP} FLASK_ENV=${FLASK_ENV} ENVIRONMENT=${ENVIRONMENT} PORT=${APP_PORT} python3 -m flask run --host=0.0.0.0 --no-reload
-prod:
-	@echo "config: prod"
-	@BG_ENABLED=${BG_DISABLED} FLASK_APP=${FLASK_APP} FLASK_ENV=production ENVIRONMENT=production PORT=${APP_PORT} python3 -m flask run --host=0.0.0.0 --no-reload
-lint:
-	@black src && black tests
-	@PYTHONPATH=./src pylint src && pylint tests
-test:
-	@FLASK_APP=${FLASK_APP} FLASK_ENV=testing ENVIRONMENT=testing PORT=${APP_PORT} pytest --cov-report term-missing --cov=src tests -v && sleep 2.5 && rm -f .coverage*
-load-test:
-	make dev & locust -f $(CURDIR)/tests/test_load.py
+## save changes locally using git
+save-local:
+	@echo "saving..."
+	@git add .
+	@git commit -m "${cm}"
 
-save:
-	@echo "saving..." && git add . && git commit -m "${COMMIT_MESSAGE}"
-
+## save changes to remote using git
 save-remote:
-	@echo "saving to remote..." && git push origin ${BRANCH_NAME}
+	@echo "saving to remote..."
+	@git push origin ${branch}
 
-latest:
-	@git describe --abbrev=0
+## pull changes from remote
+pull-remote:
+	@echo "pulling from remote..."
+	@git merge origin ${branch}
 
-release:
-	git tag -d ${VERSION} || : && git push --delete origin ${VERSION} || : && git tag -a ${VERSION} -m "latest" && git push origin --tags
+## create new tag, recreate if it exists
+tag:
+	git tag -d ${version} || : 
+	git push --delete origin ${version} || : 
+	git tag -a ${version} -m "latest" 
+	git push origin --tags
+#######
 
+# DEV #
 
-# docker commands
-build-dev:
-	@docker build -f ./dockerfiles/Dockerfile . -t ${APP_CONTAINER_NAME_DEV}:latest
-build-prod:
-	@docker build -f ./dockerfiles/Dockerfile.prod . -t ${APP_CONTAINER_NAME_PROD}:latest
-up-dev: build-dev
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_DEV}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "existing dev container found. please run make purge-dev",\
-		@docker run -p 5000:5000 --name ${APP_CONTAINER_NAME_DEV} ${APP_CONTAINER_NAME_DEV}:latest)
+## install dependencies [deptype = dev | prod] 
+install:
+	@echo "dep type: ${deptype}"
+	@python3 -m pip install --upgrade pip
+	@python3 -m pip install -r $(CURDIR)/requirements/${deptype}.txt
+
+## show app routes
+routes:
+	@echo "config: ${env}"
+	@FLASK_APP=${ep} FLASK_ENV=${env} ENVIRONMENT=${env} PORT=${port} python3 -m flask routes
+
+## run app [env = development | production]
+run:
+	@echo "config: ${env}"
+	@FLASK_APP=${ep} FLASK_ENV=${env} ENVIRONMENT=${env} PORT=${port} python3 -m flask run --host=0.0.0.0 --no-reload
+
+## run formatting [black]
+format:
+	@python3 -m black ${mn}
+	@python3 -m black ${tmn}
+
+## run linting [pylint]
+lint:
+	@python3 -m pylint ${mn}
+	@python3 -m pylint ${tmn}
+
+## run tests [pytest]
+test:
+	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} -v
+	@sleep 2.5
+	@rm -f .coverage*
+
+## run load tests [pytest + locust]
+load-test:
+	@make run & locust -f $(CURDIR)/tests/test_load.py
+
+## build docker env
+build-env:
+	@docker build -f ./dockerfiles/Dockerfile.${envtype} . -t ${cname}:${envtype}
+
+## start docker env
+up-env: build-env
+	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(if $(strip $(cid)), \
+		@echo "existing container found. please run make purge-env",\
+		@docker run -p ${port}:5000 --name ${cname} ${cname}:${envtype})
 	$(endif)
-up-prod: build-prod
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_PROD}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "existing prod container found. please run make purge-prod",\
-		@echo "running app container..." && docker run -p ${APP_PORT}:${APP_PORT} --name ${APP_CONTAINER_NAME_PROD} ${APP_CONTAINER_NAME_PROD}:latest)
+
+## exec. into docker env
+exec-env:
+	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(if $(strip $(cid)), \
+		@echo "exec into env container..." && docker exec -it ${cid} bash,\
+		@echo "env container not running.")
 	$(endif)
-purge-dev:
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_DEV}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "purging dev app container..." && docker stop ${APP_CONTAINER_ID} && docker rm ${APP_CONTAINER_ID},\
-		@echo "dev app container not running.")
+
+## remove docker env
+purge-env:
+	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(if $(strip $(cid)), \
+		@echo "purging container..." && docker stop ${cid} && docker rm ${cid},\
+		@echo "env container not running.")
 	$(endif)
-purge-prod:
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_PROD}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "purging prod app container..." && docker stop ${APP_CONTAINER_ID} && docker rm ${APP_CONTAINER_ID},\
-		@echo "prod app container not running.")
+
+## get status of docker env
+status-env:
+	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(if $(strip $(cid)), \
+		@echo "env container running",\
+		@echo "env container not running.")
 	$(endif)
-status-dev:
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_DEV}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "dev app container running",\
-		@echo "dev app container not running.")
-	$(endif)
-status-prod:
-	$(eval APP_CONTAINER_ID = $(shell (docker ps -aqf "name=${APP_CONTAINER_NAME_PROD}")))
-	$(if $(strip $(APP_CONTAINER_ID)), \
-		@echo "prod app container running",\
-		@echo "prod app container not running.")
-	$(endif)
+
+## init env + install common tools
+init-env:
+	apt-get update && apt-get -y upgrade
+	apt-get install curl sudo bash vim ncurses-bin -y
+	apt-get install build-essential -y --no-install-recommends
+#######

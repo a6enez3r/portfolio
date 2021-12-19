@@ -1,0 +1,13 @@
+# set base image (host OS)
+FROM python:3.9
+# set the working directory in the container
+WORKDIR /app
+# Copy files
+COPY . /app
+# Init env
+RUN apt-get install -y make
+RUN make init-env
+# Init app deps
+RUN make install
+# run app
+CMD [ "make", "run"]
