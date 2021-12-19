@@ -13,7 +13,7 @@ ifeq ($(cm),)
 cm := default commit message
 endif
 ifeq ($(branch),)
-branch := master
+branch := main
 endif
 ifeq ($(deptype),)
 deptype := dev
