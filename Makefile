@@ -94,7 +94,7 @@ tag:
 # DEV #
 
 ## install dependencies [deptype = dev | prod] 
-install:
+deps:
 	@echo "dep type: ${deptype}"
 	@python3 -m pip install --upgrade pip
 	@python3 -m pip install -r $(CURDIR)/requirements/${deptype}.txt
