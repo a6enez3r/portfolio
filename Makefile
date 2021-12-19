@@ -1,5 +1,4 @@
-cname := portfolio
-ep := app.py
+ep := wsgi.py
 mn := src
 tmn := tests
 env := development
@@ -21,6 +20,12 @@ deptype := dev
 endif
 ifeq ($(envtype),)
 envtype := dev
+endif
+ifeq ($(cname),)
+cname := portfolio_${envtype}
+endif
+ifeq ($(ctag),)
+ctag := latest
 endif
 
 # COLORS
@@ -131,14 +136,14 @@ load-test:
 
 ## build docker env
 build-env:
-	@docker build -f ./dockerfiles/Dockerfile.${envtype} . -t ${cname}:${envtype}
+	@docker build -f ./dockerfiles/Dockerfile.${envtype} . -t ${cname}:${ctag}
 
 ## start docker env
 up-env: build-env
 	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
 	$(if $(strip $(cid)), \
 		@echo "existing container found. please run make purge-env",\
-		@docker run -p ${port}:5000 --name ${cname} ${cname}:${envtype})
+		@docker run -p ${port}:5000 --name ${cname} ${cname}:${ctag})
 	$(endif)
 
 ## exec. into docker env

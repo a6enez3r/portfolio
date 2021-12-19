@@ -20,6 +20,8 @@ from src.config import config_dict
 # config blueprints
 from src.bps import register_blueprints
 
+from src.extensions import secure_headers
+
 
 logger = structlog.get_logger()
 
@@ -65,6 +67,11 @@ def create_app(environment="development"):
             "favicon.ico",
             mimetype="image/vnd.microsoft.icon",
         )
+
+    @app.after_request
+    def set_secure_headers(response):
+        secure_headers.framework.flask(response)
+        return response
 
     # config logger
     app.logger = logger
