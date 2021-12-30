@@ -1,7 +1,7 @@
-ep := wsgi.py
+ip := wsgi
+ep := ${ip}.py
 mn := src
 tmn := tests
-env := development
 default_port := 5000
 ifeq ($(port),)
 port := ${default_port}
@@ -16,13 +16,16 @@ ifeq ($(branch),)
 branch := main
 endif
 ifeq ($(deptype),)
-deptype := dev
+deptype := development
 endif
-ifeq ($(envtype),)
-envtype := dev
+ifeq ($(flask_env),)
+flask_env := development
+endif
+ifeq ($(docker_env),)
+docker_env := development
 endif
 ifeq ($(cname),)
-cname := portfolio_${envtype}
+cname := portfolio_${docker_env}
 endif
 ifeq ($(ctag),)
 ctag := latest
@@ -99,20 +102,27 @@ tag:
 # DEV #
 
 ## install dependencies [deptype = dev | prod] 
-deps:
+install:
 	@echo "dep type: ${deptype}"
 	@python3 -m pip install --upgrade pip
 	@python3 -m pip install -r $(CURDIR)/requirements/${deptype}.txt
 
 ## show app routes
 routes:
-	@echo "config: ${env}"
-	@FLASK_APP=${ep} FLASK_ENV=${env} ENVIRONMENT=${env} PORT=${port} python3 -m flask routes
+	@echo "flask env: ${flask_env}"
+	@FLASK_APP=${ep} FLASK_ENV=${flask_env} ENVIRONMENT=${flask_env} PORT=${port} python3 -m flask routes
 
 ## run app [env = development | production]
 run:
-	@echo "config: ${env}"
-	@FLASK_APP=${ep} FLASK_ENV=${env} ENVIRONMENT=${env} PORT=${port} python3 -m flask run --host=0.0.0.0 --no-reload
+	@echo "flask env: ${flask_env}"
+ifeq ($(flask_env),production)
+	@echo "using: gunicorn"
+	@gunicorn --workers 4 --bind 0.0.0.0:5000 ${ip}:app
+endif
+ifeq ($(flask_env),development)
+	@echo "using: flask"
+	@FLASK_APP=${ep} FLASK_ENV=${flask_env} ENVIRONMENT=${flask_env} PORT=${port} python3 -m flask run --host=0.0.0.0 --no-reload
+endif
 
 ## run formatting [black]
 format:
@@ -136,7 +146,7 @@ load-test:
 
 ## build docker env
 build-env:
-	@docker build -f ./dockerfiles/Dockerfile.${envtype} . -t ${cname}:${ctag}
+	@docker build -f ./dockerfiles/Dockerfile.${docker_env} . -t ${cname}:${ctag}
 
 ## start docker env
 up-env: build-env
@@ -174,5 +184,5 @@ status-env:
 init-env:
 	apt-get update && apt-get -y upgrade
 	apt-get install curl sudo bash vim ncurses-bin -y
-	apt-get install build-essential -y --no-install-recommends
+	apt-get install build-essential python3-pip -y --no-install-recommends
 #######
