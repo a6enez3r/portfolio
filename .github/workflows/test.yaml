@@ -17,7 +17,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: deps
         run: |
-          make deps deptype=dev
+          make install deptype=development
       - name: lint
         run: |
           make lint
