@@ -2,10 +2,17 @@ ip := wsgi
 ep := ${ip}.py
 mn := src
 tmn := tests
+
+# flask
 default_port := 5000
 ifeq ($(port),)
 port := ${default_port}
 endif
+default_host := 0.0.0.0
+ifeq ($(host),)
+host := ${default_host}
+endif
+# git
 ifeq ($(version),)
 version := 0.0.1
 endif
@@ -15,22 +22,29 @@ endif
 ifeq ($(branch),)
 branch := main
 endif
-ifeq ($(deptype),)
-deptype := development
+# python / docker / dep
+ifeq ($(dtype),)
+dtype := development
 endif
-ifeq ($(flask_env),)
-flask_env := development
+ifeq ($(fenv),)
+fenv := development
 endif
-ifeq ($(docker_env),)
-docker_env := development
+ifeq ($(denv),)
+denv := development
 endif
 ifeq ($(cname),)
-cname := portfolio_${docker_env}
+cname := teret_${denv}
 endif
 ifeq ($(ctag),)
 ctag := latest
 endif
+# pytest
+ifeq ($(topts),)
+topts := -vv
+endif
 
+.DEFAULT_GOAL := help
+TARGET_MAX_CHAR_NUM=20
 # COLORS
 ifneq (,$(findstring xterm,${TERM}))
 	BLACK        := $(shell tput -Txterm setaf 0 || exit 0)
@@ -54,74 +68,87 @@ else
 	RESET        := ""
 endif
 
-
-TARGET_MAX_CHAR_NUM=20
-## show help
+## show usage / common commands available
+.PHONY: help
 help:
-	@echo ''
-	@echo 'usage:'
-	@echo '  ${BLUE}make${RESET} ${RED}<cmd>${RESET}'
-	@echo ''
-	@echo 'cmds:'
-	@awk '/^[a-zA-Z\-\_0-9]+:/ { \
-		helpMessage = match(lastLine, /^## (.*)/); \
-		if (helpMessage) { \
-			helpCommand = substr($$1, 0, index($$1, ":")-1); \
-			helpMessage = substr(lastLine, RSTART + 3, RLENGTH); \
-			printf "  ${PURPLE}%-$(TARGET_MAX_CHAR_NUM)s${RESET} ${GREEN}%s${RESET}\n", helpCommand, helpMessage; \
-		} \
-	} \
-	{ lastLine = $$0 }' $(MAKEFILE_LIST)
+	@printf "${RED}cmds:\n\n";
 
-# SCM #
+	@awk '{ \
+			if ($$0 ~ /^.PHONY: [a-zA-Z\-\_0-9]+$$/) { \
+				helpCommand = substr($$0, index($$0, ":") + 2); \
+				if (helpMessage) { \
+					printf "  ${PURPLE}%-$(TARGET_MAX_CHAR_NUM)s${RESET} ${GREEN}%s${RESET}\n\n", helpCommand, helpMessage; \
+					helpMessage = ""; \
+				} \
+			} else if ($$0 ~ /^[a-zA-Z\-\_0-9.]+:/) { \
+				helpCommand = substr($$0, 0, index($$0, ":")); \
+				if (helpMessage) { \
+					printf "  ${YELLOW}%-$(TARGET_MAX_CHAR_NUM)s${RESET} ${GREEN}%s${RESET}\n", helpCommand, helpMessage; \
+					helpMessage = ""; \
+				} \
+			} else if ($$0 ~ /^##/) { \
+				if (helpMessage) { \
+					helpMessage = helpMessage"\n                     "substr($$0, 3); \
+				} else { \
+					helpMessage = substr($$0, 3); \
+				} \
+			} else { \
+				if (helpMessage) { \
+					print "\n${LIGHTPURPLE}             "helpMessage"\n" \
+				} \
+				helpMessage = ""; \
+			} \
+		}' \
+		$(MAKEFILE_LIST)
 
-## save changes locally using git
+## -- git --
+
+## save changes locally [git]
 save-local:
 	@echo "saving..."
 	@git add .
 	@git commit -m "${cm}"
 
-## save changes to remote using git
+## save changes to remote [git]
 save-remote:
 	@echo "saving to remote..."
 	@git push origin ${branch}
 
-## pull changes from remote
+## pull changes from remote [git]
 pull-remote:
 	@echo "pulling from remote..."
 	@git merge origin ${branch}
 
-## create new tag, recreate if it exists
+## create new tag, recreate if it exists [git]
 tag:
 	git tag -d ${version} || : 
 	git push --delete origin ${version} || : 
 	git tag -a ${version} -m "latest" 
 	git push origin --tags
-#######
 
-# DEV #
+## -- python --
 
-## install dependencies [deptype = dev | prod] 
+## install dependencies [dtype = development | production] 
 install:
-	@echo "dep type: ${deptype}"
-	@python3 -m pip install --upgrade pip
-	@python3 -m pip install -r $(CURDIR)/requirements/${deptype}.txt
+	@echo "dep type: ${dtype}"
+	@python3 -m pip install --upgrade pip setuptools wheel
+	@python3 -m pip install -r $(CURDIR)/requirements/${dtype}.txt
 
-## show app routes
+## show app routes [fenv = development | production]
 routes:
-	@echo "flask env: ${flask_env}"
-	@FLASK_APP=${ep} FLASK_ENV=${flask_env} ENVIRONMENT=${flask_env} PORT=${port} python3 -m flask routes
+	@echo "flask env: ${fenv}"
+	@FLASK_APP=${ep} fenv=${fenv} ENVIRONMENT=${fenv} PORT=${port} python3 -m flask routes
 
-## run app [env = development | production]
+## run app [fenv = development | production]
 run:
-	@echo "flask env: ${flask_env}"
-ifeq ($(flask_env),production)
+	@echo "flask env: ${fenv}"
+ifeq ($(fenv),production)
 	@echo "using: gunicorn"
-	@gunicorn --workers 4 --bind 0.0.0.0:5000 ${ip}:app
+	@gunicorn --workers 1 --bind ${host}:${port} ${ip}:app
 endif
-ifeq ($(flask_env),development)
+ifeq ($(fenv),development)
 	@echo "using: flask"
-	@FLASK_APP=${ep} FLASK_ENV=${flask_env} ENVIRONMENT=${flask_env} PORT=${port} python3 -m flask run --host=0.0.0.0 --no-reload
+	@FLASK_APP=${ep} FLASK_ENV=${fenv} ENVIRONMENT=${fenv} PORT=${port} python3 -m flask run --host=${host} --port=${port} --no-reload
 endif
 
 ## run formatting [black]
@@ -136,19 +163,21 @@ lint:
 
 ## run tests [pytest]
 test:
-	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} -v
-	@sleep 2.5
+	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} ${topts}
+	@sleep 1
 	@rm -f .coverage*
 
 ## run load tests [pytest + locust]
 load-test:
 	@make run & locust -f $(CURDIR)/tests/test_load.py
 
-## build docker env
-build-env:
-	@docker build -f ./dockerfiles/Dockerfile.${docker_env} . -t ${cname}:${ctag}
+## -- docker --
 
-## start docker env
+## build docker env [denv = development | production]
+build-env:
+	@docker build -f ./dockerfiles/Dockerfile.${denv} . -t ${cname}:${ctag}
+
+## start docker env [denv = development | production]
 up-env: build-env
 	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
 	$(if $(strip $(cid)), \
@@ -180,9 +209,8 @@ status-env:
 		@echo "env container not running.")
 	$(endif)
 
-## init env + install common tools
+## init Linux env / install common tools
 init-env:
 	apt-get update && apt-get -y upgrade
 	apt-get install curl sudo bash vim ncurses-bin -y
 	apt-get install build-essential python3-pip -y --no-install-recommends
-#######
