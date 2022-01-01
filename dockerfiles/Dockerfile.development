@@ -8,6 +8,6 @@ COPY . .
 RUN apt-get update && apt-get install -y make
 RUN make init-env
 # Init app deps
-RUN make install dtype=development
+RUN make deps dtype=development
 # Run app
 CMD make -w start fenv=development

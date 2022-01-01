@@ -13,6 +13,6 @@ COPY requirements/production.txt requirements/production.txt
 RUN apt-get update && apt-get install -y make
 RUN make init-env
 # Install app deps
-RUN make install dtype=production
+RUN make deps dtype=production
 # Run app
 CMD make -w start fenv=production
