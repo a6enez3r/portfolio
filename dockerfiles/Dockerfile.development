@@ -8,6 +8,6 @@ COPY . /app
 RUN apt-get install -y make
 RUN make init-env
 # Init app deps
-RUN make install deptype=development
+RUN make install dtype=development
 # run app
 CMD [ "make", "run", "flask_env=development"]

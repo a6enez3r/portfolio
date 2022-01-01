@@ -13,6 +13,6 @@ COPY requirements/production.txt requirements/production.txt
 RUN apt-get install -y make
 RUN make init-env
 # Install app deps
-RUN make install deptype=production
+RUN make install dtype=production
 # run app
 CMD [ "make", "run", "flask_env=production"]
