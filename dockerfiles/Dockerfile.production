@@ -1,18 +1,18 @@
 # set base image (host OS)
-FROM python:3.9
+FROM ubuntu:latest
 # set the working directory in the container
-WORKDIR /app
+WORKDIR /home/app
 # copy the contents of the local app directory to the working directory
 # need to be really careful to not accidentally add sensitive info such
 # as .env files
 COPY src src
 COPY wsgi.py wsgi.py
-COPY Makefile Makefile
+ADD Makefile Makefile
 COPY requirements/production.txt requirements/production.txt
 # Init env
-RUN apt-get install -y make
+RUN apt-get update && apt-get install -y make
 RUN make init-env
 # Install app deps
 RUN make install dtype=production
-# run app
-CMD [ "make", "run", "flask_env=production"]
+# Run app
+CMD make -w start fenv=production

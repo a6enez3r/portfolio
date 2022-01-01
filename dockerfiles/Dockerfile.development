@@ -1,13 +1,13 @@
 # set base image (host OS)
-FROM python:3.9
+FROM ubuntu:latest
 # set the working directory in the container
-WORKDIR /app
+WORKDIR /home/app
 # Copy files
-COPY . /app
+COPY . .
 # Init env
-RUN apt-get install -y make
+RUN apt-get update && apt-get install -y make
 RUN make init-env
 # Init app deps
 RUN make install dtype=development
-# run app
-CMD [ "make", "run", "flask_env=development"]
+# Run app
+CMD make -w start fenv=development
