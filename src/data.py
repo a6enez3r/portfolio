@@ -106,8 +106,8 @@ about_data = {
             """,
     "projects": [
         {
-            "title": "validate_json",
-            "link": "https://github.com/abmamo/validate_json",
+            "title": "jval",
+            "link": "https://github.com/abmamo/jval",
             # pylint: disable=line-too-long
             "summary": "validate JSON data against a schema",
         },
@@ -118,10 +118,10 @@ about_data = {
             "summary": "python package to generate mock data. supports generating data in CSV, JSON, Parquet, and SQLite formats.",
         },
         {
-            "title": "fastdb",
-            "link": "https://github.com/abmamo/fastdb",
+            "title": "mkdk",
+            "link": "https://github.com/abmamo/mkdk",
             # pylint: disable=line-too-long
-            "summary": "python package to easily set up mock Postgres & MySQL databases in docker (requires docker)",
+            "summary": "simplify running common Docker containers",
         },
         {
             "title": "flask_rl",
