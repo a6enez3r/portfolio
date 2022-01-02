@@ -102,7 +102,7 @@ work_data = [
 about_data = {
     # pylint: disable=line-too-long
     "text": """
-                I am a full-stack developer with strong backgrounds in API design & development, microservices, databases, cloud-native & serverless computing, NLP/ML.
+                I am a full-stack developer with a strong background in API design & development, microservices, databases, cloud-native & serverless computing, NLP/ML.
             """,
     "projects": [
         {
