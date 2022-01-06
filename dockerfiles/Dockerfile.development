@@ -10,4 +10,4 @@ RUN make init-env
 # Init app deps
 RUN make deps dtype=development
 # Run app
-CMD make -w start fenv=development
+CMD make -w run fenv=development

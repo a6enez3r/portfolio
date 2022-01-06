@@ -15,4 +15,4 @@ RUN make init-env
 # Install app deps
 RUN make deps dtype=production
 # Run app
-CMD make -w start fenv=production
+CMD make -w run fenv=production
