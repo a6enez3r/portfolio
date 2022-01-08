@@ -21,43 +21,8 @@ from src.config import config_dict
 from src.bps import register_blueprints
 
 from src.extensions import secure_headers
-from flask_talisman import Talisman
 
 logger = structlog.get_logger()
-
-
-def init_csp(app):
-    """
-    init talisman for csp
-    """
-    csp = {
-        "default-src": [
-            "'self'",
-            'googleapis.com',
-            '*.googleapis.com',
-            'cloudflare.com',
-            '*.cloudflare.com',
-            'jsdelivr.com',
-            '*.jsdelivr.com',
-        ],
-        "script-src": [
-            "'self'",
-            "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js",
-            "https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js",
-        ],
-        "style-src": [
-            "'self'",
-            "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
-            "https://fonts.googleapis.com/icon?family=Material+Icons",
-            "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-            "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
-        ],
-    }
-    talisman = Talisman(
-        content_security_policy=csp,
-        content_security_policy_nonce_in=['script-src']
-    )
 
 
 def init_common(app):
@@ -80,7 +45,6 @@ def init_common(app):
     def set_secure_headers(response):
         secure_headers.framework.flask(response)
         return response
-
 
 
 def create_logger(app):
@@ -113,8 +77,6 @@ def create_app(environment="development"):
     app = Flask(__name__)
     # config here
     app.config.from_object(config_dict[environment])
-    # init csp
-    init_csp(app)
     # init common app routes
     init_common(app)
     # config logger
