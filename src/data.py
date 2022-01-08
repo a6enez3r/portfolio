@@ -118,8 +118,8 @@ about_data = {
             "summary": "python package to generate mock data. supports generating data in CSV, JSON, Parquet, and SQLite formats.",
         },
         {
-            "title": "mkdk",
-            "link": "https://github.com/abmamo/mkdk",
+            "title": "mkd",
+            "link": "https://github.com/abmamo/mkd",
             # pylint: disable=line-too-long
             "summary": "simplify running common Docker containers",
         },

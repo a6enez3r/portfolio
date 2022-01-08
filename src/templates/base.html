@@ -49,39 +49,10 @@
     {% block content %}{% endblock %}
   </div>
   <!-- javascript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <!-- darkmode trigger -->
-  <script>
-    const options = {
-      bottom: '32px', // default: '32px'
-      right: '32px', // default: '32px'
-      left: 'unset', // default: 'unset'
-      time: '0.5s', // default: '0.3s'
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#ffffff',  // default: '#fff'
-      buttonColorDark: '#443B2F',  // default: '#100f2c'
-      buttonColorLight: '#ffffff', // default: '#fff'
-      saveInCookies: true, // default: true,
-      label: '🌙 ', // default: ''
-      autoMatchOsTheme: true // default: true
-    }
-    const darkmode = new Darkmode(options);
-    darkmode.showWidget();
-  </script>
-  <!-- sidenav trigger -->
-  <script>
-    $(document).ready(function () {
-      $('.sidenav').sidenav();
-    });
-  </script>
-  <!-- collapsible trigger -->
-  <script>
-    $(document).ready(function () {
-      $('.collapsible').collapsible();
-    });
-  </script>
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/darkmode.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/trigger.js') }}"></script>
 </body>
 
 </html>
