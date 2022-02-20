@@ -1,4 +1,4 @@
-name: build
+name: pipeline
 
 on: [push, pull_request]
 
@@ -24,6 +24,19 @@ jobs:
       - name: test
         run: |
           make test
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: login
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
