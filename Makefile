@@ -177,6 +177,11 @@ load-test:
 build-env:
 	@docker build -f ./dockerfiles/Dockerfile.${denv} . -t ${cname}:${ctag}
 
+## build & push image
+push-env:
+	@make build-env denv=production cname="ghcr.io/a6enez3r/portfolio" ctag="latest"
+	@docker push ghcr.io/a6enez3r/portfolio
+
 ## start docker env [denv = development | production]
 up-env: build-env
 	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
