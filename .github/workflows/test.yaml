@@ -24,3 +24,13 @@ jobs:
       - name: test
         run: |
           make test
+      - name: Docker
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: build & push
+        run: |
+          make build-env denv=production cname="ghcr.io/a6enez3r/portfolio" ctag="latest"
+          docker push ghcr.io/a6enez3r/portfolio:latest
