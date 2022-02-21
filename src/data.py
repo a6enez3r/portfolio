@@ -7,18 +7,22 @@ USER_NAME = "abenezer m. mamo"
 social_links = [
     {
         "name": "github",
-        "link": "https://github.com/abmamo",
+        "link": "https://github.com/a6enez3r",
         "class": "fa fa-github-square",
     },
     {
         "name": "linked_in",
-        "link": "https://www.linkedin.com/in/abmamo/",
+        "link": "https://www.linkedin.com/in/a6enez3r/",
         "class": "fa fa-linkedin-square",
     },
-    {"name": "angel", "link": "https://angel.co/u/abmamo", "class": "fa fa-angellist"},
+    {
+        "name": "angel",
+        "link": "https://angel.co/u/a6enez3r",
+        "class": "fa fa-angellist",
+    },
     {
         "name": "availability",
-        "link": "https://calendly.com/abenezermamo",
+        "link": "https://calendly.com/a6enez3r",
         "class": "fa fa-calendar",
     },
 ]
@@ -106,41 +110,39 @@ about_data = {
             """,
     "projects": [
         {
-            "title": "jval",
-            "link": "https://github.com/abmamo/jval",
-            # pylint: disable=line-too-long
-            "summary": "validate JSON data against a schema",
-        },
-        {
-            "title": "mock",
-            "link": "https://github.com/abmamo/mock",
-            # pylint: disable=line-too-long
-            "summary": "python package to generate mock data. supports generating data in CSV, JSON, Parquet, and SQLite formats.",
-        },
-        {
-            "title": "mkd",
-            "link": "https://github.com/abmamo/mkd",
-            # pylint: disable=line-too-long
-            "summary": "simplify running common Docker containers",
-        },
-        {
-            "title": "flask_rl",
-            "link": "https://github.com/abmamo/flask_rl",
-            "summary": """
-                flask rate limiter extension with an in memory DB
-            """,
-        },
-        {
             "title": "teret",
-            "link": "https://teret.abmamo.com",
+            "link": "https://github.com/a6enez3r/teret",
             # pylint: disable=line-too-long
-            "summary": "blogging application with WYSIWYG editor built using Flask + SummernoteJS + SQLite.",
+            "summary": "blogging application with a WYSIWYG editor built using Flask + SummernoteJS + SQLite (or any other relational database supported by SQLAlchemy)",
         },
         {
             "title": "tunez",
-            "link": "https://tunez.abmamo.com",
+            "link": "https://github.com/a6enez3r/tunez",
             # pylint: disable=line-too-long
-            "summary": "music player web application built using Flask + HowlerJS + SQLite/SQLAlchemy",
+            "summary": "web music player built using Flask + HowlerJS + SQLite/SQLAlchemy",
+        },
+        {
+            "title": "mok",
+            "link": "https://github.com/a6enez3r/mok",
+            # pylint: disable=line-too-long
+            "summary": "generate data files. currently supports: JSON, CSV, Parquet, and XLSX",
+        },
+        {
+            "title": "flask_rl",
+            "link": "https://github.com/a6enez3r/flask_rl",
+            # pylint: disable=line-too-long
+            "summary": "rate limiting flask extension",
+        },
+        {
+            "title": "jval",
+            "link": "https://github.com/a6enezer/flask_rl",
+            "summary": "validate JSON data against a schema",
+        },
+        {
+            "title": "mkd",
+            "link": "https://github.com/a6enez3r/mkd",
+            # pylint: disable=line-too-long
+            "summary": "simplify running common Docker containers",
         },
     ],
 }
