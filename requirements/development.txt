@@ -1,4 +1,4 @@
-flask==2.0.2
+flask==2.0.3
 locust==2.7.3
 python-dotenv==0.19.2
 secure==0.3.0
