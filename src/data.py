@@ -142,7 +142,7 @@ about_data = {
             "title": "mkd",
             "link": "https://github.com/a6enez3r/mkd",
             # pylint: disable=line-too-long
-            "summary": "simplify running common Docker containers",
+            "summary": "collection of commands to simplify running common Docker containers",
         },
     ],
 }
