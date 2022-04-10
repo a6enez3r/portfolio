@@ -1,4 +1,4 @@
-flask==2.0.2
+flask==2.0.3
 locust==2.7.3
 python-dotenv==0.19.2
 secure==0.3.0
@@ -8,4 +8,4 @@ black==22.1.0
 pylint==2.12.2
 flake8==4.0.1
 pytest-cov==3.0.0
-pytest==7.0.0
+pytest==7.0.1
