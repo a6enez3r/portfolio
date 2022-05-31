@@ -163,7 +163,7 @@ lint:
 
 ## run tests [pytest]
 test:
-	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} ${topts}
+	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} python3 -m pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} ${topts}
 	@sleep 1
 	@rm -f .coverage*
 
