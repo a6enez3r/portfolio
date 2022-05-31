@@ -33,7 +33,7 @@ ifeq ($(denv),)
 denv := development
 endif
 ifeq ($(cname),)
-cname := teret_${denv}
+cname := portfolio_${denv}
 endif
 ifeq ($(ctag),)
 ctag := latest
@@ -144,7 +144,7 @@ run:
 	@echo "flask env: ${fenv}"
 ifeq ($(fenv),production)
 	@echo "using: gunicorn"
-	@gunicorn --workers 1 --bind ${host}:${port} ${ip}:app
+	@python3 -m gunicorn --workers 1 --bind ${host}:${port} ${ip}:app
 endif
 ifeq ($(fenv),development)
 	@echo "using: flask"

@@ -12,6 +12,7 @@
 """
 # built-in fs modules
 import os
+import logging
 import pathlib
 
 # env manager
@@ -33,6 +34,8 @@ class Config:  # pylint: disable=too-few-public-methods
 
     # base dir
     BASE_DIR = pathlib.Path(__file__).parent.parent.absolute()
+    LOGFILE = os.environ.get("LOGFILE", os.path.join(BASE_DIR, "portfolio.log"))
+    SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
     # application threads
     THREADS_PER_PAGE = 2
     # protection agains Cross-site Request Forgery (CSRF)
@@ -55,6 +58,8 @@ class TestingConfig(Config):  # pylint: disable=too-few-public-methods
     TESTING = True
     WTF_CSRF_ENABLED = False
     CSRF_ENABLED = False
+    LOG_BACKTRACE = True
+    LOGLEVEL = logging.DEBUG
 
 
 class DevelopmentConfig(Config):  # pylint: disable=too-few-public-methods
@@ -68,6 +73,8 @@ class DevelopmentConfig(Config):  # pylint: disable=too-few-public-methods
     TESTING = False
     WTF_CSRF_ENABLED = True
     CSRF_ENABLED = True
+    LOG_BACKTRACE = True
+    LOGLEVEL = logging.DEBUG
 
 
 class ProductionConfig(Config):  # pylint: disable=too-few-public-methods
@@ -81,6 +88,8 @@ class ProductionConfig(Config):  # pylint: disable=too-few-public-methods
     TESTING = False
     WTF_CSRF_ENABLED = True
     CSRF_ENABLED = True
+    LOG_BACKTRACE = False
+    LOGLEVEL = logging.INFO
 
 
 # importable config dict that maps each configuration

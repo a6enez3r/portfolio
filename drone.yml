@@ -1,9 +1,0 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: greeting
-  image: node:alpine
-  commands:
-    - node -e 'console.log("Hello, world")'
