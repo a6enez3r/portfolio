@@ -7,11 +7,16 @@ import requests
 
 
 class SlackerLogHandler(logging.Handler):
+    """
+    customer log handler that emits logs
+    to a Slack channel
+    """
+
     def __init__(self, webhook_url):
         super().__init__()
         self.webhook_url = webhook_url
 
-    def slack_message(self, webhook_url, title, value):
+    def slack_message(self, webhook_url, title, value):  # pylint: disable=no-self-use
         """
         send message to slack channel (using incoming webhooks)
 
@@ -35,8 +40,8 @@ class SlackerLogHandler(logging.Handler):
             ]
         }
 
-        r = requests.post(hook, data=json.dumps(payload), headers=headers)
-        print("Response: " + str(r.status_code) + "," + str(r.reason))
+        resp = requests.post(hook, data=json.dumps(payload), headers=headers)
+        print("Response: " + str(resp.status_code) + "," + str(resp.reason))
 
     def emit(self, record):
         message = self.format(record)
