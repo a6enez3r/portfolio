@@ -8,25 +8,28 @@ import os
 from flask import Blueprint, render_template, send_from_directory, current_app
 
 # data
-from src.data import experience, aboutme, links
 from src.gh import github_projects
+from src.parser import resume_content
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
 )
 
-# work page
+# experience page
 @pages_bp.route("/", methods=["GET"])
-def work():
+def experience():
     """
     render work page
     """
+    content = resume_content(
+        os.path.join(current_app.root_path, "static", "resume/resume.html")
+    )
     return (
         render_template(
-            "work.html",
+            "experience.html",
             name=current_app.config["PORTFOLIO_USERNAME"],
-            experience=experience,
-            links=links,
+            experiences=content["experiences"],
+            links=content["links"],
         ),
         200,
     )
@@ -38,6 +41,9 @@ def about():
     """
     render about page
     """
+    content = resume_content(
+        os.path.join(current_app.root_path, "static", "resume/resume.html")
+    )
     projects = github_projects(
         pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"]
     )
@@ -45,9 +51,9 @@ def about():
         render_template(
             "about.html",
             name=current_app.config["PORTFOLIO_USERNAME"],
-            aboutme=aboutme,
+            aboutme=content["aboutme"],
             projects=projects,
-            links=links,
+            links=content["links"],
         ),
         200,
     )

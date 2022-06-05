@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %}
 <div class="container cards-container">
   <div class="row">
-    {% for item in experience %}
+    {% for item in experiences %}
     <div class="col s12 m12 l12">
       <div class="card-panel valign-wrapper left-align">
         <div class="container">
           <div class="row no-padding-bottom">
-            <div class="col s12 m12 l12 card-position">{{item["title"]}}</div>
+            <div class="col s12 m12 l12 card-position">{{item["position"]}}</div>
           </div>
           <div class="row">
             <div class="col s12 m6 l6 padding-bottom">
@@ -18,9 +18,9 @@
             </div>
           </div>
           <div class="row no-padding-bottom">
-            <div class="col s12 m12 l12 card-summary">{{item["summary"]}}</div>
+            <div class="col s12 m12 l12 card-summary">{{item["description"]}}</div>
           </div>
-          <div class="row no-padding-bottom">
+          <!-- <div class="row no-padding-bottom">
             <ul class="collapsible">
               <li>
                 <div class="collapsible-header">
@@ -47,7 +47,7 @@
                 </div>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

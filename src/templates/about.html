@@ -31,7 +31,7 @@
                       commits
                     </div>
                     <div class="col s12 m12 l6">
-                      <span class="new badge black white-text" data-badge-caption="commits">{{ project["commits"] }}</span>
+                      <span class="new badge black-text" data-badge-caption="commits">{{ project["commits"] }}</span>
                     </div>
                   </div>
                   <div class="row">
@@ -41,7 +41,7 @@
                     <div class="col s12 m12 l9">
                       <div class="row">
                       {% for language in project["languages"] %}
-                        <div class="col s12 m12 l6"><span class="new badge black white-text" data-badge-caption="{{ language }}"></span></div>
+                        <div class="col s12 m12 l6"><span class="new badge black-text" data-badge-caption="{{ language }}"></span></div>
                       {% endfor %}
                       </div>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="col s12 m12 l9">
                       <div class="row">
                       {% for topic in project["topics"] %}
-                        <div class="col s12 m12 l6"><span class="new badge black white-text" data-badge-caption="{{ topic }}"></span></div>
+                        <div class="col s12 m12 l6"><span class="new badge black-text" data-badge-caption="{{ topic }}"></span></div>
                       {% endfor %}
                       </div>
                     </div>

@@ -3,14 +3,14 @@
 
 <!-- The unordered list immediately after the h1 will be formatted on a single
 line. It is intended to be used for contact details -->
+- [https://github.com/a6enez3r](https://github.com/a6enez3r)
+- [https://linkedin.com/in/a6enez3r](https://linkedin.com/in/a6enez3r)
 - [hi@abenezer.sh](mailto:hi@abenezer.sh)
-- [github.com/a6enez3r](https://github.com/a6enez3r)
-- [LinkedIn](https://www.linkedin.com/in/a6enez3r/)
-- [AngelList](https://angel.co/u/a6enez3r)
-- [Calendly](https://calendly.com/a6enez3r)
+- [https://calendly.com/a6enez3r](https://calendly.com/a6enez3r)
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
+full-stack developer with a strong background in API design & development, micro-services, databases, cloud-native & server-less computing, NLP/ML
 
 
 ## EXPERIENCE

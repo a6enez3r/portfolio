@@ -24,9 +24,10 @@ body {
 h1 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 200%;
+    font-size: 175%;
     margin: 0;
-    margin-bottom: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
     padding: 0;
 }
 h2 {
