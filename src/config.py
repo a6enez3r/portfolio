@@ -36,6 +36,9 @@ class Config:  # pylint: disable=too-few-public-methods
     BASE_DIR = pathlib.Path(__file__).parent.parent.absolute()
     LOGFILE = os.environ.get("LOGFILE", os.path.join(BASE_DIR, "portfolio.log"))
     SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
+    # [OPTIONAL] get project stats from GitHub
+    GH_PAT = os.environ.get("GH_PATH", "")
+    GH_USERNAME = os.environ.get("GH_USERNAME", "")
     # application threads
     THREADS_PER_PAGE = 2
     # protection agains Cross-site Request Forgery (CSRF)

@@ -9,6 +9,8 @@ from src.factory import create_app
 
 # load env vars
 load_dotenv()
+# [OPTIONAL] get GitHub creds to automatically display repos
+gh_pat, gh_username = os.environ.get("GH_PAT", None), os.environ.get("GH_USERNAME", None)
 # create WSGI app
 app = create_app(
     environment=os.environ.get("ENVIRONMENT", "development")

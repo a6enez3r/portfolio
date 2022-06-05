@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Abenezer Mamo</title>
+<style>
+body {
+    color: #000000;
+    background: #EEEEEE;
+    font: 1.1em "Times New Roman";
+    line-height: 1.2;
+    margin: 40px 0;
+}
+#resume {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 60px;
+    background: #FFFFFF;
+    border: 2px solid #9999;
+    box-shadow: 2px 2px 4px #AAAAAA;
+    -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    border-bottom: 2px solid #000000;
+    text-transform: uppercase;
+    font-size: 130%;
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+h3 {
+    font-size: 100%;
+    margin: 0.8em 0 0.3em 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    }
+ul {
+    padding: 0;
+    margin: 0 1.5em;
+    }
+/* ul immediately after h1 = contact list */
+h1 + ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    }
+h1 + ul > li {
+    display: inline;
+    white-space: pre;
+    list-style-type: none;
+}
+h1 + ul > li:after {
+    content: "  \2022  ";
+}
+h1 + ul > li:last-child:after {
+    content: "";
+}
+/* p immediately after contact list = summary */
+h1 + ul + p {
+    margin: 1em 0;
+}
+@media print {
+    body {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+    #resume {
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    /* Make links black in PDF */
+    /* Move this outside the print block to apply this in HTML too */
+    a, a:link, a:visited, a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+}
+@page {
+    /* Change margins and paper size of PDF */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@page */
+    size: letter;
+    margin: 0.5in 0.8in;
+}
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 16pt;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF !important;
+    }
+    #resume {
+        margin: 0;
+        padding: 1em;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+</style>
+</head>
+<body>
+<div id="resume">
+<!-- The (first) h1 will be used as the <title> of the HTML page -->
+<h1>Abenezer Mamo</h1>
+<!-- The unordered list immediately after the h1 will be formatted on a single
+line. It is intended to be used for contact details -->
+<ul>
+<li><a href="mailto:hi@abenezer.sh">hi@abenezer.sh</a></li>
+<li><a href="https://github.com/a6enez3r">github.com/a6enez3r</a></li>
+<li><a href="https://www.linkedin.com/in/a6enez3r/">LinkedIn</a></li>
+<li><a href="https://angel.co/u/a6enez3r">AngelList</a></li>
+<li><a href="https://calendly.com/a6enez3r">Calendly</a></li>
+</ul>
+<!-- The paragraph after the h1 and ul and before the first h2 is optional. It
+is intended to be used for a short summary. -->
+
+<h2>Experience</h2>
+<!-- You have to wrap the "left" and "right" half of these headings in spans by
+hand -->
+<h3><span>Software Engineer, Klaviyo</span> <span>May 2022 – Present</span></h3>
+<p>Built various features necessary to ensure messages sent by clients get sent through the right platform &amp; Carter while also making sure the messages are delivered via the right device with an eye towards compliance &amp; also laying the foundation of scaling mobile @ Klaviyo.</p>
+<ul>
+<li>
+<p>Integrate a third party CDN into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6%</p>
+</li>
+<li>
+<p>Worked with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing application (with an emphasis on backend development) while also focusing on internal tooling, such as poppy — a python CLI to simplify sampling, wrangling, transforming, and cleaning data out of production and into local databases — and improve team velocity</p>
+</li>
+<li>
+<p>Designed &amp; developed various APIs &amp; features using the Django web framework and React such as <strong><em>_, </em></strong><em>, and <strong><em>_ to improve SMS delivery pipeline accuracy by </em></strong></em> &amp; stability by <strong><em> (measured by </em></strong>) to enable clients form long lasting relationships through highly targeted SMS messages based on transactional and behavioral data.</p>
+</li>
+<li>
+<p>Integrate Klaviyo’s mobile application platform with third party SMS APIs such as Twilio and SendGrid
+Debug, troubleshoot, and fix various operational issues that come up during pager duty with SMS delivery pipelines and document various approaches in the process for progeny</p>
+</li>
+</ul>
+<h3><span>Software Engineer, ForAllSecure</span> <span>Mar 2021 – May 2022 </span></h3>
+<p>Designed, built, and maintained various services and features necessary to bring Mayhem—a fully autonomous cybersecurity system—to market.</p>
+<ul>
+<li>
+<p>Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
+Built a reporting dashboard using Postgres, SQLAlchemy &amp; React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform</p>
+</li>
+<li>
+<p>Worked independently and as part of short-term &amp; rapidly evolving teams to add various interface (Core Library/UI/API/CLI) features such as GitHub OAuth aimed at enabling users to easily integrate Mayhem into their existing CI/CD pipelines (Jenkins, GitLab, GitHub) and reducing customer onboarding times</p>
+</li>
+<li>
+<p>Continuously &amp; actively improved internal testing infrastructure using pytest fixtures to increase reusability &amp; test coverage by 8%</p>
+</li>
+<li>
+<p>Refactored database garbage collector queries to minimize the number of test cases stored in database &amp; provide faster test suite download and regression testing times for customers</p>
+</li>
+</ul>
+<h3><span>Junior Backend Engineer, Pivony</span> <span>May 2020 – Oct 2020 </span></h3>
+<p>Architected a distributed AWS native topic modeling platform to efficiently process and summarize textual data, identify trends such as sentiment, common complaints, influential documents, most frequent keywords, and deliver actionable insights.</p>
+<ul>
+<li>
+<p>Built a preprocessing micro service using SQLAlchemy, Docker, and Dask to provide multilingual sentiment analysis, text tokenization, &amp; keyword extraction; optimized the service using multithreading resulting in a 55% decrease in billable EC2 instance hours</p>
+</li>
+<li>
+<p>Created an AWS resource orchestrator using boto3, SQLAlchemy, and Postgres to optimize resource allocation and eliminate idle EC2 instances</p>
+</li>
+<li>
+<p>Researched and developed a topic modeling engine utilizing BERT and various unsupervised algorithms such as LDA &amp; GSDMM to cluster text into human readable topics at scale</p>
+</li>
+<li>
+<p>Designed and implemented a RESTful API to provide a universal gateway to various micro services using nginx, Flask, SQLAlchemy, and AWS RDS</p>
+</li>
+</ul>
+<h2>Education</h2>
+<h3><span>Reed College, BA Computer Science</span> <span>Aug 2015 – Jan 2020</span></h3>
+<ul>
+<li>Portland, OR</li>
+<li>Thesis : Scalable Learning for the Odd-Man-Out Task with Applications to Word Vector Induction</li>
+</ul>
+<h3><span>Study Abroad, Informatics</span> <span>Sep 2017 – Jun 2018</span></h3></div>
+</body>
+</html>

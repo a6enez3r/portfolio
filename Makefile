@@ -219,3 +219,9 @@ init-env:
 	apt-get update && apt-get -y upgrade
 	apt-get install curl sudo bash vim ncurses-bin -y
 	apt-get install build-essential python3-pip -y --no-install-recommends
+
+## -- resume ---
+
+## generate resume HTML & PDF
+generate-resume:
+	@python3 src/resume.py $(CURDIR)/src/static/resume/resume.md
