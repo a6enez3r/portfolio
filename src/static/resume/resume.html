@@ -1,12 +1,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Abenezer Mamo</title>
+<title>Abenezer M. Mamo</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 body {
     color: #000000;
     background: #EEEEEE;
-    font: 1.1em "Times New Roman";
+    font-family: "Poppins", monospace;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.25em !important;
+    padding: 0 0 1em 0 !important;
+    font-size: 11px !important;
     line-height: 1.2;
     margin: 40px 0;
 }
@@ -24,6 +31,7 @@ h1 {
     text-align: center;
     font-size: 200%;
     margin: 0;
+    margin-bottom: 10px !important;
     padding: 0;
 }
 h2 {
@@ -51,8 +59,8 @@ ul {
 /* ul immediately after h1 = contact list */
 h1 + ul {
     text-align: center;
-    margin: 0;
-    padding: 0;
+    margin: 2.5px;
+    padding: 1.5px;
     }
 h1 + ul > li {
     display: inline;
@@ -119,7 +127,7 @@ h1 + ul + p {
 <body>
 <div id="resume">
 <!-- The (first) h1 will be used as the <title> of the HTML page -->
-<h1>Abenezer Mamo</h1>
+<h1>Abenezer M. Mamo</h1>
 <!-- The unordered list immediately after the h1 will be formatted on a single
 line. It is intended to be used for contact details -->
 <ul>
@@ -132,65 +140,52 @@ line. It is intended to be used for contact details -->
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
 
-<h2>Experience</h2>
+<h2>EXPERIENCE</h2>
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
 <h3><span>Software Engineer, Klaviyo</span> <span>May 2022 – Present</span></h3>
 <p>Built various features necessary to ensure messages sent by clients get sent through the right platform &amp; Carter while also making sure the messages are delivered via the right device with an eye towards compliance &amp; also laying the foundation of scaling mobile @ Klaviyo.</p>
 <ul>
-<li>
-<p>Integrate a third party CDN into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6%</p>
-</li>
-<li>
-<p>Worked with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing application (with an emphasis on backend development) while also focusing on internal tooling, such as poppy — a python CLI to simplify sampling, wrangling, transforming, and cleaning data out of production and into local databases — and improve team velocity</p>
-</li>
-<li>
-<p>Designed &amp; developed various APIs &amp; features using the Django web framework and React such as <strong><em>_, </em></strong><em>, and <strong><em>_ to improve SMS delivery pipeline accuracy by </em></strong></em> &amp; stability by <strong><em> (measured by </em></strong>) to enable clients form long lasting relationships through highly targeted SMS messages based on transactional and behavioral data.</p>
-</li>
-<li>
-<p>Integrate Klaviyo’s mobile application platform with third party SMS APIs such as Twilio and SendGrid
-Debug, troubleshoot, and fix various operational issues that come up during pager duty with SMS delivery pipelines and document various approaches in the process for progeny</p>
-</li>
+<li>Integrate a third party CDN into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6%</li>
+<li>Worked with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing application (with an emphasis on backend development)</li>
+<li>internal tooling, such as poppy — a python CLI to simplify sampling, wrangling, transforming, and cleaning data out of production and into local databases — and improve team velocity</li>
+<li>Integrate Klaviyo’s mobile application platform with third party SMS APIs such as Twilio and SendGrid
+Debug, troubleshoot, and fix various operational issues that come up during pager duty with SMS delivery pipelines and document various approaches in the process for progeny</li>
 </ul>
 <h3><span>Software Engineer, ForAllSecure</span> <span>Mar 2021 – May 2022 </span></h3>
-<p>Designed, built, and maintained various services and features necessary to bring Mayhem—a fully autonomous cybersecurity system—to market.</p>
+<p>Worked independently and as part of short-term &amp; rapidly evolving teams to design, buid, and maintain various services and features such as GitHub OAuth, Markdown Badges necessary to bring Mayhem—a fully autonomous cybersecurity system—to market and aimed at enabling users easily integrate Mayhem into their existing CI/CD pipelines and reducing customer onboarding times.</p>
 <ul>
-<li>
-<p>Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
-Built a reporting dashboard using Postgres, SQLAlchemy &amp; React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform</p>
-</li>
-<li>
-<p>Worked independently and as part of short-term &amp; rapidly evolving teams to add various interface (Core Library/UI/API/CLI) features such as GitHub OAuth aimed at enabling users to easily integrate Mayhem into their existing CI/CD pipelines (Jenkins, GitLab, GitHub) and reducing customer onboarding times</p>
-</li>
-<li>
-<p>Continuously &amp; actively improved internal testing infrastructure using pytest fixtures to increase reusability &amp; test coverage by 8%</p>
-</li>
-<li>
-<p>Refactored database garbage collector queries to minimize the number of test cases stored in database &amp; provide faster test suite download and regression testing times for customers</p>
-</li>
+<li>Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
+Built a reporting dashboard using Postgres, SQLAlchemy &amp; React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform</li>
+<li>Continuously &amp; actively improved internal testing infrastructure using pytest fixtures to increase reusability &amp; test coverage by 8%</li>
+<li>Refactored database garbage collector queries to minimize the number of test cases stored in database &amp; provide faster test suite download and regression testing times for customers</li>
 </ul>
 <h3><span>Junior Backend Engineer, Pivony</span> <span>May 2020 – Oct 2020 </span></h3>
 <p>Architected a distributed AWS native topic modeling platform to efficiently process and summarize textual data, identify trends such as sentiment, common complaints, influential documents, most frequent keywords, and deliver actionable insights.</p>
 <ul>
-<li>
-<p>Built a preprocessing micro service using SQLAlchemy, Docker, and Dask to provide multilingual sentiment analysis, text tokenization, &amp; keyword extraction; optimized the service using multithreading resulting in a 55% decrease in billable EC2 instance hours</p>
-</li>
-<li>
-<p>Created an AWS resource orchestrator using boto3, SQLAlchemy, and Postgres to optimize resource allocation and eliminate idle EC2 instances</p>
-</li>
-<li>
-<p>Researched and developed a topic modeling engine utilizing BERT and various unsupervised algorithms such as LDA &amp; GSDMM to cluster text into human readable topics at scale</p>
-</li>
-<li>
-<p>Designed and implemented a RESTful API to provide a universal gateway to various micro services using nginx, Flask, SQLAlchemy, and AWS RDS</p>
-</li>
+<li>Built a preprocessing micro service using SQLAlchemy, Docker, and Dask to provide multilingual sentiment analysis, text tokenization, &amp; keyword extraction; optimized the service using multithreading resulting in a 55% decrease in billable EC2 instance hours</li>
+<li>Created an AWS resource orchestrator using boto3, SQLAlchemy, and Postgres to optimize resource allocation and eliminate idle EC2 instances</li>
+<li>Researched and developed a topic modeling engine utilizing BERT and various unsupervised algorithms such as LDA &amp; GSDMM to cluster text into human readable topics at scale</li>
+<li>Designed and implemented a RESTful API to provide a universal gateway to various micro services using nginx, Flask, SQLAlchemy, and AWS RDS</li>
 </ul>
-<h2>Education</h2>
+<h2>EDUCATION</h2>
 <h3><span>Reed College, BA Computer Science</span> <span>Aug 2015 – Jan 2020</span></h3>
 <ul>
-<li>Portland, OR</li>
 <li>Thesis : Scalable Learning for the Odd-Man-Out Task with Applications to Word Vector Induction</li>
 </ul>
-<h3><span>Study Abroad, Informatics</span> <span>Sep 2017 – Jun 2018</span></h3></div>
+<h3><span>Study Abroad, Informatics</span> <span>Sep 2017 – Jun 2018</span></h3>
+<h2>PROJECTS</h2>
+<h3><span>mok</span> <span>2020 – Present</span></h3>
+<ul>
+<li>A pseudo-random CSV, JSON, Parquet, XLSX file generator package written in Python</li>
+</ul>
+<h3><span>flask_rl</span> <span>2020 – Present</span></h3>
+<ul>
+<li>An open source Flask extension to perform sliding window rate limiting based on request IP address</li>
+</ul>
+<h3><span>jval</span> <span>2020 – Present</span></h3>
+<ul>
+<li>An open source Python package to perform type / value validation on JSON documents</li>
+</ul></div>
 </body>
 </html>

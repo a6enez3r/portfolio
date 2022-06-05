@@ -1,10 +1,8 @@
 """
     data.py: contains all info for rendering
 """
-# general
-USER_NAME = "abenezer m. mamo"
 # social links
-social_links = [
+links = [
     {
         "name": "github",
         "link": "https://github.com/a6enez3r",
@@ -25,9 +23,14 @@ social_links = [
         "link": "https://calendly.com/a6enez3r",
         "class": "fa fa-calendar",
     },
+    {
+        "name": "mail",
+        "link": "mailto:hi@abenezer.sh",
+        "class": "fa fa-envelope-o",
+    },
 ]
 # work
-work_data = [
+experience = [
     {
         "title": "Software Engineer",
         "company": "ForAllSecure",
@@ -103,46 +106,7 @@ work_data = [
     },
 ]
 # about
-about_data = {
-    # pylint: disable=line-too-long
-    "text": """
-                I am a full-stack developer with a strong background in API design & development, microservices, databases, cloud-native & serverless computing, NLP/ML.
-            """,
-    "projects": [
-        {
-            "title": "teret",
-            "link": "https://github.com/a6enez3r/teret",
-            # pylint: disable=line-too-long
-            "summary": "blogging application with a WYSIWYG editor built using Flask + SummernoteJS + SQLite (or any other relational database supported by SQLAlchemy)",
-        },
-        {
-            "title": "tunez",
-            "link": "https://github.com/a6enez3r/tunez",
-            # pylint: disable=line-too-long
-            "summary": "web music player built using Flask + HowlerJS + SQLite/SQLAlchemy",
-        },
-        {
-            "title": "mok",
-            "link": "https://github.com/a6enez3r/mok",
-            # pylint: disable=line-too-long
-            "summary": "generate data files. currently supports: JSON, CSV, Parquet, and XLSX",
-        },
-        {
-            "title": "flask_rl",
-            "link": "https://github.com/a6enez3r/flask_rl",
-            # pylint: disable=line-too-long
-            "summary": "rate limiting flask extension",
-        },
-        {
-            "title": "jval",
-            "link": "https://github.com/a6enezer/flask_rl",
-            "summary": "validate JSON data against a schema",
-        },
-        {
-            "title": "mkd",
-            "link": "https://github.com/a6enez3r/mkd",
-            # pylint: disable=line-too-long
-            "summary": "collection of commands to simplify running common Docker containers",
-        },
-    ],
-}
+# pylint: disable=line-too-long
+aboutme = """
+    full-stack developer with backgrounds in API design & development, microservices, databases, cloud-native, & serverless computing, NLP/ML, & fuzzing.
+"""

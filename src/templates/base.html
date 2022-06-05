@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> {{ USER_NAME }} </title>
+  <title> {{ name }} </title>
   <!-- static files -->
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
@@ -19,16 +19,16 @@
   <!-- nav -->
   <nav>
     <div class="nav-wrapper white">
-      <a href="{{ url_for('pages_bp.work') }}" class="brand-logo left hide-on-med-and-down">{{ USER_NAME }}</a>
+      <a href="{{ url_for('pages_bp.work') }}" class="brand-logo left hide-on-med-and-down">{{ name }}</a>
       <a href="#" data-target="mySidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li class="nav-link"><a href="{{ url_for('pages_bp.work') }}">work</a></li>
         <li class="nav-link"><a href="{{ url_for('pages_bp.about')}}">about</a></li>
         <li class="nav-link"><a href="{{ url_for('pages_bp.resume')}}" target="_blank">resume</a></li>
         <li class="nav-link"><a href="https://teret.abenezer.sh" target="_blank">blog</a></li>
-        {% for social_link in social_links%}
-        <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i
-              class="{{ social_link['class'] }}"></i></a></li>
+        {% for link in links%}
+        <li class="nav-icon"><a href="{{ link['link'] }}" target="_blank"><i
+              class="{{ link['class'] }}"></i></a></li>
         {% endfor %}
       </ul>
     </div>
@@ -39,9 +39,9 @@
     <li class="nav-link"><a href="{{ url_for('pages_bp.about')}}">about</a></li>
     <li class="nav-link"><a href="{{ url_for('pages_bp.resume')}}" target="_blank">resume</a></li>
     <li class="nav-link"><a href="https://teret.abenezer.sh" target="_blank">blog</a></li>
-    {% for social_link in social_links%}
-    <li class="nav-icon"><a href="{{ social_link['link'] }}" target="_blank"><i
-        style="padding-left: 107.5px;" class="{{ social_link['class'] }}"></i></a></li>
+    {% for link in links%}
+    <li class="nav-icon"><a href="{{ link['link'] }}" target="_blank"><i
+        style="padding-left: 107.5px;" class="{{ link['class'] }}"></i></a></li>
     {% endfor %}
   </ul>
   <!-- content -->

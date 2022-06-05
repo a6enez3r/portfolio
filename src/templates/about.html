@@ -8,7 +8,7 @@
         </div>
         <div class="row no-padding-bottom">
           <div class="col s12 m12 l12 card-summary">
-            <p>{{ about_data["text"]}}</p>
+            <p>{{ aboutme }}</p>
           </div>
           <div class="col s12 m12 l12 card-summary">
             <ul class="collapsible">
@@ -17,15 +17,57 @@
                   <i class="material-icons">sort</i><span class="card-subheader">projects</span>
                 </div>
                 <div class="collapsible-body">
-                  {% for my_project in about_data["projects"] %}
+                  {% for project in projects %}
                   <div class="row no-padding-bottom">
                     <div class="col s12 m12 l6">
-                      <a href="{{ my_project['link'] }}" target="_blank">
-                        {{ my_project["title"] }}
+                      <a href="{{ project['link'] }}" target="_blank">
+                        {{ project["name"] }}
                       </a>
                     </div>
-                    <div class="col s12 m12 l6">{{ my_project["summary"] }}</div>
+                    <div class="col s12 m12 l6">{{ project["description"] }}</div>
                   </div>
+                  <div class="row">
+                    <div class="col s12 m12 l6">
+                      commits
+                    </div>
+                    <div class="col s12 m12 l6">
+                      <span class="new badge black white-text" data-badge-caption="commits">{{ project["commits"] }}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 m12 l3">
+                      tools
+                    </div>
+                    <div class="col s12 m12 l9">
+                      <div class="row">
+                      {% for language in project["languages"] %}
+                        <div class="col s12 m12 l6"><span class="new badge black white-text" data-badge-caption="{{ language }}"></span></div>
+                      {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 m12 l3">
+                      topics
+                    </div>
+                    <div class="col s12 m12 l9">
+                      <div class="row">
+                      {% for topic in project["topics"] %}
+                        <div class="col s12 m12 l6"><span class="new badge black white-text" data-badge-caption="{{ topic }}"></span></div>
+                      {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col s12 m12 l6">
+                        <span class="new badge green darken-4 white-text" data-badge-caption="started">{{ project["created"] }}</span>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <span class="new badge blue darken-4 white-text" data-badge-caption="last updated">{{ project["updated"] }}</span>
+                    </div>
+                  </div>
+                  <hr />
                   {% endfor %}
                 </div>
               </li>

@@ -36,6 +36,7 @@ def github_projects(pat: str, username: str):
                     "commits": repo.get_commits().totalCount,
                     "topics": repo.get_topics(),
                     "languages": languages,
+                    "description": repo.description,
                 }
                 repos.append(repo)
     return repos

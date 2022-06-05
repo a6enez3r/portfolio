@@ -170,6 +170,11 @@ nav {
   border-bottom: 1px solid #EEB21B;
 }
 
+.badge {
+  line-height: 1.6;
+  font-size: 9 !important;
+}
+
 .collapsible-body a:hover {
   color: #ffffff !important;
   background: #EEB21B !important;

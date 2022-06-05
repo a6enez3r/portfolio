@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 body {
     color: #000000;
     background: #EEEEEE;
-    font: 1.1em "Times New Roman";
+    font-family: "Poppins", monospace;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.25em !important;
+    padding: 0 0 1em 0 !important;
+    font-size: 11px !important;
     line-height: 1.2;
     margin: 40px 0;
 }
@@ -19,6 +26,7 @@ h1 {
     text-align: center;
     font-size: 200%;
     margin: 0;
+    margin-bottom: 10px !important;
     padding: 0;
 }
 h2 {
@@ -46,8 +54,8 @@ ul {
 /* ul immediately after h1 = contact list */
 h1 + ul {
     text-align: center;
-    margin: 0;
-    padding: 0;
+    margin: 2.5px;
+    padding: 1.5px;
     }
 h1 + ul > li {
     display: inline;
@@ -94,7 +102,7 @@ h1 + ul + p {
 }
 @media screen and (max-width: 800px) {
     body {
-        font-size: 16pt;
+        font-size: 11pt;
         margin: 0;
         padding: 0;
         background: #FFFFFF !important;

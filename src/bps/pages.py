@@ -8,7 +8,8 @@ import os
 from flask import Blueprint, render_template, send_from_directory, current_app
 
 # data
-from src.data import work_data, about_data, social_links, USER_NAME
+from src.data import experience, aboutme, links
+from src.gh import github_projects
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
@@ -23,9 +24,9 @@ def work():
     return (
         render_template(
             "work.html",
-            USER_NAME=USER_NAME,
-            work_data=work_data,
-            social_links=social_links,
+            name=current_app.config["PORTFOLIO_USERNAME"],
+            experience=experience,
+            links=links,
         ),
         200,
     )
@@ -40,9 +41,12 @@ def about():
     return (
         render_template(
             "about.html",
-            USER_NAME=USER_NAME,
-            about_data=about_data,
-            social_links=social_links,
+            name=current_app.config["PORTFOLIO_USERNAME"],
+            aboutme=aboutme,
+            projects=github_projects(
+                pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"]
+            ),
+            links=links,
         ),
         200,
     )
@@ -56,5 +60,5 @@ def resume():
     """
     # send resume file
     return send_from_directory(
-        os.path.join(current_app.root_path, "static"), "resume.pdf"
+        os.path.join(current_app.root_path, "static"), "resume/resume.pdf"
     )
