@@ -33,8 +33,32 @@ links = [
 experience = [
     {
         "title": "Software Engineer",
+        "company": "Klaviyo",
+        "duration": "May, 2022 - Present",
+        # pylint: disable=line-too-long
+        "summary": """designing, building, and maintaining various services and features necessary to bring Mayhem, a fully autonomous cybersecurity system, to market.""",
+        "projects": [
+            "Reporting Dashboard",
+            "Mayhem for CI/CD",
+        ],
+        "tools": [
+            "GKE",
+            "python",
+            "react",
+            "typescript",
+            "kubernetes",
+            "docker",
+            "flask",
+            "bash",
+            "PostgreSQL",
+            "git",
+            "selenium",
+        ],
+    },
+    {
+        "title": "Software Engineer",
         "company": "ForAllSecure",
-        "duration": "Mar, 2021 - Present",
+        "duration": "Mar, 2021 - May, 2022",
         # pylint: disable=line-too-long
         "summary": """designing, building, and maintaining various services and features necessary to bring Mayhem, a fully autonomous cybersecurity system, to market.""",
         "projects": [

@@ -1,10 +1,48 @@
 """
     gh.py: autoamtially generate project info from GitHub
 """
+from functools import lru_cache
 import requests
 from github import Github
 
+from functools import lru_cache, wraps
+from datetime import datetime, timedelta
 
+
+def timed_lru_cache(seconds: int, maxsize: int = None):
+    """
+    timed lru cache decorator that takes a seconds arg
+    in addition to a maxsize arg
+
+    params:
+
+    :param seconds (int): expiration window in secondds
+    :param maxsize (int): cache size
+    """
+
+    def wrapper_cache(func):
+        """timed cache implementation"""
+        # using lru_cache
+        func = lru_cache(maxsize=maxsize)(func)
+        # set lifetime
+        func.lifetime = timedelta(seconds=seconds)
+        # set expiration
+        func.expiration = datetime.utcnow() + func.lifetime
+
+        @wraps(func)
+        def wrapped_func(*args, **kwargs):
+            # check expiration
+            if datetime.utcnow() >= func.expiration:
+                func.cache_clear()
+                func.expiration = datetime.utcnow() + func.lifetime
+            return func(*args, **kwargs)
+
+        return wrapped_func
+
+    return wrapper_cache
+
+
+@timed_lru_cache(3600)
 def github_projects(pat: str, username: str):
     """
     automatically pull project info from GitHub using

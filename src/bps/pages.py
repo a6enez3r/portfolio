@@ -38,14 +38,15 @@ def about():
     """
     render about page
     """
+    projects = github_projects(
+        pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"]
+    )
     return (
         render_template(
             "about.html",
             name=current_app.config["PORTFOLIO_USERNAME"],
             aboutme=aboutme,
-            projects=github_projects(
-                pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"]
-            ),
+            projects=projects,
             links=links,
         ),
         200,
