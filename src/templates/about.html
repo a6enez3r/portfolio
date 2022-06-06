@@ -27,14 +27,6 @@
                     <div class="col s12 m12 l6">{{ project["description"] }}</div>
                   </div>
                   <div class="row">
-                    <div class="col s12 m12 l6">
-                      commits
-                    </div>
-                    <div class="col s12 m12 l6">
-                      <span class="new badge black-text" data-badge-caption="commits">{{ project["commits"] }}</span>
-                    </div>
-                  </div>
-                  <div class="row">
                     <div class="col s12 m12 l3">
                       tools
                     </div>
@@ -60,11 +52,14 @@
                   </div>
                   <hr />
                   <div class="row">
-                    <div class="col s12 m12 l6">
-                        <span class="new badge green darken-4 white-text" data-badge-caption="started">{{ project["created"] }}</span>
+                    <div class="col s12 m12 l4">
+                      <span class="new badge black-text" data-badge-caption="commits">{{ project["commits"] }}</span>
                     </div>
-                    <div class="col s12 m12 l6">
-                        <span class="new badge blue darken-4 white-text" data-badge-caption="last updated">{{ project["updated"] }}</span>
+                    <div class="col s12 m12 l4">
+                        <span class="new badge badge black-text" data-badge-caption="started">{{ project["created"] }}</span>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <span class="new badge badge black-text" data-badge-caption="updated">{{ project["updated"] }}</span>
                     </div>
                   </div>
                   <hr />

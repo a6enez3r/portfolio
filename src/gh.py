@@ -1,12 +1,11 @@
 """
     gh.py: autoamtially generate project info from GitHub
 """
-from functools import lru_cache
-import requests
-from github import Github
-
 from functools import lru_cache, wraps
 from datetime import datetime, timedelta
+
+import requests
+from github import Github
 
 
 def timed_lru_cache(seconds: int, maxsize: int = None):
@@ -69,8 +68,8 @@ def github_projects(pat: str, username: str):
                     languages = list(resp.json().keys())
                 repo = {
                     "name": repo.name,
-                    "created": repo.created_at,
-                    "updated": repo.updated_at,
+                    "created": repo.created_at.strftime("%m-%d-%Y"),
+                    "updated": repo.updated_at.strftime("%m-%d-%Y"),
                     "commits": repo.get_commits().totalCount,
                     "topics": repo.get_topics(),
                     "languages": languages,

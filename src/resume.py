@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+    resume.py: autoamtially generate resume PDF from resume.md
+"""
+# pylint: skip-file
 import argparse
 import base64
 import itertools

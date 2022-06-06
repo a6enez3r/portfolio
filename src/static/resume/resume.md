@@ -12,6 +12,10 @@ line. It is intended to be used for contact details -->
 is intended to be used for a short summary. -->
 full-stack developer with a strong background in API design & development, micro-services, databases, cloud-native & server-less computing, NLP/ML
 
+## TECHNICAL SKILLS
+
+- **Languages + Frameworks**: Python, Go, Haskell, JavaScript, Flask, Gin, React, Celery, SQLAlchemy
+- **Infra + Ops**: AWS, GCP, Azure, Postgres, MongoDB, Redis, Docker, Kubernetes, Linux, Git, Jira, Hive
 
 ## EXPERIENCE
 
@@ -29,7 +33,7 @@ Debug, troubleshoot, and fix various operational issues that come up during page
 
 ### <span>Software Engineer, ForAllSecure </span> <span>2021 – 2022 </span>
 
-Worked independently and as part of short-term & rapidly evolving teams to design, buid, and maintain various services and features such as GitHub OAuth, Markdown Badges necessary to bring Mayhem—a fully autonomous cybersecurity system—to market and aimed at enabling users easily integrate Mayhem into their existing CI/CD pipelines and reducing customer onboarding times.
+Worked independently and as part of short-term & rapidly evolving teams to design, buid, and maintain various services such as GitHub OAuth, Mayhem Badges necessary to bring Mayhem—a fully autonomous cybersecurity system—to market and aimed at enabling users easily integrate Mayhem into their existing CI/CD pipelines and reducing customer onboarding times.
 
  - Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
 Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform
@@ -63,10 +67,6 @@ Architected a distributed AWS native topic modeling platform to efficiently proc
 ### <span>flask_rl</span> <span>2021 – Present</span>
 
   - An open source Flask extension to perform sliding window rate limiting based on request IP address
-
-### <span>jval    </span> <span>2020 – Present</span>
-
-  - An open source Python package to perform type / value validation on JSON documents
 
 
 
