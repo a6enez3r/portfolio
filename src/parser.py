@@ -54,11 +54,8 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
     exepriences = []
     for item in soup.select("#resume > h3")[:3]:
         raw = [x.strip() for x in item.get_text().split("  ") if x != ""]
-        position, company, duration = (
-            raw[0].split(",")[0].strip(),
-            raw[0].split(",")[1].strip(),
-            raw[1].strip(),
-        )
+        position_company, duration = raw
+        position, company = position_company.split(",")
         exepriences.append(
             {
                 "company": company,
@@ -72,6 +69,6 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
 
 
 # UNCOMMENT: the following two lines to debug the parser
-#            by running python3 src/parser.py
+# #            by running python3 src/parser.py
 # from pprint import pprint
 # pprint(resume_content("./src/static/resume/resume.html"))

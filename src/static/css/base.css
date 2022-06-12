@@ -129,7 +129,8 @@ nav {
 }
 
 
-.card-company {
+.card-company,
+.card-time {
   margin-left: 0.5em !important;
 }
 

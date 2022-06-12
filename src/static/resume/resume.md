@@ -1,5 +1,5 @@
 <!-- The (first) h1 will be used as the <title> of the HTML page -->
-# Abenezer M. Mamo
+# Abenezer Mamo
 
 <!-- The unordered list immediately after the h1 will be formatted on a single
 line. It is intended to be used for contact details -->
@@ -10,7 +10,7 @@ line. It is intended to be used for contact details -->
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
-full-stack developer with a strong background in API design & development, micro-services, databases, cloud-native & server-less computing, NLP/ML
+full-stack developer with backgrounds in API design & development, micro-services, databases, fuzzing, cloud-native & server-less computing, NLP/ML
 
 ## TECHNICAL SKILLS
 
@@ -21,15 +21,16 @@ full-stack developer with a strong background in API design & development, micro
 
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
-### <span>Software Engineer, Klaviyo      </span> <span>2022 – Present</span>
+### <span>Software Engineer, Klaviyo </span> <span>2022 – Present</span>
 
-Built various features necessary to ensure messages sent by clients get sent through the right platform & Carter while also making sure the messages are delivered via the right device with an eye towards compliance & also laying the foundation of scaling mobile @ Klaviyo.
+Building various features necessary to ensure messages sent by clients get sent through the right platform and
+are delivered via the right channel with an emphasis on internal and customer delivery enablement & laying the foundations for scaling mobile @ Klaviyo.
 
- - Integrate a third party CDN into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6%
- - Worked with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing application (with an emphasis on backend development)
- -  internal tooling, such as poppy — a python CLI to simplify sampling, wrangling, transforming, and cleaning data out of production and into local databases — and improve team velocity
- - Integrate Klaviyo’s mobile application platform with third party SMS APIs such as Twilio and SendGrid
-Debug, troubleshoot, and fix various operational issues that come up during pager duty with SMS delivery pipelines and document various approaches in the process for progeny
+ - Built an internal & easily cuztomizable report generator using Django & MySQL
+ - Working on internal tooling such as poppy - a python CLI to simplify sampling, wrangling, tranforming, and cleaning data out of production and into local databass, and covme, a Slack Bot to automatically generate pytest coverage report based on CODEOWNERS.
+ - Integrating a third-party CDN (Fastly) into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6 - 8 %
+ - Working with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing mobile application (with an emphasis on customer enablement)
+ - Debugging, troubleshooting, and fixing various operational issues that come up during pager duty
 
 ### <span>Software Engineer, ForAllSecure </span> <span>2021 – 2022 </span>
 
@@ -44,7 +45,6 @@ Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to pro
 
 Architected a distributed AWS native topic modeling platform to efficiently process and summarize textual data, identify trends such as sentiment, common complaints, influential documents, most frequent keywords, and deliver actionable insights.
 
-
  - Built a preprocessing micro service using SQLAlchemy, Docker, and Dask to provide multilingual sentiment analysis, text tokenization, & keyword extraction; optimized the service using multithreading resulting in a 55% decrease in billable EC2 instance hours
  - Created an AWS resource orchestrator using boto3, SQLAlchemy, and Postgres to optimize resource allocation and eliminate idle EC2 instances
  - Researched and developed a topic modeling engine utilizing BERT and various unsupervised algorithms such as LDA & GSDMM to cluster text into human readable topics at scale
@@ -52,17 +52,17 @@ Architected a distributed AWS native topic modeling platform to efficiently proc
 
 ## EDUCATION
 
-### <span>Reed College, BA Computer Science</span> <span>2015 – 2020</span>
+### <span>Computer Science, BA, Reed College</span> <span>2015 – 2020</span>
 
-  - Thesis : Scalable Learning for the Odd-Man-Out Task with Applications to Word Vector Induction
+  - **Thesis** : Scalable Learning for the Odd-Man-Out Task with Applications to Word Vector Induction
 
-### <span>Study Abroad, Informatics        </span> <span>2017 – 2018</span>
+### <span>Study Abroad, Informatics</span> <span>2017 – 2018</span>
 
 ## PROJECTS
 
-### <span>mok     </span> <span>2020 – Present</span>
+### <span>mok</span> <span>2020 – Present</span>
 
-  - A pseudo-random CSV, JSON, Parquet, XLSX file generator package written in Python
+  - A pseudo-random data file [CSV, JSON, Parquet, XLSX] generator package written in Python
 
 ### <span>flask_rl</span> <span>2021 – Present</span>
 

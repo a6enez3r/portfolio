@@ -55,6 +55,7 @@ h1 + ul {
     text-align: center;
     margin: 2.5px;
     padding: 1.5px;
+    border-bottom: 2px solid #000000;
     }
 h1 + ul > li {
     display: inline;
