@@ -74,6 +74,7 @@ def github_projects(pat: str, username: str):
                     "topics": repo.get_topics(),
                     "languages": languages,
                     "description": repo.description,
+                    "link": repo.html_url,
                 }
                 repos.append(repo)
     return repos
