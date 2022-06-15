@@ -34,7 +34,7 @@ are delivered via the right channel with an emphasis on internal and customer de
 
 ### <span>Software Engineer, ForAllSecure </span> <span>2021 – 2022 </span>
 
-Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipeliens and shortening customer onboarding journeys.  
+Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipelines and shortening customer onboarding journeys.  
 
  - Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
 Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform
