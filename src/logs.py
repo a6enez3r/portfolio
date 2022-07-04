@@ -16,7 +16,7 @@ class SlackerLogHandler(logging.Handler):
         super().__init__()
         self.webhook_url = webhook_url
 
-    def slack_message(self, webhook_url, title, value):  # pylint: disable=no-self-use
+    def slack_message(self, webhook_url, title, value):
         """
         send message to slack channel (using incoming webhooks)
 
