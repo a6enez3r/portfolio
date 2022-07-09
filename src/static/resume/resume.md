@@ -10,12 +10,12 @@ line. It is intended to be used for contact details -->
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
-full-stack developer with backgrounds in API design & development, micro-services, databases, fuzzing, cloud-native & server-less computing, NLP/ML
+full-stack developer with backgrounds in API / UI design & development, micro-services, databases, fuzzing, NLP/ML, and cloud-native & server-less multi-tenant computing systems
 
 ## TECHNICAL SKILLS
 
-- **Languages + Frameworks**: Python, Go, Haskell, JavaScript, Flask, Gin, React, Celery, SQLAlchemy
-- **Infra + Ops**: AWS, GCP, Azure, Postgres, MongoDB, Redis, Docker, Kubernetes, Linux, Git, Jira, Hive
+- **Languages + Frameworks**: Python, Go, Haskell, JavaScript, Flask, Gin, React, Celery, SQLAlchemy, Django
+- **Infra + Ops**: AWS, GCP, Azure, Postgres, MongoDB, Redis, Docker, Kubernetes, Linux, Git, Jira, Hive, RabbitMQ, Pulsar
 
 ## EXPERIENCE
 
@@ -23,18 +23,17 @@ full-stack developer with backgrounds in API design & development, micro-service
 hand -->
 ### <span>Software Engineer, Klaviyo </span> <span>2022 – Present</span>
 
-Building various features necessary to ensure messages sent by clients get sent through the right platform and
-are delivered via the right channel with an emphasis on internal and customer delivery enablement & laying the foundations for scaling mobile @ Klaviyo.
+Building various features necessary to ensure messages sent by clients get sent through the right channel and are delivered via the right platform, with an emphasis on internal and external delivery enablement. In addition, collaborating radically to contribute to various projects aimed at providing a scalable and high performance sending experience both on the front and backend using tools such as React, Django, RabbitMQ, and Redis.
 
- - Built an internal & easily cuztomizable report generator using Django & MySQL
- - Working on internal tooling such as poppy - a python CLI to simplify sampling, wrangling, tranforming, and cleaning data out of production and into local databass, and covme, a Slack Bot to automatically generate pytest coverage report based on CODEOWNERS.
- - Integrating a third-party CDN (Fastly) into the mobile delivery pipeline to optimize virtual contact file fetch / load times from AWS S3 by 6 - 8 %
- - Working with a team of 7 engineers and various other stakeholders across the company to build and manage Klaviyo’s customer facing mobile application (with an emphasis on customer enablement)
+ - Working in a team and various stakeholders across the company to build and manage Klaviyo’s customer facing SMS service (with an emphasis on delivery enablement)
+ - Learning about the full software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production
+ - Building an internal & easily cuztomizable account information report generator & visualizer using vaex, React, Django & MySQL
+ - Working on internal tooling such as docd - a python CLI that leverages ASTs to autogenerate documentation / docstrings placeholders to increase internal code readability
  - Debugging, troubleshooting, and fixing various operational issues that come up during pager duty
 
-### <span>Software Engineer, ForAllSecure </span> <span>2021 – 2022 </span>
+### <span>Software Engineer, ForAllSecure </span> <span>2021 – 2022</span>
 
-Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipelines and shortening customer onboarding journeys.  
+Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipelines and shortening customer onboarding journeys.
 
  - Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
 Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform
@@ -62,15 +61,9 @@ Architected a distributed AWS native topic modeling platform to efficiently proc
 
 ### <span>mok</span> <span>2020 – Present</span>
 
-  - A pseudo-random data file [CSV, JSON, Parquet, XLSX] generator package written in Python
+  - A pseudo-random data file [CSV, JSON, Parquet, XLSX, TXT] generator package written in Python
 
 ### <span>flask_rl</span> <span>2021 – Present</span>
 
   - An open source Flask extension to perform sliding window rate limiting based on request IP address
-
-
-
-
-
-
 
