@@ -25,7 +25,7 @@ hand -->
 
 Collaborating radically to contribute to various projects aimed at providing a scalable and performant sending experience necessary to ensure messages sent by clients get sent through the right channel and are delivered via the right platform at the right time, with an emphasis on internal and external delivery enablement.
 
-- Working with various stakeholders across the company to build and manage Klaviyo’s customer facing SMS service and learning about the full software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production at scale
+- Working with stakeholders across the company to build and manage Klaviyo’s SMS service and learning about the full software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production at scale
 - Maintaining a cuztomizable account information report generator & visualizer built using vaex, React, Django & MySQL to easily identify and decommision low volume SMS accounts & reduce costs associated with unused numbers
 - Working on internal tooling such as docd - a lightweight python CLI that leverages ASTs & integrates with pre-commit hooks to simplify autogenerating docstring placeholders & writing internal documentation and incrementally improve code readability in a large monolithic codebase
 - Debugging, troubleshooting, and fixing various operational issues and bugs that come up during pager duty
@@ -34,9 +34,10 @@ Collaborating radically to contribute to various projects aimed at providing a s
 
 Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipelines and shortening customer onboarding journeys.
 
+- Integrate third party APIs such as GitHub OAuth & Keycloak to simplify authentication & CI/CD workflows
 - Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
 - Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable insights and increase engagement with non-developer users of the Mayhem platform
-- Continuously & actively improved internal testing infrastructure using pytest fixtures to increase reusability & test coverage by 8%
+- Actively improved internal testing infrastructure using pytest fixtures to increase reusability & test coverage by 8%
 - Refactored database garbage collector queries to minimize the number of test cases stored in database without adversely affecting coverage to provide faster test suite download and regression testing times for customers
 
 ### <span>Junior Backend Engineer, Pivony </span> <span>2020 – 2020 </span>
