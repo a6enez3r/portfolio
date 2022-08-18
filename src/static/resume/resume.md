@@ -23,11 +23,11 @@ full-stack developer with backgrounds in API & UI development, microservices, da
 hand -->
 ### <span>Software Engineer - Mobile, Klaviyo </span> <span>2022 – Present</span>
 
-Collaborating radically to contribute to various projects aimed at providing a scalable and performant sending experience necessary to ensure messages sent by clients get sent through the right channel and are delivered via the right platform at the right time, with an emphasis on internal and external delivery enablement.
+Collaborating radically on various projects aimed at providing a scalable and performant sending experience, necessary to ensure messages sent by clients get sent through the right channel and are delivered via the right platform at the right time. Emphasis on internal and external delivery enablement.
 
 - Working with stakeholders across the company to build and manage Klaviyo’s SMS service and learning about the entire software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production at scale
 - Maintaining a customizable account information report generator & visualizer built using vaex, React, Django & MySQL to quickly identify and decommission low-volume SMS accounts & reduce costs associated with unused numbers
-- Working on internal tooling such as docd - a lightweight python CLI that leverages ASTs & integrates with pre-commit hooks to simplify autogenerating docstring placeholders & writing internal documentation and incrementally improve code readability in a sizeable monolithic codebase
+- Working on internal tooling such as docd - a lightweight python CLI that leverages ASTs and integrates with pre-commit hooks to simplify autogenerating docstring placeholders as well as writing internal documentation and incrementally improving code readability in a sizeable monolithic codebase.
 - Debugging, troubleshooting, and fixing various operational issues and bugs that come up during pager duty
 
 ### <span>Software Engineer - Platform, ForAllSecure </span> <span>2021 – 2022</span>
