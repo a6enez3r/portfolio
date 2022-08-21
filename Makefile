@@ -42,6 +42,10 @@ endif
 ifeq ($(topts),)
 topts := -vv
 endif
+# resume path
+ifeq ($(resume_path),)
+resume_path = $(CURDIR)/src/static/resume/resume.md
+endif
 
 .DEFAULT_GOAL := help
 TARGET_MAX_CHAR_NUM=20
@@ -224,4 +228,4 @@ init-env:
 
 ## generate resume HTML & PDF
 generate-resume:
-	@python3 src/resume.py $(CURDIR)/src/static/resume/resume.md
+	@python3 src/resume.py ${resume_path}
