@@ -169,6 +169,12 @@ nav {
   color: #000000 !important;
   line-height: 1.6;
   border-bottom: 1px solid #EEB21B;
+  border-top: 1px solid #EEB21B;
+}
+
+.card-badge {
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 .badge {
