@@ -47,7 +47,7 @@ Architected a distributed AWS native topic modeling platform to process and summ
 - Built a preprocessing microservice using SQLAlchemy, Docker, and Dask to provide multilingual sentiment analysis, text tokenization, & keyword extraction; optimized the service using multithreading, resulting in a 55% reduction in billable EC2 instance hours
 - Created an AWS resource orchestrator using boto3, SQLAlchemy, and Postgres to optimize resource allocation and eliminate idle EC2 instances
 - Researched and developed a topic modeling engine utilizing BERT and various unsupervised algorithms such as LDA & GSDMM to cluster text into human-readable topics at scale
-- Designed and implemented a RESTful API to provide a universal gateway to various microservices using Nginx, Flask, SQLAlchemy, and AWS RDS
+- Designed and implemented a RESTful API to provide a universal gateway to various microservices using nginx, Flask, SQLAlchemy, and AWS RDS
 
 ## EDUCATION
 
@@ -65,4 +65,4 @@ Architected a distributed AWS native topic modeling platform to process and summ
 
 ### <span>sirch</span> <span>June 2022 – Present</span>
 
-- Parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing libraries to generate a low-bandwidth searchable static site
+- parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing to generate a low-bandwidth search-enabled site
