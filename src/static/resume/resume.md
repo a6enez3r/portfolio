@@ -23,7 +23,7 @@ full-stack developer with backgrounds in API & UI development, microservices, da
 hand -->
 ### <span>Software Engineer - Mobile, Klaviyo </span> <span>May 2022 – Present</span>
 
-Collaborating radically on various projects aimed at providing a scalable and performant sending experience necessary to ensure messages sent by clients get sent through the right channel and delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
+Collaborating radically on various projects aimed at providing a scalable and performant sending experience necessary to ensure client messages get sent through the right channel and get delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
 
 - Working with stakeholders across the company to build and manage Klaviyo’s SMS service and learning about the entire software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production at scale
 - Maintaining a customizable account information report generator & visualizer built using vaex, React, Django & MySQL to quickly identify and decommission low-volume and noncompliant SMS accounts & reduce costs associated with unused numbers & content violation remediation fees
