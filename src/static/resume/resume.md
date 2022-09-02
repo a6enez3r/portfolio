@@ -25,10 +25,10 @@ hand -->
 
 Collaborating radically on various projects aimed at providing a scalable and performant sending experience necessary to ensure client messages get sent through the right channel and get delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
 
-- Working with stakeholders across the company to build and manage Klaviyo’s SMS service and learning about the entire software development lifecycle from problem definition to design, development, testing, demoing, and supporting features in production at scale
-- Maintaining a customizable account information report generator & visualizer built using vaex, React, Django & MySQL to quickly identify and decommission low-volume and noncompliant SMS accounts & reduce costs associated with unused numbers & content violation remediation fees
-- Working on internal tooling such as docd - a lightweight python CLI that leverages ASTs and integrates with pre-commit hooks to simplify autogenerating docstring placeholders as well as writing internal documentation and incrementally improving code readability in a sizeable monolithic codebase
-- Debugging, troubleshooting, and fixing various operational issues and bugs that come up during pager duty
+- Debugging, troubleshooting, and fixing various operational issues and bugs that come up during PagerDuty
+- Leveraged Grafana, Graphite, and statsd to develop monitoring and alerting to increase observability during peak traffic hours as well as get visibility into ongoing operational behaviors during cutovers to deliver a user experience with little to zero downtime
+- Maintaining a customizable account information report generator & visualizer built using dtale, Django & MySQL to quickly identify and decommission low-volume and noncompliant SMS accounts & reduce costs associated with unused numbers & content violation remediation
+- Working on internal tooling such as feel, a command line CSV filter built using clize, and docd, a lightweight and opinionated docstring generator to incrementally improve code readability in a sizeable monolithic codebase
 
 ### <span>Software Engineer - Platform, ForAllSecure </span> <span>March 2021 – May 2022</span>
 
