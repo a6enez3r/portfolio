@@ -54,7 +54,7 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
     for item in soup.select("#resume > h3")[:3]:
         raw = [x.strip() for x in item.get_text().split("  ") if x != ""]
         position_company, duration = raw
-        position, company = position_company.split(",")
+        position, company = position_company.split("@")
         exepriences.append(
             {
                 "company": company,
