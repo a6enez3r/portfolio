@@ -228,4 +228,4 @@ init-env:
 
 ## generate resume HTML & PDF
 generate-resume:
-	@python3 src/resume.py ${resume_path}
+	@python3 src/resume/generator.py ${resume_path}

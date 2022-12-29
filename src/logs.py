@@ -1,8 +1,9 @@
 """
     logs.py: contains function to configure & create loggers
 """
-import logging
 import json
+import logging
+
 import requests
 
 

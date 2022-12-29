@@ -6,7 +6,6 @@ line. It is intended to be used for contact details -->
 - [https://github.com/a6enez3r](https://github.com/a6enez3r)
 - [https://linkedin.com/in/a6enez3r](https://linkedin.com/in/a6enez3r)
 - [hi@abenezer.sh](mailto:hi@abenezer.sh)
-- [https://calendly.com/a6enez3r](https://calendly.com/a6enez3r)
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
@@ -14,7 +13,7 @@ full-stack developer with backgrounds in API & UI development, microservices, da
 
 ## SKILLS
 
-- **Languages + Frameworks**: Python, JavaScript/TypeScript, Go, Haskell, C++, SQLAlchemy, Flask, Django, React
+- **Languages + Frameworks**: Python, JavaScript/TypeScript, Go, Haskell, C++, C#, SQLAlchemy, Flask, Django, React
 - **Infra + Ops**: AWS, GCP, Azure, Postgres, MySQL, Mongo, Redis, RabbitMQ, Pulsar, Docker, Kubernetes, Linux, Terraform
 
 ## EXPERIENCE
@@ -23,7 +22,7 @@ full-stack developer with backgrounds in API & UI development, microservices, da
 hand -->
 ### <span>Software Engineer - Mobile, Klaviyo </span> <span>May 2022 – Present</span>
 
-Collaborating radically on various projects aimed at providing a scalable and performant sending experience necessary to ensure client messages get sent through the right channel and get delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
+Collaborating on various projects aimed at providing a scalable and performant sending experience necessary to ensure client messages get sent through the right channel and get delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
 
 - Debugging, troubleshooting, and fixing various operational issues and bugs that come up during PagerDuty
 - Leveraged Grafana, Graphite, and statsd to develop monitoring and alerting to increase observability during peak traffic hours as well as get visibility into ongoing operational behaviors during cutovers to deliver a user experience with little to zero downtime

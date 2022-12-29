@@ -1,15 +1,15 @@
 """
     factory.py: contains function to configure & create flask web app
 """
-import os
 import logging
+import os
 
 from flask import Flask, send_from_directory
 
-from src.logs import SlackerLogHandler
-from src.config import config_dict
 from src.bps import register_blueprints
+from src.config import config_dict
 from src.extensions import secure_headers
+from src.logs import SlackerLogHandler
 
 
 def init_logs(app):

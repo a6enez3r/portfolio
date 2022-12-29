@@ -26,7 +26,6 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
         "github.com": "fa fa-github-square",
         "linkedin.com": "fa fa-linkedin-square",
         "abenezer.sh": "fa fa-envelope-o",
-        "calendly.com": "fa fa-calendar",
     }
     for item in soup.select("#resume > ul:nth-child(2)"):
         raw = [link.strip() for link in item.get_text().split("\n") if link != ""]

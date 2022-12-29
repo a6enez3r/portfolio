@@ -10,9 +10,9 @@
         "production": ProductionConfig,
     }
 """
+import logging
 # built-in fs modules
 import os
-import logging
 import pathlib
 
 # env manager
@@ -34,12 +34,13 @@ class Config:  # pylint: disable=too-few-public-methods
 
     # base dir
     BASE_DIR = pathlib.Path(__file__).parent.parent.absolute()
-    PORTFOLIO_USERNAME = os.environ.get("PORTFOLIO_USERNAME", "")
+    PORTFOLIO_USERNAME = os.environ.get("PORTFOLIO_USERNAME", "abenezer")
     LOGFILE = os.environ.get("LOGFILE", os.path.join(BASE_DIR, "portfolio.log"))
     SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
     # [OPTIONAL] get project stats from GitHub
     GH_PAT = os.environ.get("GH_PAT", "")
-    GH_USERNAME = os.environ.get("GH_USERNAME", "")
+    GH_USERNAME = os.environ.get("GH_USERNAME", "a6enez3r")
+    GH_FILE = os.path.join(BASE_DIR, "src/static/github.json")
     # application threads
     THREADS_PER_PAGE = 2
     # protection agains Cross-site Request Forgery (CSRF)

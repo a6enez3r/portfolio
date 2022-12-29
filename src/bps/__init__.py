@@ -11,7 +11,6 @@ import structlog
 
 # error handlers
 from src.bps.errors import errors_bp
-
 # page handlers
 from src.bps.pages import pages_bp
 

@@ -5,11 +5,11 @@
 import os
 
 # flask
-from flask import Blueprint, render_template, send_from_directory, current_app
+from flask import Blueprint, current_app, render_template, send_from_directory
 
 # data
-from src.gh import github_projects
-from src.parser import resume_content
+from src.gh import github_content
+from src.resume.parser import resume_content
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
@@ -44,8 +44,8 @@ def about():
     content = resume_content(
         os.path.join(current_app.root_path, "static", "resume/resume.html")
     )
-    projects = github_projects(
-        pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"]
+    projects = github_content(
+        pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"], saved=current_app.config["GH_FILE"]
     )
     return (
         render_template(
