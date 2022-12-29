@@ -9,37 +9,39 @@ line. It is intended to be used for contact details -->
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
-full-stack developer with backgrounds in API & UI development, microservices, databases, fuzzing, NLP & ML, UX design & research, and cloud-native & bare-metal multi-tenant computing systems
+developer with backgrounds in API & UI development, microservices, databases, fuzzing, NLP & ML, event-driven programming, and cloud-native & bare-metal multi-tenant systems
 
 ## SKILLS
 
-- **Languages + Frameworks**: Python, JavaScript/TypeScript, Go, Haskell, C++, C#, SQLAlchemy, Flask, Django, React
+- **Languages + Frameworks**: Python, JavaScript, Go, Haskell, C++, SQLAlchemy, Flask, Django, React, Haxl, Jennifer
 - **Infra + Ops**: AWS, GCP, Azure, Postgres, MySQL, Mongo, Redis, RabbitMQ, Pulsar, Docker, Kubernetes, Linux, Terraform
 
 ## EXPERIENCE
 
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
-### <span>Software Engineer - Mobile, Klaviyo </span> <span>May 2022 – Present</span>
+### <span>Software Engineer - Mobile @ Klaviyo </span> <span>May 2022 – Present</span>
 
-Collaborating on various projects aimed at providing a scalable and performant sending experience necessary to ensure client messages get sent through the right channel and get delivered via the right platform at the right time -- emphasis on internal and external delivery enablement.
+Worked on various projects and features to provide a scalable and performant SMS-sending experience necessary to ensure client messages get sent through the right channel and delivered via the right platform at the right time.
 
-- Debugging, troubleshooting, and fixing various operational issues and bugs that come up during PagerDuty
-- Leveraged Grafana, Graphite, and statsd to develop monitoring and alerting to increase observability during peak traffic hours as well as get visibility into ongoing operational behaviors during cutovers to deliver a user experience with little to zero downtime
-- Maintaining a customizable account information report generator & visualizer built using dtale, Django & MySQL to quickly identify and decommission low-volume and noncompliant SMS accounts & reduce costs associated with unused numbers & content violation remediation
-- Working on internal tooling such as feel, a command line CSV filter built using clize, and docd, a lightweight and opinionated docstring generator to incrementally improve code readability in a sizeable monolithic codebase
+- Implement monitoring and alerting systems for various features like virtual contact card webhooks using Grafana, Graphite, and StatsD
+- Improve observability during high traffic periods and ensure uninterrupted service during cutovers and providing a seamless user experience with minimal downtime
+- Identifying and resolving operational issues and bugs during PagerDuty shifts
+- Maintain a customizable account information report generator & visualizer built using dtale, Django, & MySQL
+- Quickly identify and decommission low-volume and noncompliant SMS accounts & reduce operational costs associated with unused numbers & content violation remediation
+- Contribute to the development of an in-app bell notification feature using Django and React to proactively inform customers about canceled SMS campaigns
 
-### <span>Software Engineer - Platform, ForAllSecure </span> <span>March 2021 – May 2022</span>
+### <span>Software Engineer - Platform @ ForAllSecure </span> <span>March 2021 – May 2022</span>
 
 Worked independently and as part of short-term & rapidly evolving teams to bring Mayhem -- a fully autonomous cybersecurity system -- to market. Responsibilities included but were not limited to designing, building, and maintaining various services and features, such as GitHub OAuth and sharable badges, aimed at enabling easy integration into existing CI/CD pipelines and shortening customer onboarding journeys.
 
 - Integrate third-party APIs such as GitHub OAuth & Keycloak to simplify authentication in CI/CD workflows
-- Optimized queries associated with defect reporting endpoints to decrease page load times by 24%
+- Optimized queries associated with defect reporting endpoints to decrease page load times by 7.12%
 - Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable usage insights and increase engagement with non-developer users of the Mayhem platform
 - Actively improved internal testing infrastructure using pytest fixtures to increase reusability & test coverage by 8%
 - Refactored database garbage collector queries to minimize the number of test cases stored in a database without adversely affecting coverage to provide faster test suite download and regression testing times for customers
 
-### <span>Junior Backend Engineer, Pivony </span> <span>May 2020 – October 2020</span>
+### <span>Junior Engineer - Backend @ Pivony </span> <span>May 2020 – October 2020</span>
 
 Architected a distributed AWS native topic modeling platform to process and summarize textual data, identify trends such as sentiment, common complaints, influential documents, most frequent keywords, and deliver actionable insights.
 
@@ -58,10 +60,6 @@ Architected a distributed AWS native topic modeling platform to process and summ
 
 ## PROJECTS
 
-### <span>mok</span> <span>November 2020 – Present</span>
-
-- A pseudo-random data file [CSV, JSON, Parquet, XLSX, TXT] generator package written in Python
-
 ### <span>sirch</span> <span>June 2022 – Present</span>
 
-- parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing to generate a low-bandwidth search-enabled site
+- parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing to generate a low-bandwidth search-enabled static site
