@@ -45,7 +45,9 @@ def about():
         os.path.join(current_app.root_path, "static", "resume/resume.html")
     )
     projects = github_content(
-        pat=current_app.config["GH_PAT"], username=current_app.config["GH_USERNAME"], saved=current_app.config["GH_FILE"]
+        pat=current_app.config["GH_PAT"],
+        username=current_app.config["GH_USERNAME"],
+        saved=current_app.config["GH_FILE"],
     )
     return (
         render_template(
