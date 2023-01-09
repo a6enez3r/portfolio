@@ -54,7 +54,7 @@ def github_content(pat: str, username: str, saved: str = None):
     :param pat (str): github access token if none will return empty dict
     """
     if saved:
-        with open(saved, "rb") as github_file:
+        with open(saved, "r", encoding="utf8") as github_file:
             return json.load(github_file)
     repos = []
     if pat is not None:
@@ -86,6 +86,6 @@ def github_content(pat: str, username: str, saved: str = None):
                     "link": repo.html_url,
                 }
                 repos.append(repo)
-    with open(saved, "wb") as github_file:
+    with open(saved, "w", encoding="utf8") as github_file:
         json.dump(repos, github_file)
     return repos
