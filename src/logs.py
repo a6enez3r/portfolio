@@ -41,7 +41,9 @@ class SlackerLogHandler(logging.Handler):
             ]
         }
 
-        resp = requests.post(hook, data=json.dumps(payload), headers=headers)
+        resp = requests.post(
+            hook, data=json.dumps(payload), headers=headers, timeout=30
+        )
         print("Response: " + str(resp.status_code) + "," + str(resp.reason))
 
     def emit(self, record):

@@ -71,7 +71,7 @@ def github_content(pat: str, username: str, saved: str = None):
                 and not repo.fork
             ):
                 headers = {"Authorization": f"token {pat}"}
-                resp = requests.get(repo.languages_url, headers=headers)
+                resp = requests.get(repo.languages_url, headers=headers, timeout=30)
                 languages = []
                 if resp.status_code == 200:
                     languages = list(resp.json().keys())
