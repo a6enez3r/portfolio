@@ -1,4 +1,4 @@
-flask==2.2.2
+flask==2.2.3
 python-dotenv==0.21.1
 secure==0.3.0
 structlog==22.3.0
