@@ -1,10 +1,10 @@
 <!-- The (first) h1 will be used as the <title> of the HTML page -->
-# Abenezer Mamo
+# abenezer mamo
 
 <!-- The unordered list immediately after the h1 will be formatted on a single
 line. It is intended to be used for contact details -->
 - [https://github.com/a6enez3r](https://github.com/a6enez3r)
-- [https://linkedin.com/in/a6enez3r](https://linkedin.com/in/a6enez3r)
+- [https://www.linkedin.com/in/a6enez3r/](https://www.linkedin.com/in/a6enez3r/)
 - [hi@abenezer.sh](mailto:hi@abenezer.sh)
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
@@ -13,22 +13,19 @@ developer with backgrounds in API & UI development, microservices, databases, fu
 
 ## SKILLS
 
-- **Languages + Frameworks**: Python, JavaScript, Go, Haskell, C++, SQLAlchemy, Flask, Django, React, Haxl, Jennifer
-- **Infra + Ops**: AWS, GCP, Azure, Postgres, MySQL, Mongo, Redis, RabbitMQ, Pulsar, Docker, Kubernetes, Linux, Terraform
+- **Languages + Frameworks**: Python, JavaScript, Go, Haskell, C++, SQLAlchemy, Flask, Django, React
+- **Infra**: AWS/GCP/Azure, Postgres, MySQL, Redis, Rabbit, Docker, Kubernetes, Linux, Terraform
 
 ## EXPERIENCE
 
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
-### <span>Software Engineer - Mobile @ Klaviyo </span> <span>May 2022 – Present</span>
+### <span>Software Engineer II - Mobile @ Klaviyo </span> <span>May 2022 – March 2023</span>
 
 Worked on various projects and features to provide a scalable and performant SMS-sending experience necessary to ensure client messages get sent through the right channel and delivered via the right platform at the right time.
 
-- Implement monitoring and alerting systems for various features like virtual contact card webhooks using Grafana, Graphite, and StatsD
-- Improve observability during high traffic periods and ensure uninterrupted service during cutovers and providing a seamless user experience with minimal downtime
-- Identifying and resolving operational issues and bugs during PagerDuty shifts
+- Implement monitoring and alerting systems for various features like virtual contact cards and webhooks using Grafana, Graphite, and StatsD to improve observability during high traffic periods and ensure uninterrupted service during Django cutovers and providing a seamless user experience with minimal downtime
 - Maintain a customizable account information report generator & visualizer built using dtale, Django, & MySQL
-- Quickly identify and decommission low-volume and noncompliant SMS accounts & reduce operational costs associated with unused numbers & content violation remediation
 - Contribute to the development of an in-app bell notification feature using Django and React to proactively inform customers about canceled SMS campaigns
 
 ### <span>Software Engineer - Platform @ ForAllSecure </span> <span>March 2021 – May 2022</span>
@@ -39,7 +36,6 @@ Worked independently and as part of short-term & rapidly evolving teams to bring
 - Optimized queries associated with defect reporting endpoints to decrease page load times by 7.12%
 - Built a reporting dashboard using Postgres, SQLAlchemy & React (reCharts) to provide easily consumable usage insights and increase engagement with non-developer users of the Mayhem platform
 - Actively improved internal testing infrastructure using pytest fixtures to increase reusability & test coverage by 8%
-- Refactored database garbage collector queries to minimize the number of test cases stored in a database without adversely affecting coverage to provide faster test suite download and regression testing times for customers
 
 ### <span>Junior Engineer - Backend @ Pivony </span> <span>May 2020 – October 2020</span>
 
@@ -56,10 +52,10 @@ Architected a distributed AWS native topic modeling platform to process and summ
 
 - **Thesis** : Scalable Learning for the Odd-Man-Out Task with Applications to Word Vector Induction
 
-### <span>Study Abroad, Informatics</span> <span>August 2017 – June 2018</span>
+### <span>Informatics, Exchange, University of Sussex</span> <span>August 2017 – June 2018</span>
 
 ## PROJECTS
 
-### <span>sirch</span> <span>June 2022 – Present</span>
+### <span>[sirch](https://github.com/a6enez3r/sirch)</span> <span>June 2022 – Present</span>
 
-- parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing to generate a low-bandwidth search-enabled static site
+- parse static Markdown files & extract metadata such as keywords, tags, and summaries using natural language processing to generate a low-bandwidth searchable static site
