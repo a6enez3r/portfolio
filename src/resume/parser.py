@@ -24,7 +24,7 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
     links = []
     host2icon = {
         "github.com": "fa fa-github-square",
-        "linkedin.com": "fa fa-linkedin-square",
+        "www.linkedin.com": "fa fa-linkedin-square",
         "abenezer.sh": "fa fa-envelope-o",
     }
     for item in soup.select("#resume > ul:nth-child(2)"):
