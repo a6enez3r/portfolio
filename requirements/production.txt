@@ -4,6 +4,6 @@ secure==0.3.0
 structlog==22.3.0
 requests==2.31.0
 gunicorn==20.1.0
-pygithub==1.58.0
+pygithub==1.58.2
 beautifulsoup4==4.11.2
 markdown==3.4.3
