@@ -16,7 +16,7 @@ def test_about(test_client):
     """
     test about page
     """
-    with mock.patch("src.bps.pages.github_content", return_value=[]):
+    with mock.patch("portfolio.bps.pages.github_content", return_value=[]):
         response = test_client.get("/about")
         assert response.status_code == 200
 
