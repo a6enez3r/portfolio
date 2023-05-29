@@ -2,7 +2,8 @@
     bps: contains all app blueprints + a single function to
                  iteratively register individual bps
 
-    blueprints
+    Blueprints
+    ---------
         - pages - publicly accessible pages bp
         - errors - error handler pages bp
 """

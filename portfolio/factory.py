@@ -5,15 +5,20 @@ import logging
 import os
 
 from flask import Flask, send_from_directory
-from src.bps import register_blueprints
-from src.config import config_dict
-from src.extensions import secure_headers
-from src.logs import SlackerLogHandler
+
+from portfolio.bps import register_blueprints
+from portfolio.config import config_dict
+from portfolio.extensions import secure_headers
+from portfolio.logs import SlackerLogHandler
 
 
-def init_logs(app):
+def init_logs(app: Flask):
     """
-    init global app logger
+    Initialize a global app logger
+
+    Args
+    ----
+        - app (Flask): a Flask WSGI instance
     """
     # logging
     # file
@@ -48,16 +53,20 @@ def init_logs(app):
         logging.getLogger("gunicorn.access").addHandler(handler)
 
 
-def init_common(app):
+def init_common(app: Flask):
     """
-    init global app settings / routes
+    Initialize common global app settings / routes
+
+    Args
+    ----
+        - app (Flask): a Flask WSGI instance
     """
 
     # favicon
     @app.route("/favicon.ico")
     def favicon():
         """
-        render favicon
+        Render favicon
         """
         return send_from_directory(
             os.path.join(app.root_path, "static"),
@@ -67,18 +76,28 @@ def init_common(app):
 
     @app.after_request
     def set_secure_headers(response):
+        """
+        Configure security headers for each response
+
+        Args
+        ----
+            - response (str): any outgoing response object
+        """
         secure_headers.framework.flask(response)
         return response
 
 
 def create_app(environment="development"):
     """
-    configure & create flask web application
+    Configure & create flask web application
 
-    params:
-        - environment: dev, prod or testing
-    returns:
-        - app: fully configured flask WSGI object
+    Args
+    ----
+        - environment: development, production or testing
+
+    Returns
+    --------
+        - A fully configured flask WSGI object
     """
     # create flask app
     app = Flask(__name__)

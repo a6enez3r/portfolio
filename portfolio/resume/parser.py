@@ -1,5 +1,5 @@
 """
-    parser.py: autoamtially generate resume info from resume.md using
+    parser.py: automatically parse & generate resume info from resume.md using
                BeautifulSoup
 """
 from urllib.parse import urlparse
@@ -12,9 +12,9 @@ def resume_content(resume_path: str):  # pylint: disable=too-many-locals
     parse the contents of the auto generated resume.html
     we get from running make generate-resume
 
-    params:
-
-    :path resume_path (str): path to resume.html
+    Args
+    ----
+        - resume_path (str): path to resume.html
     """
 
     with open(resume_path, "rb") as resume_md:

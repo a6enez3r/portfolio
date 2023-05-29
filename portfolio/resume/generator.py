@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    resume.py: autoamtially generate resume PDF from resume.md
+    resume.py: automatically generate resume PDF from resume.md
 """
 # pylint: skip-file
 import argparse
@@ -75,6 +75,13 @@ CHROME_GUESSES_LINUX = [
 
 
 def guess_chrome_path() -> str:
+    """
+    Guess where the Google Chrome Path is based on platform [Darwin vs Linux vs Windows]
+
+    Returns
+    ------
+        - The path of Google Chrome
+    """
     if sys.platform == "darwin":
         guesses = CHROME_GUESSES_MACOS
     elif sys.platform == "win32":
@@ -92,6 +99,18 @@ def title(md: str) -> str:
     """
     Return the contents of the first markdown heading in md, which we
     assume to be the title of the document.
+
+    Args
+    ----
+        - md (str): markdown string
+
+    Returns
+    -------
+        - The contents of the first markdown heading
+
+    Raises
+    ------
+        - ValueError if it can't find any h1 headings
     """
     for line in md.splitlines():
         if re.match("^#[^#]", line):  # starts with exactly one '#'
@@ -106,6 +125,15 @@ def make_html(md: str, prefix: str = "resume") -> str:
     Compile md to HTML and prepend/append preamble/postamble.
 
     Insert <prefix>.css if it exists.
+
+    Args
+    -----
+        - md (str): markdown string
+        - prefix (str): file name / prefix
+
+    Raises
+    ------
+        - FileNotFoundError if styling CSS file not found
     """
     try:
         with open(prefix + ".css") as cssfp:
@@ -124,7 +152,17 @@ def make_html(md: str, prefix: str = "resume") -> str:
 
 def write_pdf(html: str, prefix: str = "resume", chrome: str = "") -> None:
     """
-    Write html to prefix.pdf
+    Write html to prefix.pdf (prefix being the name specified by default resume)
+
+    Args
+    ----
+        - html(str): resume in html content
+        - prefix (str): file name
+        - chrome (str): path to Google Chrome
+
+    Returns
+    ------
+        - None
     """
     chrome = chrome or guess_chrome_path()
     html64 = base64.b64encode(html.encode("utf-8"))
