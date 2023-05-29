@@ -1,6 +1,6 @@
 babel==2.12.1
 bandit==1.7.5
-beautifulsoup4==4.11.2
+beautifulsoup4==4.12.2
 black==23.3.0
 flake8==6.0.0
 flask==2.3.2
