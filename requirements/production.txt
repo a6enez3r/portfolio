@@ -6,4 +6,4 @@ pygithub==1.58.2
 python-dotenv==1.0.0
 requests==2.31.0
 secure==0.3.0
-structlog==22.3.0
+structlog==23.1.0
