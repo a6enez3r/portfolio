@@ -5,7 +5,6 @@ import logging
 import os
 
 from flask import Flask, send_from_directory
-
 from src.bps import register_blueprints
 from src.config import config_dict
 from src.extensions import secure_headers
@@ -53,6 +52,7 @@ def init_common(app):
     """
     init global app settings / routes
     """
+
     # favicon
     @app.route("/favicon.ico")
     def favicon():

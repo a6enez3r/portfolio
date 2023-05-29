@@ -11,21 +11,17 @@
     }
 """
 import logging
-
-# built-in fs modules
 import os
 import pathlib
 
-# env manager
 from dotenv import load_dotenv
 
-# load env. vars
 load_dotenv()
 
 
 class Config:  # pylint: disable=too-few-public-methods
     """
-    base configuration class. all other configuration classes
+    Base configuration class. All the other configuration classes
     (Testing, Development, Production) inherit from this class.
 
     Config specifies basic Flask configuration options such as
@@ -33,29 +29,22 @@ class Config:  # pylint: disable=too-few-public-methods
     and Celery URLs for executing background tasks
     """
 
-    # base dir
     BASE_DIR = pathlib.Path(__file__).parent.parent.absolute()
     PORTFOLIO_USERNAME = os.environ.get("PORTFOLIO_USERNAME", "abenezer")
     LOGFILE = os.environ.get("LOGFILE", os.path.join(BASE_DIR, "portfolio.log"))
     SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
-    # [OPTIONAL] get project stats from GitHub
     GH_PAT = os.environ.get("GH_PAT", "")
     GH_USERNAME = os.environ.get("GH_USERNAME", "a6enez3r")
     GH_FILE = os.path.join(BASE_DIR, "src/static/github.json")
-    # application threads
     THREADS_PER_PAGE = 2
-    # protection agains Cross-site Request Forgery (CSRF)
     CSRF_ENABLED = True
-    # unique + secret key for signing the data. Psuedo-randomly
-    # generated
     CSRF_SESSION_KEY = os.urandom(64)
-    # secret key for signing cookies
     SECRET_KEY = os.urandom(64)
 
 
 class TestingConfig(Config):  # pylint: disable=too-few-public-methods
     """
-    testing configuration class. sets up a local
+    Testing configuration class. sets up a local
     SQLite database for testing, disables CSRF
     protections & configures Flask
     """
@@ -70,7 +59,7 @@ class TestingConfig(Config):  # pylint: disable=too-few-public-methods
 
 class DevelopmentConfig(Config):  # pylint: disable=too-few-public-methods
     """
-    development configuration class. sets up a local
+    Development configuration class. sets up a local
     SQLite database for development, enables CSRF
     protections & configures Flask
     """
@@ -85,7 +74,7 @@ class DevelopmentConfig(Config):  # pylint: disable=too-few-public-methods
 
 class ProductionConfig(Config):  # pylint: disable=too-few-public-methods
     """
-    production configuration class. sets up a local
+    Production configuration class. sets up a local
     SQLite database for production, enables CSRF
     protections & configures Flask for production
     """

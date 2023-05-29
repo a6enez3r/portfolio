@@ -11,22 +11,19 @@ from github import Github, GithubException
 
 def timed_lru_cache(seconds: int, maxsize: int = None):
     """
-    timed lru cache decorator that takes a seconds arg
+    Timed lru cache decorator that takes a seconds arg
     in addition to a maxsize arg
 
-    params:
-
-    :param seconds (int): expiration window in secondds
-    :param maxsize (int): cache size
+    Args
+    ----
+        - seconds (int): expiration window in secondds
+        - maxsize (int): cache size
     """
 
     def wrapper_cache(func):
         """timed cache implementation"""
-        # using lru_cache
         func = lru_cache(maxsize=maxsize)(func)
-        # set lifetime
         func.lifetime = timedelta(seconds=seconds)
-        # set expiration
         func.expiration = datetime.utcnow() + func.lifetime
 
         @wraps(func)
@@ -45,13 +42,13 @@ def timed_lru_cache(seconds: int, maxsize: int = None):
 @timed_lru_cache(3600)
 def github_content(pat: str, username: str, saved: str = None):
     """
-    automatically pull project info from GitHub using
+    Automatically pull project info from GitHub using
 
     PAT & V3 API
 
-    params:
-
-    :param pat (str): github access token if none will return empty dict
+    Args
+    ----
+        - pat (str): github access token if none will return empty dict
     """
     if saved:
         with open(saved, "r", encoding="utf8") as github_file:

@@ -1,25 +1,26 @@
 """
     pages.py: contains functions to render pages
 """
-# os
 import os
 
-# flask
 from flask import Blueprint, current_app, render_template, send_from_directory
 
-# data
-from src.gh import github_content
-from src.resume.parser import resume_content
+from portfolio.gh import github_content
+from portfolio.resume.parser import resume_content
 
 pages_bp = Blueprint(
     "pages_bp", __name__, template_folder="templates", static_folder="static"
 )
 
-# experience page
+
 @pages_bp.route("/", methods=["GET"])
 def experience():
     """
-    render work page
+    Render the experience page.
+
+    Returns
+    -------
+        - - The rendered HTML template as a string.
     """
     content = resume_content(
         os.path.join(current_app.root_path, "static", "resume/resume.html")
@@ -35,11 +36,14 @@ def experience():
     )
 
 
-# about page
 @pages_bp.route("/about", methods=["GET"])
 def about():
     """
-    render about page
+    Render the about page.
+
+    Returns
+    -------
+        - - The rendered HTML template as a string.
     """
     content = resume_content(
         os.path.join(current_app.root_path, "static", "resume/resume.html")
@@ -61,11 +65,14 @@ def about():
     )
 
 
-# resume page
 @pages_bp.route("/resume")
 def resume():
     """
-    render resume
+    Render the resume pdf.
+
+    Returns
+    -------
+        - - The rendered HTML template as a string.
     """
     # send resume file
     return send_from_directory(

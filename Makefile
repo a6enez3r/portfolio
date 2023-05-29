@@ -1,50 +1,31 @@
 ip := wsgi
 ep := ${ip}.py
-mn := src
-tmn := tests
+mn := portfolio
+tn := tests
 
-# flask
-default_port := 5000
-ifeq ($(port),)
-port := ${default_port}
-endif
-default_host := 0.0.0.0
-ifeq ($(host),)
-host := ${default_host}
-endif
-# git
 ifeq ($(version),)
 version := 0.0.1
 endif
-ifeq ($(cm),)
-cm := default commit message
+ifeq ($(commit_message),)
+commit_message := default commit message
 endif
 ifeq ($(branch),)
 branch := main
 endif
-# python / docker / dep
-ifeq ($(dtype),)
-dtype := development
+ifeq ($(pytest_opts),)
+pytest_opts := -vv
 endif
-ifeq ($(fenv),)
-fenv := development
+ifeq ($(dep_type),)
+dep_type := development
 endif
-ifeq ($(denv),)
-denv := development
+ifeq ($(container_tag),)
+container_tag := ${dep_type}
 endif
-ifeq ($(cname),)
-cname := portfolio_${denv}
+ifeq ($(durations),)
+durations := 10
 endif
-ifeq ($(ctag),)
-ctag := latest
-endif
-# pytest
-ifeq ($(topts),)
-topts := -vv
-endif
-# resume path
-ifeq ($(resume_path),)
-resume_path = $(CURDIR)/src/static/resume/resume.md
+ifeq ($(pkg_type),)
+pkg_type := develop
 endif
 
 .DEFAULT_GOAL := help
@@ -111,92 +92,142 @@ help:
 save-local:
 	@echo "saving..."
 	@git add .
-	@git commit -m "${cm}"
+	@git commit -m "${commit_message}"
 
 ## save changes to remote [git]
 save-remote:
 	@echo "saving to remote..."
 	@git push origin ${branch}
 
-## pull changes from remote [git]
+## pull changes from remote
 pull-remote:
 	@echo "pulling from remote..."
-	@git merge origin ${branch}
+	@git pull origin ${branch}
 
-## create new tag, recreate if it exists [git]
+## create new tag, recreate if it exists
 tag:
-	git tag -d ${version} || : 
-	git push --delete origin ${version} || : 
-	git tag -a ${version} -m "latest" 
-	git push origin --tags
+	@git tag -d ${version} || : 
+	@git push --delete origin ${version} || : 
+	@git tag -a ${version} -m "latest version" 
+	@git push origin --tags
 
 ## -- python --
 
-## install dependencies [dtype = development | production] 
-deps:
-	@echo "dep type: ${dtype}"
-	@python3 -m pip install --upgrade pip setuptools wheel
-	@python3 -m pip install -r $(CURDIR)/requirements/${dtype}.txt
+## build package
+pkg-build:
+	@echo "building..." && python3 setup.py build
 
-## show app routes [fenv = development | production]
-routes:
-	@echo "flask env: ${fenv}"
-	@FLASK_APP=${ep} fenv=${fenv} ENVIRONMENT=${fenv} PORT=${port} python3 -m flask routes
+## install package [pkg_type = editable | noneditable]
+pkg-install:
+	@echo "installing..." && python3 setup.py ${pkg_type}
+
+## install package dependencies [dep_type = development | production]
+deps:
+	@python3 -m pip install --upgrade pip setuptools wheel
+#	@python3 -m pip install .
+	@if [ -f requirements/${dep_type}.txt ]; then pip install -r requirements/${dep_type}.txt; fi
+
+## run tests [pytest]
+test:
+	@echo "running tests..."
+	@python3 -m pytest --durations=${durations} --cov-report term-missing --cov=${mn} ${tn} ${pytest_opts}
+
+## run load tests [pytest + locust]
+load-test:
+	@make run & locust -f $(CURDIR)/tests/test_load.py
 
 ## run app [fenv = development | production]
 run:
 	@echo "flask env: ${fenv}"
 ifeq ($(fenv),production)
 	@echo "using: gunicorn"
-	@python3 -m gunicorn --workers 1 --bind ${host}:${port} ${ip}:app
+	@gunicorn --workers 1 --bind ${host}:${port} ${ip}:app
 endif
 ifeq ($(fenv),development)
 	@echo "using: flask"
 	@FLASK_APP=${ep} FLASK_ENV=${fenv} ENVIRONMENT=${fenv} PORT=${port} python3 -m flask run --host=${host} --port=${port} --no-reload
 endif
 
+## -- code quality --
+
+## run test profiling [pytest-profiling]
+profile:
+	@echo "running tests..."
+	@python3 -m pytest --profile ${tn} ${pytest_opts}
+
 ## run formatting [black]
 format:
+	@echo "formatting..."
+	@python3 -m isort ${mn}
+	@python3 -m isort ${tn}
+	@sort-requirements requirements/development.txt
+	@sort-requirements requirements/production.txt
 	@python3 -m black ${mn}
-	@python3 -m black ${tmn}
+	@python3 -m black ${tn}
 
 ## run linting [pylint]
 lint:
+	@echo "linting..."
 	@python3 -m pylint ${mn}
-	@python3 -m pylint ${tmn}
+	@python3 -m pylint ${tn}
 
-## run tests [pytest]
-test:
-	@FLASK_APP=${ep} FLASK_ENV=testing ENVIRONMENT=testing PORT=${port} python3 -m pytest --cov-report term-missing --durations=10 --cov=${mn} ${tmn} ${topts}
-	@sleep 1
-	@rm -f .coverage*
+## run linting & formatting
+prettify: format lint
 
-## run load tests [pytest + locust]
-load-test:
-	@make run & locust -f $(CURDIR)/tests/test_load.py
+## type inference [pyre]
+type-infer:
+	@echo "inferring types..."
+	@pyre infer
+
+## type checking [pyre]
+type-check:
+	@echo "checking types..."
+	@pyre
+
+## scan for dead code [vulture]
+scan-deadcode:
+	@echo "checking dead code..."
+	@vulture ${mn} || exit 0
+	@vulture ${tn} || exit 0
+
+## scan for security issues [bandit]
+scan-security:
+	@echo "checking for security issues..."
+	@bandit ${mn}
+
+## -- docs --
+
+## build docs [pdoc]
+docs-build:
+	@echo "building docs..."
+	@python3 -m pdoc ${mn} -o docs
+
+## serve docs [pdoc]
+docs-serve:
+	@python3 -m pdoc ${mn}
 
 ## -- docker --
 
-## build docker env [denv = development | production]
+## build docker env [docker_env = development | production]
 build-env:
-	@docker build -f ./dockerfiles/Dockerfile.${denv} . -t ${cname}:${ctag}
+	@docker build -f ./dockerfiles/Dockerfile.${docker_env} . -t ${container_name}:${container_tag}
 
 ## build & push image
 push-env:
-	@make build-env denv=production cname="ghcr.io/a6enez3r/portfolio" ctag="latest"
+	@make build-env docker_env=production container_name="ghcr.io/a6enez3r/portfolio" container_tag="latest"
 	@docker push ghcr.io/a6enez3r/portfolio
 
-## start docker env [denv = development | production]
+## start docker env [docker_env = development | production]
 up-env: build-env
-	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(eval cid = $(shell (docker ps -aqf "name=${container_name}")))
 	$(if $(strip $(cid)), \
 		@echo "existing container found. please run make purge-env",\
-		@docker run -p ${port}:5000 --name ${cname} ${cname}:${ctag})
+		@docker run -p ${port}:5000 --name ${container_name} ${container_name}:${container_tag})
 	$(endif)
 
 ## exec. into docker env
 exec-env:
-	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(eval cid = $(shell (docker ps -aqf "name=${container_name}")))
 	$(if $(strip $(cid)), \
 		@echo "exec into env container..." && docker exec -it ${cid} bash,\
 		@echo "env container not running.")
@@ -204,7 +235,7 @@ exec-env:
 
 ## remove docker env
 purge-env:
-	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(eval cid = $(shell (docker ps -aqf "name=${container_name}")))
 	$(if $(strip $(cid)), \
 		@echo "purging container..." && docker stop ${cid} && docker rm ${cid},\
 		@echo "env container not running.")
@@ -212,7 +243,7 @@ purge-env:
 
 ## get status of docker env
 status-env:
-	$(eval cid = $(shell (docker ps -aqf "name=${cname}")))
+	$(eval cid = $(shell (docker ps -aqf "name=${container_name}")))
 	$(if $(strip $(cid)), \
 		@echo "env container running",\
 		@echo "env container not running.")
@@ -223,9 +254,3 @@ init-env:
 	apt-get update && apt-get -y upgrade
 	apt-get install curl sudo bash vim ncurses-bin -y
 	apt-get install build-essential python3-pip -y --no-install-recommends
-
-## -- resume ---
-
-## generate resume HTML & PDF
-generate-resume:
-	@python3 src/resume/generator.py ${resume_path}
