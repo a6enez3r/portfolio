@@ -2,7 +2,7 @@ beautifulsoup4==4.11.2
 flask==2.2.3
 gunicorn==20.1.0
 markdown==3.4.3
-pygithub==1.58.2
+pygithub==1.59.0
 python-dotenv==1.0.0
 requests==2.31.0
 secure==0.3.0
